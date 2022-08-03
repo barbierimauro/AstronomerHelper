@@ -87,7 +87,7 @@ proginfo=false
 provflag=false
 bibflag=false
 fileinfo=false
-
+p3hdr=false
 
 
 ###############################################################################
@@ -998,6 +998,7 @@ function ckw (){
               #kvalue=$(cat "$hdr" | grep $search_kname | head -"$n" | tail -1)
               #echo $k $maxval $search_kname $kvalue
               kvalue_len=${#kvalue}
+              #echo $p3hdr
               if [ $p3hdr = "true" ]; then
                  if [ $kvalue_len -ge 1 ]; then
 					kvalue_full=$(grep $search_kname $hdr | head -"$n" | tail -1)
@@ -1146,8 +1147,8 @@ Usage: ep3fsck OPTIONS
     mcat      = MCATALOG
     ctile     = CATALOGTILE
     catal     = CATALOG
- -p name.hdr  : intendend for ESO ADP files,
-                print only the phase3 SDPS headers
+ -p name.hdr  : intendend for ESO ADP files, print only the phase3 SDPS 
+                headers
 "
 exit 1
 }
@@ -1164,7 +1165,7 @@ Usage: ep3fsck OPTIONS
  -h           : print this help and exit
  -k           : print in the LaTeX report the Table 8 of SDPS
                                               (true/false)       [false]
- -l           : LaTeX output                                   [out.tex]
+ -o           : LaTeX output                                   [out.tex]
  -m           : download ESO phase 3 and FITS documentation                  
  -T           : plain ASCII output file                        [out.txt]                 
  -r           : print some usage examples                                    
@@ -1181,8 +1182,8 @@ Usage: ep3fsck OPTIONS
     mcat      = MCATALOG
     ctile     = CATALOGTILE
     catal     = CATALOG
- -p name.hdr  : intendend for ESO ADP files,
-                print only the phase3 SDPS headers
+ -p name.hdr  : intendend for ESO ADP files, print only the phase3 SDPS 
+                headers
  -u           : user name in the LaTeX report                   [\$USER]
 DEVEL OPTIONS
  -B           : make version backup
