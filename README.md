@@ -1,6 +1,6 @@
 # ESOarchive
 
-This is acollection of softwares for working with data stored in the European Southern Observatory (ESO) Science Archive Facility (SAF)
+This is a collection of software for working with data stored in the European Southern Observatory (ESO) Science Archive Facility (SAF)
 http://archive.eso.org/cms.html
 
 # ep3fsck 
