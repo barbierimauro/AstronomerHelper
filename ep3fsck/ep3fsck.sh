@@ -908,7 +908,7 @@ function ckw (){
 				s1=$(echo $EXPTIME'<'$TEXPTIME+0.01| bc -l)
 				#echo s1 $s1 
 			    if [ $s1 -lt 1 ]; then
-			       echo "ERROR: EXPTIME<TEXPTIME+0.01 !!!"
+			       echo "WARNING: EXPTIME<TEXPTIME+0.01 !!!"
 			       echo EXPTIME  = $EXPTIME
 			       echo TEXPTIME = $TEXPTIME
 			       echo EXPTIME - TEXPTIME: `echo $EXPTIME-$TEXPTIME|bc -l`      
@@ -925,7 +925,7 @@ function ckw (){
 			if [ $vk16 = "F" ]; then
 				s1=$(echo $MJDOBS - 40587 | bc | grep -c '-')
 			    if [ $s1 -ge 1 ]; then
-			       echo "ERROR: MJD-OBS<40587 !!!"
+			       echo "WARNING: MJD-OBS<40587 !!!"
 			       echo MJD-OBS = $MJDOBS
 			    #else
 			    #   echo MJD-OBS ok
@@ -942,17 +942,17 @@ function ckw (){
 			if [ $vk16 = "F" ] && [ $vk17 = "F" ]; then
 			    s1=$(echo $MJDOBS - $MJDEND | bc | grep -c '-')
 			    if [ $s1 -lt 1 ]; then
-			       echo "ERROR: MJD-END<MJD-OBS !!!"
+			       echo "WARNING: MJD-END<MJD-OBS !!!"
 			       echo MJD-OBS = $MJDOBS
 			       echo MJD-END = $MJDEND
 			    #else
 			    #   echo MJDs ok
 			    fi
 			fi
-				s1=$(echo $TEXPTIME/86400.0'<='$MJDEND-$MJDOBS| bc -l)
+				s1=$(echo $TEXPTIME/86400.0+0.1'<='$MJDEND-$MJDOBS| bc -l)
 				#echo s1 $s1 
 			    if [ $s1 -lt 1 ]; then
-			       echo "ERROR: TEXPTIME<=MJDEND-MJDOBS !!!"
+			       echo "WARNING: TEXPTIME<=MJDEND-MJDOBS !!!"
 			       echo TEXPTIME = $TEXPTIME
 			       echo MJD-OBS  = $MJDOBS
 			       echo MJD-END  = $MJDEND
