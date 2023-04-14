@@ -1,0 +1,109 @@
+#!/bin/bash
+set -e
+stilts="$HOME/local/topcat/stilts.jar"
+
+
+output=$(java -jar "${stilts}" -version)
+if [[ "$output" =~ STILTS[[:space:]]+version[[:space:]]+([0-9]+\.[0-9]+(-[0-9]+)?)[[:space:]]+.* ]]; then
+    stilts_version="${BASH_REMATCH[1]}"
+fi
+
+if [[ "$output" =~ Starjava\ revision:\ ([a-z0-9]+)\ \((.*)\) ]]; then
+    stilts_revision="${BASH_REMATCH[1]}"
+    stilts_date="${BASH_REMATCH[2]}"
+fi
+
+echo
+echo "Validate FITS tables for UCDs and UNITS compliance with VO standards"
+echo "Based on STILTS of Mark Taylor, STILT version and date: $stilts_version, $stilts_date"
+echo
+
+
+if [ $# -eq 0 ]; then
+    echo "ERROR: No input file specified."
+    echo "Usage: $0 inputfile.fits"
+    echo
+    exit 1
+fi
+
+input_file="$1"
+
+if [ ! -s "${input_file}" ]; then
+    echo "ERROR: Input file does not exist or is empty."
+    exit 1
+fi
+
+if ! file -b "${input_file}" | grep -q "FITS"; then
+    echo "ERROR: Input file is not a FITS file."
+    exit 1
+fi
+
+file_name="$(basename -- "${input_file}")"
+votable_file="$(mktemp -t "${file_name}.XXXXXX.vot")"
+report_name="${input_file}.stilts.report"
+
+if [[ -s "${report_name}" ]]; then
+  report_date=$(stat -c %x "${report_name}")
+  echo "${report_name}" 
+  echo "already exists and is not empty"
+  echo  "created on $report_date"
+  echo
+  read -p "Do you want to overwrite the report? [y/n]: " answer
+  if [[ $answer == "y" ]]; then
+    echo "Deleting previous report..."
+    rm -rf "${report_name}"
+    echo
+  else
+    echo
+    echo "Aborting execution"
+    echo
+    exit 1
+  fi
+fi
+
+echo "from the first record of the FITS bintable, generate a votable"
+java -Xms8192M -jar $stilts tpipe \
+	omode=out \
+        ofmt="votable(format=TABLEDATA,version=V14)" \
+        out="${votable_file}" \
+        cmd="rowrange 1 1" \
+        istream=false \
+        ifmt="fits" \
+        in="${input_file}"
+echo
+
+#efte "${votable_file}"
+
+echo "validate the UCD and the units in the votable"
+echo
+if ! java -Xms8192M -jar $stilts  votlint \
+        maxrepeat=10000 \
+	ucd=true \
+        unit=true \
+        validate=true \
+        version=1.4 \
+        votable="${votable_file}" \
+        | tee /dev/tty \
+        | awk '{print $0}' >"${report_name}"; then
+#        | grep -E "ERROR|WARNING">"${report_name}"; then
+        echo "${input_file} , VO compliant"
+fi
+
+echo 
+# remove the temporary VOTable
+rm "${votable_file}"
+
+# check if the report exist
+if [ -e "${report_name}" ]; then
+    if [ -s "${report_name}" ]; then
+        # report present
+        echo "The full report is on the file:"
+        echo "${report_name}"
+    else
+        # zero size report, means no errors or warnings
+        echo "no errors or warnings"
+        rm "${report_name}"
+    fi
+else
+    echo "STRANGE: ${report_name} does not exist..."
+fi
