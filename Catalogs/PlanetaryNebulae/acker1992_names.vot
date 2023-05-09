@@ -1,0 +1,1510 @@
+<?xml version='1.0'?>
+<VOTABLE version="1.4"
+ xmlns="http://www.ivoa.net/xml/VOTable/v1.3">
+<!--
+ !  VOTable written by STIL version 4.1 (uk.ac.starlink.votable.VOTableWriter)
+ !  at 2022-06-25T05:08:53
+ !-->
+<RESOURCE>
+<TABLE name="Joined" nrows="1143">
+<DESCRIPTION>
+Notes and remarks about some nebulae (2)
+</DESCRIPTION>
+<PARAM arraysize="19" datatype="char" name="votable-version" value="1.99+ (14-Oct-2013)"/>
+<PARAM arraysize="11" datatype="char" name="-ref" value="VOTx2720601"/>
+<PARAM arraysize="5" datatype="char" name="-out.max" value="50000"/>
+<PARAM arraysize="1" datatype="char" name="queryParameters" value="4">
+<DESCRIPTION>-oc.form=dec
+-source=V/84
+-out.all
+-out.max=50000</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="19" datatype="char" name="votable-version" value="1.99+ (14-Oct-2013)"/>
+<PARAM arraysize="11" datatype="char" name="-ref" value="VOTx2720601"/>
+<PARAM arraysize="5" datatype="char" name="-out.max" value="50000"/>
+<PARAM arraysize="1" datatype="char" name="queryParameters" value="4">
+<DESCRIPTION>-oc.form=dec
+-source=V/84
+-out.all
+-out.max=50000</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="33" datatype="char" name="Match type" value="Pair match; Best match, symmetric">
+<DESCRIPTION>Type of match which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="11" datatype="char" name="Match algorithm" value="Exact Value">
+<DESCRIPTION>Matching algorithm which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="89" datatype="char" name="Join Type" value="All from 1 (An output row for each matched or unmatched row in table 1 (LEFT OUTER JOIN))">
+<DESCRIPTION>Determines which rows appear in output table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="12" datatype="char" name="First input table" value="6: V_84_main"/>
+<PARAM arraysize="12" datatype="char" name="Second input table" value="7: V_84_diam"/>
+<PARAM arraysize="19" datatype="char" name="votable-version" value="1.99+ (14-Oct-2013)"/>
+<PARAM arraysize="11" datatype="char" name="-ref" value="VOTx2720601"/>
+<PARAM arraysize="5" datatype="char" name="-out.max" value="50000"/>
+<PARAM arraysize="1" datatype="char" name="queryParameters" value="4">
+<DESCRIPTION>-oc.form=dec
+-source=V/84
+-out.all
+-out.max=50000</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="33" datatype="char" name="Match type" value="Pair match; Best match, symmetric">
+<DESCRIPTION>Type of match which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="11" datatype="char" name="Match algorithm" value="Exact Value">
+<DESCRIPTION>Matching algorithm which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="89" datatype="char" name="Join Type" value="All from 1 (An output row for each matched or unmatched row in table 1 (LEFT OUTER JOIN))">
+<DESCRIPTION>Determines which rows appear in output table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="14" datatype="char" name="First input table" value="21: match(6,7)"/>
+<PARAM arraysize="12" datatype="char" name="Second input table" value="8: V_84_dist"/>
+<PARAM arraysize="19" datatype="char" name="votable-version" value="1.99+ (14-Oct-2013)"/>
+<PARAM arraysize="11" datatype="char" name="-ref" value="VOTx2720601"/>
+<PARAM arraysize="5" datatype="char" name="-out.max" value="50000"/>
+<PARAM arraysize="1" datatype="char" name="queryParameters" value="4">
+<DESCRIPTION>-oc.form=dec
+-source=V/84
+-out.all
+-out.max=50000</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="33" datatype="char" name="Match type" value="Pair match; Best match, symmetric">
+<DESCRIPTION>Type of match which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="11" datatype="char" name="Match algorithm" value="Exact Value">
+<DESCRIPTION>Matching algorithm which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="89" datatype="char" name="Join Type" value="All from 1 (An output row for each matched or unmatched row in table 1 (LEFT OUTER JOIN))">
+<DESCRIPTION>Determines which rows appear in output table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="15" datatype="char" name="First input table" value="22: match(21,8)"/>
+<PARAM arraysize="13" datatype="char" name="Second input table" value="9: V_84_hbeta"/>
+<PARAM arraysize="19" datatype="char" name="votable-version" value="1.99+ (14-Oct-2013)"/>
+<PARAM arraysize="11" datatype="char" name="-ref" value="VOTx2720601"/>
+<PARAM arraysize="5" datatype="char" name="-out.max" value="50000"/>
+<PARAM arraysize="1" datatype="char" name="queryParameters" value="4">
+<DESCRIPTION>-oc.form=dec
+-source=V/84
+-out.all
+-out.max=50000</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="33" datatype="char" name="Match type" value="Pair match; Best match, symmetric">
+<DESCRIPTION>Type of match which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="11" datatype="char" name="Match algorithm" value="Exact Value">
+<DESCRIPTION>Matching algorithm which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="89" datatype="char" name="Join Type" value="All from 1 (An output row for each matched or unmatched row in table 1 (LEFT OUTER JOIN))">
+<DESCRIPTION>Determines which rows appear in output table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="15" datatype="char" name="First input table" value="23: match(22,9)"/>
+<PARAM arraysize="15" datatype="char" name="Second input table" value="10: V_84_intens"/>
+<PARAM arraysize="19" datatype="char" name="votable-version" value="1.99+ (14-Oct-2013)"/>
+<PARAM arraysize="11" datatype="char" name="-ref" value="VOTx2720601"/>
+<PARAM arraysize="5" datatype="char" name="-out.max" value="50000"/>
+<PARAM arraysize="1" datatype="char" name="queryParameters" value="4">
+<DESCRIPTION>-oc.form=dec
+-source=V/84
+-out.all
+-out.max=50000</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="33" datatype="char" name="Match type" value="Pair match; Best match, symmetric">
+<DESCRIPTION>Type of match which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="11" datatype="char" name="Match algorithm" value="Exact Value">
+<DESCRIPTION>Matching algorithm which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="89" datatype="char" name="Join Type" value="All from 1 (An output row for each matched or unmatched row in table 1 (LEFT OUTER JOIN))">
+<DESCRIPTION>Determines which rows appear in output table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="16" datatype="char" name="First input table" value="24: match(23,10)"/>
+<PARAM arraysize="12" datatype="char" name="Second input table" value="11: V_84_iue"/>
+<PARAM arraysize="19" datatype="char" name="votable-version" value="1.99+ (14-Oct-2013)"/>
+<PARAM arraysize="11" datatype="char" name="-ref" value="VOTx2720601"/>
+<PARAM arraysize="5" datatype="char" name="-out.max" value="50000"/>
+<PARAM arraysize="1" datatype="char" name="queryParameters" value="4">
+<DESCRIPTION>-oc.form=dec
+-source=V/84
+-out.all
+-out.max=50000</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="33" datatype="char" name="Match type" value="Pair match; Best match, symmetric">
+<DESCRIPTION>Type of match which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="11" datatype="char" name="Match algorithm" value="Exact Value">
+<DESCRIPTION>Matching algorithm which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="89" datatype="char" name="Join Type" value="All from 1 (An output row for each matched or unmatched row in table 1 (LEFT OUTER JOIN))">
+<DESCRIPTION>Determines which rows appear in output table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="16" datatype="char" name="First input table" value="25: match(24,11)"/>
+<PARAM arraysize="13" datatype="char" name="Second input table" value="12: V_84_iras"/>
+<PARAM arraysize="5" datatype="char" name="matches" value="14737">
+<DESCRIPTION>matching records</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="97" datatype="char" name="Warning" value="compile expression: OType, http://vizier.u-strasbg.fr/viz-bin/vizExec/getclass?VI/99&amp;amp;${OType}"/>
+<PARAM arraysize="123" datatype="char" name="Warning" value="compile expression: Link1, http://vizier.u-strasbg.fr/viz-bin/VizieR-4?-info=XML&amp;amp;-out.add=.&amp;amp;-source=6099&amp;amp;-c=PN+"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="123" datatype="char" name="Warning" value="compile expression: Quality, http://vizier.u-strasbg.fr/viz-bin/VizieR?-6N&amp;amp;-info=XML&amp;amp;-out.add=.&amp;amp;&amp;amp;lt;&amp;amp;qu"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="+++No column for LINK to a row in table: V/84/refs"/>
+<PARAM arraysize="49" datatype="char" name="Warning" value="main column 1098 - link column not generated Name"/>
+<PARAM arraysize="123" datatype="char" name="Warning" value="compile expression: Class, http://vizier.u-strasbg.fr/viz-bin/VizieR?-6N&amp;amp;-info=XML&amp;amp;-out.add=.&amp;amp;&amp;amp;lt;&amp;amp;quot"/>
+<PARAM arraysize="49" datatype="char" name="Warning" value="main column 1098 - link column not generated Name"/>
+<PARAM arraysize="19" datatype="char" name="votable-version" value="1.99+ (14-Oct-2013)"/>
+<PARAM arraysize="11" datatype="char" name="-ref" value="VOTx2720601"/>
+<PARAM arraysize="5" datatype="char" name="-out.max" value="50000"/>
+<PARAM arraysize="1" datatype="char" name="queryParameters" value="4">
+<DESCRIPTION>-oc.form=dec
+-source=V/84
+-out.all
+-out.max=50000</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="33" datatype="char" name="Match type" value="Pair match; Best match, symmetric">
+<DESCRIPTION>Type of match which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="11" datatype="char" name="Match algorithm" value="Exact Value">
+<DESCRIPTION>Matching algorithm which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="89" datatype="char" name="Join Type" value="All from 1 (An output row for each matched or unmatched row in table 1 (LEFT OUTER JOIN))">
+<DESCRIPTION>Determines which rows appear in output table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="16" datatype="char" name="First input table" value="26: match(25,12)"/>
+<PARAM arraysize="12" datatype="char" name="Second input table" value="13: V_84_nir"/>
+<PARAM arraysize="5" datatype="char" name="matches" value="14737">
+<DESCRIPTION>matching records</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="97" datatype="char" name="Warning" value="compile expression: OType, http://vizier.u-strasbg.fr/viz-bin/vizExec/getclass?VI/99&amp;amp;${OType}"/>
+<PARAM arraysize="123" datatype="char" name="Warning" value="compile expression: Link1, http://vizier.u-strasbg.fr/viz-bin/VizieR-4?-info=XML&amp;amp;-out.add=.&amp;amp;-source=6099&amp;amp;-c=PN+"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="123" datatype="char" name="Warning" value="compile expression: Quality, http://vizier.u-strasbg.fr/viz-bin/VizieR?-6N&amp;amp;-info=XML&amp;amp;-out.add=.&amp;amp;&amp;amp;lt;&amp;amp;qu"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="+++No column for LINK to a row in table: V/84/refs"/>
+<PARAM arraysize="49" datatype="char" name="Warning" value="main column 1098 - link column not generated Name"/>
+<PARAM arraysize="123" datatype="char" name="Warning" value="compile expression: Class, http://vizier.u-strasbg.fr/viz-bin/VizieR?-6N&amp;amp;-info=XML&amp;amp;-out.add=.&amp;amp;&amp;amp;lt;&amp;amp;quot"/>
+<PARAM arraysize="49" datatype="char" name="Warning" value="main column 1098 - link column not generated Name"/>
+<PARAM arraysize="19" datatype="char" name="votable-version" value="1.99+ (14-Oct-2013)"/>
+<PARAM arraysize="11" datatype="char" name="-ref" value="VOTx2720601"/>
+<PARAM arraysize="5" datatype="char" name="-out.max" value="50000"/>
+<PARAM arraysize="1" datatype="char" name="queryParameters" value="4">
+<DESCRIPTION>-oc.form=dec
+-source=V/84
+-out.all
+-out.max=50000</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="33" datatype="char" name="Match type" value="Pair match; Best match, symmetric">
+<DESCRIPTION>Type of match which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="11" datatype="char" name="Match algorithm" value="Exact Value">
+<DESCRIPTION>Matching algorithm which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="89" datatype="char" name="Join Type" value="All from 1 (An output row for each matched or unmatched row in table 1 (LEFT OUTER JOIN))">
+<DESCRIPTION>Determines which rows appear in output table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="16" datatype="char" name="First input table" value="27: match(26,13)"/>
+<PARAM arraysize="14" datatype="char" name="Second input table" value="14: V_84_radio"/>
+<PARAM arraysize="5" datatype="char" name="matches" value="14737">
+<DESCRIPTION>matching records</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="97" datatype="char" name="Warning" value="compile expression: OType, http://vizier.u-strasbg.fr/viz-bin/vizExec/getclass?VI/99&amp;amp;${OType}"/>
+<PARAM arraysize="123" datatype="char" name="Warning" value="compile expression: Link1, http://vizier.u-strasbg.fr/viz-bin/VizieR-4?-info=XML&amp;amp;-out.add=.&amp;amp;-source=6099&amp;amp;-c=PN+"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="123" datatype="char" name="Warning" value="compile expression: Quality, http://vizier.u-strasbg.fr/viz-bin/VizieR?-6N&amp;amp;-info=XML&amp;amp;-out.add=.&amp;amp;&amp;amp;lt;&amp;amp;qu"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="+++No column for LINK to a row in table: V/84/refs"/>
+<PARAM arraysize="49" datatype="char" name="Warning" value="main column 1098 - link column not generated Name"/>
+<PARAM arraysize="123" datatype="char" name="Warning" value="compile expression: Class, http://vizier.u-strasbg.fr/viz-bin/VizieR?-6N&amp;amp;-info=XML&amp;amp;-out.add=.&amp;amp;&amp;amp;lt;&amp;amp;quot"/>
+<PARAM arraysize="49" datatype="char" name="Warning" value="main column 1098 - link column not generated Name"/>
+<PARAM arraysize="19" datatype="char" name="votable-version" value="1.99+ (14-Oct-2013)"/>
+<PARAM arraysize="11" datatype="char" name="-ref" value="VOTx2720601"/>
+<PARAM arraysize="5" datatype="char" name="-out.max" value="50000"/>
+<PARAM arraysize="1" datatype="char" name="queryParameters" value="4">
+<DESCRIPTION>-oc.form=dec
+-source=V/84
+-out.all
+-out.max=50000</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="33" datatype="char" name="Match type" value="Pair match; Best match, symmetric">
+<DESCRIPTION>Type of match which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="11" datatype="char" name="Match algorithm" value="Exact Value">
+<DESCRIPTION>Matching algorithm which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="89" datatype="char" name="Join Type" value="All from 1 (An output row for each matched or unmatched row in table 1 (LEFT OUTER JOIN))">
+<DESCRIPTION>Determines which rows appear in output table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="16" datatype="char" name="First input table" value="28: match(27,14)"/>
+<PARAM arraysize="12" datatype="char" name="Second input table" value="15: V_84_vel"/>
+<PARAM arraysize="5" datatype="char" name="matches" value="14737">
+<DESCRIPTION>matching records</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="97" datatype="char" name="Warning" value="compile expression: OType, http://vizier.u-strasbg.fr/viz-bin/vizExec/getclass?VI/99&amp;amp;${OType}"/>
+<PARAM arraysize="123" datatype="char" name="Warning" value="compile expression: Link1, http://vizier.u-strasbg.fr/viz-bin/VizieR-4?-info=XML&amp;amp;-out.add=.&amp;amp;-source=6099&amp;amp;-c=PN+"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="123" datatype="char" name="Warning" value="compile expression: Quality, http://vizier.u-strasbg.fr/viz-bin/VizieR?-6N&amp;amp;-info=XML&amp;amp;-out.add=.&amp;amp;&amp;amp;lt;&amp;amp;qu"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="+++No column for LINK to a row in table: V/84/refs"/>
+<PARAM arraysize="49" datatype="char" name="Warning" value="main column 1098 - link column not generated Name"/>
+<PARAM arraysize="123" datatype="char" name="Warning" value="compile expression: Class, http://vizier.u-strasbg.fr/viz-bin/VizieR?-6N&amp;amp;-info=XML&amp;amp;-out.add=.&amp;amp;&amp;amp;lt;&amp;amp;quot"/>
+<PARAM arraysize="49" datatype="char" name="Warning" value="main column 1098 - link column not generated Name"/>
+<PARAM arraysize="19" datatype="char" name="votable-version" value="1.99+ (14-Oct-2013)"/>
+<PARAM arraysize="11" datatype="char" name="-ref" value="VOTx2720601"/>
+<PARAM arraysize="5" datatype="char" name="-out.max" value="50000"/>
+<PARAM arraysize="1" datatype="char" name="queryParameters" value="4">
+<DESCRIPTION>-oc.form=dec
+-source=V/84
+-out.all
+-out.max=50000</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="33" datatype="char" name="Match type" value="Pair match; Best match, symmetric">
+<DESCRIPTION>Type of match which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="11" datatype="char" name="Match algorithm" value="Exact Value">
+<DESCRIPTION>Matching algorithm which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="89" datatype="char" name="Join Type" value="All from 1 (An output row for each matched or unmatched row in table 1 (LEFT OUTER JOIN))">
+<DESCRIPTION>Determines which rows appear in output table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="16" datatype="char" name="First input table" value="29: match(28,15)"/>
+<PARAM arraysize="14" datatype="char" name="Second input table" value="16: V_84_cstar"/>
+<PARAM arraysize="5" datatype="char" name="matches" value="14737">
+<DESCRIPTION>matching records</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="97" datatype="char" name="Warning" value="compile expression: OType, http://vizier.u-strasbg.fr/viz-bin/vizExec/getclass?VI/99&amp;amp;${OType}"/>
+<PARAM arraysize="123" datatype="char" name="Warning" value="compile expression: Link1, http://vizier.u-strasbg.fr/viz-bin/VizieR-4?-info=XML&amp;amp;-out.add=.&amp;amp;-source=6099&amp;amp;-c=PN+"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="123" datatype="char" name="Warning" value="compile expression: Quality, http://vizier.u-strasbg.fr/viz-bin/VizieR?-6N&amp;amp;-info=XML&amp;amp;-out.add=.&amp;amp;&amp;amp;lt;&amp;amp;qu"/>
+<PARAM arraysize="48" datatype="char" name="Warning" value="main column 1098 - link column not generated PNG"/>
+<PARAM arraysize="50" datatype="char" name="Warning" value="+++No column for LINK to a row in table: V/84/refs"/>
+<PARAM arraysize="49" datatype="char" name="Warning" value="main column 1098 - link column not generated Name"/>
+<PARAM arraysize="123" datatype="char" name="Warning" value="compile expression: Class, http://vizier.u-strasbg.fr/viz-bin/VizieR?-6N&amp;amp;-info=XML&amp;amp;-out.add=.&amp;amp;&amp;amp;lt;&amp;amp;quot"/>
+<PARAM arraysize="49" datatype="char" name="Warning" value="main column 1098 - link column not generated Name"/>
+<PARAM arraysize="19" datatype="char" name="votable-version" value="1.99+ (14-Oct-2013)"/>
+<PARAM arraysize="11" datatype="char" name="-ref" value="VOTx2720601"/>
+<PARAM arraysize="5" datatype="char" name="-out.max" value="50000"/>
+<PARAM arraysize="1" datatype="char" name="queryParameters" value="4">
+<DESCRIPTION>-oc.form=dec
+-source=V/84
+-out.all
+-out.max=50000</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="33" datatype="char" name="Match type" value="Pair match; Best match, symmetric">
+<DESCRIPTION>Type of match which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="11" datatype="char" name="Match algorithm" value="Exact Value">
+<DESCRIPTION>Matching algorithm which created this table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="89" datatype="char" name="Join Type" value="All from 1 (An output row for each matched or unmatched row in table 1 (LEFT OUTER JOIN))">
+<DESCRIPTION>Determines which rows appear in output table</DESCRIPTION>
+</PARAM>
+<PARAM arraysize="16" datatype="char" name="First input table" value="30: match(29,16)"/>
+<PARAM arraysize="14" datatype="char" name="Second input table" value="17: V_84_notes"/>
+<FIELD arraysize="*" datatype="char" name="simbad_name">
+<DESCRIPTION>Expression: "PNG "+PNG</DESCRIPTION>
+</FIELD>
+<FIELD datatype="double" name="RA" ucd="pos.eq.ra" unit="deg">
+<DESCRIPTION>ICRS Right Ascension</DESCRIPTION>
+</FIELD>
+<FIELD datatype="double" name="DEC" ucd="pos.eq.dec" unit="deg">
+<DESCRIPTION>ICRS Declination</DESCRIPTION>
+</FIELD>
+<DATA>
+<TABLEDATA>
+<TR><TD>PNG 000.0-06.8</TD><TD>273.32512500000007</TD><TD>-32.3286111111111</TD></TR>
+<TR><TD>PNG 000.1+02.6</TD><TD>263.89741666666663</TD><TD>-27.400944444444445</TD></TR>
+<TR><TD>PNG 000.1+04.3</TD><TD>262.3485416666667</TD><TD>-26.433944444444446</TD></TR>
+<TR><TD>PNG 000.1+17.2</TD><TD>250.95562499999994</TD><TD>-18.94252777777778</TD></TR>
+<TR><TD>PNG 000.1-01.1</TD><TD>267.600875</TD><TD>-29.421638888888882</TD></TR>
+<TR><TD>PNG 000.1-02.3</TD><TD>268.8387083333333</TD><TD>-29.967305555555555</TD></TR>
+<TR><TD>PNG 000.1-05.6</TD><TD>272.1038333333333</TD><TD>-31.62341666666666</TD></TR>
+<TR><TD>PNG 000.2-01.9</TD><TD>268.44129166666664</TD><TD>-29.72952777777777</TD></TR>
+<TR><TD>PNG 000.2-04.6</TD><TD>271.18420833333334</TD><TD>-31.047333333333345</TD></TR>
+<TR><TD>PNG 000.3+06.9</TD><TD>260.09258333333327</TD><TD>-24.864749999999994</TD></TR>
+<TR><TD>PNG 000.3+12.2</TD><TD>255.38991666666658</TD><TD>-21.82588888888889</TD></TR>
+<TR><TD>PNG 000.3-02.8</TD><TD>269.42379166666666</TD><TD>-30.03391666666665</TD></TR>
+<TR><TD>PNG 000.3-04.6</TD><TD>271.257875</TD><TD>-30.970861111111123</TD></TR>
+<TR><TD>PNG 000.4-01.9</TD><TD>268.60549999999995</TD><TD>-29.602611111111123</TD></TR>
+<TR><TD>PNG 000.4-02.9</TD><TD>269.581125</TD><TD>-30.01147222222222</TD></TR>
+<TR><TD>PNG 000.5-01.6</TD><TD>268.35387499999996</TD><TD>-29.28522222222221</TD></TR>
+<TR><TD>PNG 000.5-03.1</TD><TD>269.81554166666666</TD><TD>-30.046722222222225</TD></TR>
+<TR><TD>PNG 000.6-01.3</TD><TD>268.14562499999994</TD><TD>-29.109277777777773</TD></TR>
+<TR><TD>PNG 000.6-02.3</TD><TD>269.10075</TD><TD>-29.63463888888889</TD></TR>
+<TR><TD>PNG 000.7+03.2</TD><TD>263.72808333333336</TD><TD>-26.59933333333333</TD></TR>
+<TR><TD>PNG 000.7+04.7</TD><TD>262.35820833333327</TD><TD>-25.823055555555552</TD></TR>
+<TR><TD>PNG 000.7-02.7</TD><TD>269.5406249999999</TD><TD>-29.739166666666648</TD></TR>
+<TR><TD>PNG 000.7-03.7</TD><TD>270.5780833333333</TD><TD>-30.23913888888888</TD></TR>
+<TR><TD>PNG 000.7-07.4</TD><TD>274.40358333333336</TD><TD>-31.94308333333334</TD></TR>
+<TR><TD>PNG 000.8-01.5</TD><TD>268.4615833333333</TD><TD>-28.98941666666667</TD></TR>
+<TR><TD>PNG 000.8-07.6</TD><TD>274.6554166666666</TD><TD>-31.91436111111109</TD></TR>
+<TR><TD>PNG 000.9-02.0</TD><TD>269.0074583333333</TD><TD>-29.18813888888889</TD></TR>
+<TR><TD>PNG 000.9-04.8</TD><TD>271.7718749999999</TD><TD>-30.570027777777774</TD></TR>
+<TR><TD>PNG 001.0+01.9</TD><TD>265.11704166666664</TD><TD>-27.01308333333333</TD></TR>
+<TR><TD>PNG 001.0-02.6</TD><TD>269.605625</TD><TD>-29.34719444444444</TD></TR>
+<TR><TD>PNG 001.1-01.6</TD><TD>268.7163333333333</TD><TD>-28.815388888888894</TD></TR>
+<TR><TD>PNG 001.2+02.1</TD><TD>265.06783333333334</TD><TD>-26.739166666666666</TD></TR>
+<TR><TD>PNG 001.2-03.0</TD><TD>270.1569999999999</TD><TD>-29.36402777777778</TD></TR>
+<TR><TD>PNG 001.2-03.9</TD><TD>270.9755833333333</TD><TD>-29.85719444444444</TD></TR>
+<TR><TD>PNG 001.3-01.2</TD><TD>268.44570833333336</TD><TD>-28.45447222222222</TD></TR>
+<TR><TD>PNG 001.4+05.3</TD><TD>262.15574999999984</TD><TD>-24.851527777777775</TD></TR>
+<TR><TD>PNG 001.4-03.4</TD><TD>270.6144166666666</TD><TD>-29.41894444444444</TD></TR>
+<TR><TD>PNG 001.5-06.7</TD><TD>274.0512083333333</TD><TD>-30.868749999999995</TD></TR>
+<TR><TD>PNG 001.6-01.3</TD><TD>268.64420833333327</TD><TD>-28.211833333333328</TD></TR>
+<TR><TD>PNG 001.7+05.7</TD><TD>262.01570833333335</TD><TD>-24.42219444444444</TD></TR>
+<TR><TD>PNG 001.7-01.6</TD><TD>269.0110416666666</TD><TD>-28.236722222222213</TD></TR>
+<TR><TD>PNG 001.7-04.4</TD><TD>271.81075</TD><TD>-29.689999999999987</TD></TR>
+<TR><TD>PNG 001.7-04.6</TD><TD>271.97441666666657</TD><TD>-29.74302777777777</TD></TR>
+<TR><TD>PNG 001.8-03.8</TD><TD>271.268</TD><TD>-29.32411111111111</TD></TR>
+<TR><TD>PNG 002.0-02.0</TD><TD>269.59033333333326</TD><TD>-28.247249999999998</TD></TR>
+<TR><TD>PNG 002.0-06.2</TD><TD>273.7771249999999</TD><TD>-30.25916666666667</TD></TR>
+<TR><TD>PNG 002.0-13.4</TD><TD>281.4628333333333</TD><TD>-33.34438888888888</TD></TR>
+<TR><TD>PNG 002.1+03.3</TD><TD>264.46349999999995</TD><TD>-25.345666666666656</TD></TR>
+<TR><TD>PNG 002.1-02.2</TD><TD>269.830625</TD><TD>-28.229972222222216</TD></TR>
+<TR><TD>PNG 002.1-04.2</TD><TD>271.7802083333333</TD><TD>-29.21550000000001</TD></TR>
+<TR><TD>PNG 002.2+00.5</TD><TD>267.1902499999999</TD><TD>-26.725194444444437</TD></TR>
+<TR><TD>PNG 002.2-02.5</TD><TD>270.24925</TD><TD>-28.271833333333326</TD></TR>
+<TR><TD>PNG 002.2-02.7</TD><TD>270.42774999999995</TD><TD>-28.42927777777777</TD></TR>
+<TR><TD>PNG 004.5+06.8</TD><TD>262.6492083333333</TD><TD>-21.48075</TD></TR>
+<TR><TD>PNG 002.2-06.3</TD><TD>274.07745833333337</TD><TD>-30.126583333333322</TD></TR>
+<TR><TD>PNG 002.2-09.4</TD><TD>277.2985833333333</TD><TD>-31.49991666666666</TD></TR>
+<TR><TD>PNG 002.3+02.2</TD><TD>265.62541666666664</TD><TD>-25.75797222222222</TD></TR>
+<TR><TD>PNG 002.3-03.4</TD><TD>271.11775</TD><TD>-28.628166666666665</TD></TR>
+<TR><TD>PNG 002.3-07.8</TD><TD>275.6439583333333</TD><TD>-30.724833333333326</TD></TR>
+<TR><TD>PNG 002.4+05.8</TD><TD>262.33658333333324</TD><TD>-23.758972222222223</TD></TR>
+<TR><TD>PNG 002.4-03.2</TD><TD>271.01920833333327</TD><TD>-28.465305555555553</TD></TR>
+<TR><TD>PNG 002.4-03.7</TD><TD>271.5247083333333</TD><TD>-28.67619444444445</TD></TR>
+<TR><TD>PNG 002.5-01.7</TD><TD>269.63016666666664</TD><TD>-27.618166666666664</TD></TR>
+<TR><TD>PNG 002.5-05.4</TD><TD>273.2522083333334</TD><TD>-29.42002777777778</TD></TR>
+<TR><TD>PNG 002.6+02.1</TD><TD>265.9145833333333</TD><TD>-25.61249999999999</TD></TR>
+<TR><TD>PNG 002.6+04.2</TD><TD>263.9939166666667</TD><TD>-24.439305555555553</TD></TR>
+<TR><TD>PNG 002.6+08.1</TD><TD>260.32812499999994</TD><TD>-22.315249999999992</TD></TR>
+<TR><TD>PNG 002.6-03.4</TD><TD>271.35774999999995</TD><TD>-28.367805555555556</TD></TR>
+<TR><TD>PNG 002.7-04.8</TD><TD>272.76987499999996</TD><TD>-28.98347222222221</TD></TR>
+<TR><TD>PNG 002.7-52.4</TD><TD>329.8822083333333</TD><TD>-39.37672222222223</TD></TR>
+<TR><TD>PNG 002.8+01.7</TD><TD>266.42229166666664</TD><TD>-25.630916666666668</TD></TR>
+<TR><TD>PNG 002.8+01.8</TD><TD>266.36816666666664</TD><TD>-25.637055555555552</TD></TR>
+<TR><TD>PNG 002.8-02.2</TD><TD>270.29075</TD><TD>-27.640500000000003</TD></TR>
+<TR><TD>PNG 002.9+06.5</TD><TD>261.9735416666666</TD><TD>-22.955416666666665</TD></TR>
+<TR><TD>PNG 002.9-03.9</TD><TD>272.0162083333334</TD><TD>-28.392138888888873</TD></TR>
+<TR><TD>PNG 003.0-02.6</TD><TD>270.71475000000004</TD><TD>-27.683999999999994</TD></TR>
+<TR><TD>PNG 003.1+02.9</TD><TD>265.4699583333333</TD><TD>-24.70222222222222</TD></TR>
+<TR><TD>PNG 003.1+03.4</TD><TD>265.02908333333323</TD><TD>-24.429027777777772</TD></TR>
+<TR><TD>PNG 003.2-04.4</TD><TD>272.6282499999999</TD><TD>-28.32274999999999</TD></TR>
+<TR><TD>PNG 003.2-06.2</TD><TD>274.4248333333333</TD><TD>-29.138777777777776</TD></TR>
+<TR><TD>PNG 003.3-04.6</TD><TD>272.89645833333327</TD><TD>-28.377027777777773</TD></TR>
+<TR><TD>PNG 003.3-07.5</TD><TD>275.7874583333333</TD><TD>-29.723583333333334</TD></TR>
+<TR><TD>PNG 003.4-04.8</TD><TD>273.1999166666667</TD><TD>-28.333611111111097</TD></TR>
+<TR><TD>PNG 003.5-02.4</TD><TD>270.82491666666664</TD><TD>-27.104555555555546</TD></TR>
+<TR><TD>PNG 003.5-04.6</TD><TD>272.97020833333323</TD><TD>-28.177222222222223</TD></TR>
+<TR><TD>PNG 003.6+03.1</TD><TD>265.4902916666666</TD><TD>-24.19041666666666</TD></TR>
+<TR><TD>PNG 003.6-02.3</TD><TD>270.7999583333333</TD><TD>-26.975249999999992</TD></TR>
+<TR><TD>PNG 003.7+07.9</TD><TD>261.19175</TD><TD>-21.56222222222222</TD></TR>
+<TR><TD>PNG 003.7-04.6</TD><TD>273.14225</TD><TD>-27.970250000000004</TD></TR>
+<TR><TD>PNG 003.8+05.3</TD><TD>263.6115416666666</TD><TD>-22.88891666666666</TD></TR>
+<TR><TD>PNG 003.8-04.3</TD><TD>272.871875</TD><TD>-27.771027777777775</TD></TR>
+<TR><TD>PNG 003.8-04.5</TD><TD>273.099125</TD><TD>-27.870472222222222</TD></TR>
+<TR><TD>PNG 003.8-17.1</TD><TD>286.4015416666666</TD><TD>-33.194111111111106</TD></TR>
+<TR><TD>PNG 003.9+01.6</TD><TD>267.1180833333333</TD><TD>-24.691361111111103</TD></TR>
+<TR><TD>PNG 003.9-02.3</TD><TD>270.9138749999999</TD><TD>-26.723555555555553</TD></TR>
+<TR><TD>PNG 003.9-03.1</TD><TD>271.70825</TD><TD>-27.104999999999997</TD></TR>
+<TR><TD>PNG 003.9-14.9</TD><TD>283.91108333333324</TD><TD>-32.265249999999995</TD></TR>
+<TR><TD>PNG 004.0-03.0</TD><TD>271.67670833333335</TD><TD>-26.922361111111112</TD></TR>
+<TR><TD>PNG 004.0-05.8</TD><TD>274.4252916666666</TD><TD>-28.2885</TD></TR>
+<TR><TD>PNG 004.0-11.1</TD><TD>279.85758333333325</TD><TD>-30.676749999999995</TD></TR>
+<TR><TD>PNG 004.1-03.8</TD><TD>272.5513333333333</TD><TD>-27.276722222222215</TD></TR>
+<TR><TD>PNG 004.2-03.2</TD><TD>272.0061666666666</TD><TD>-26.900194444444434</TD></TR>
+<TR><TD>PNG 004.2-04.3</TD><TD>273.1029583333333</TD><TD>-27.481833333333338</TD></TR>
+<TR><TD>PNG 004.2-05.9</TD><TD>274.6613749999999</TD><TD>-28.13483333333333</TD></TR>
+<TR><TD>PNG 004.3+01.8</TD><TD>267.1514999999999</TD><TD>-24.276527777777765</TD></TR>
+<TR><TD>PNG 004.3-02.6</TD><TD>271.487875</TD><TD>-26.49494444444443</TD></TR>
+<TR><TD>PNG 004.6+06.0</TD><TD>263.4072916666666</TD><TD>-21.771555555555544</TD></TR>
+<TR><TD>PNG 004.7-11.8</TD><TD>281.0558749999999</TD><TD>-30.307416666666654</TD></TR>
+<TR><TD>PNG 004.8+02.0</TD><TD>267.25241666666665</TD><TD>-23.715194444444442</TD></TR>
+<TR><TD>PNG 004.8-05.0</TD><TD>274.0476666666666</TD><TD>-27.24919444444444</TD></TR>
+<TR><TD>PNG 004.8-22.7</TD><TD>293.0304166666666</TD><TD>-34.209277777777764</TD></TR>
+<TR><TD>PNG 004.9+04.9</TD><TD>264.6263333333333</TD><TD>-22.14411111111111</TD></TR>
+<TR><TD>PNG 004.9-04.9</TD><TD>274.0724166666666</TD><TD>-27.075722222222222</TD></TR>
+<TR><TD>PNG 005.0+03.0</TD><TD>266.4038333333333</TD><TD>-23.040694444444437</TD></TR>
+<TR><TD>PNG 005.0+04.4</TD><TD>265.0753333333333</TD><TD>-22.321555555555555</TD></TR>
+<TR><TD>PNG 005.0-03.9</TD><TD>273.09641666666664</TD><TD>-26.548527777777778</TD></TR>
+<TR><TD>PNG 005.1-03.0</TD><TD>272.3059166666667</TD><TD>-26.040694444444448</TD></TR>
+<TR><TD>PNG 005.1-08.9</TD><TD>278.12958333333336</TD><TD>-28.722527777777774</TD></TR>
+<TR><TD>PNG 005.2+04.2</TD><TD>265.40399999999994</TD><TD>-22.217472222222224</TD></TR>
+<TR><TD>PNG 005.2+05.6</TD><TD>264.0997499999999</TD><TD>-21.513777777777776</TD></TR>
+<TR><TD>PNG 005.2-18.6</TD><TD>288.5971249999999</TD><TD>-32.571666666666665</TD></TR>
+<TR><TD>PNG 005.4-01.9</TD><TD>271.34808333333336</TD><TD>-25.210333333333338</TD></TR>
+<TR><TD>PNG 005.5+02.7</TD><TD>267.0324166666666</TD><TD>-22.779583333333342</TD></TR>
+<TR><TD>PNG 005.5+06.1</TD><TD>263.8382499999999</TD><TD>-20.95502777777778</TD></TR>
+<TR><TD>PNG 005.5-02.5</TD><TD>271.9729583333333</TD><TD>-25.400611111111118</TD></TR>
+<TR><TD>PNG 005.5-04.0</TD><TD>273.4189583333333</TD><TD>-26.145277777777775</TD></TR>
+<TR><TD>PNG 005.6-04.7</TD><TD>274.22366666666665</TD><TD>-26.390000000000004</TD></TR>
+<TR><TD>PNG 005.7-03.6</TD><TD>273.1873749999999</TD><TD>-25.739722222222213</TD></TR>
+<TR><TD>PNG 005.7-05.3</TD><TD>274.85474999999997</TD><TD>-26.5886111111111</TD></TR>
+<TR><TD>PNG 005.8+05.1</TD><TD>264.97754166666664</TD><TD>-21.235083333333325</TD></TR>
+<TR><TD>PNG 005.8-06.1</TD><TD>275.726</TD><TD>-26.821333333333328</TD></TR>
+<TR><TD>PNG 005.9-02.6</TD><TD>272.30224999999996</TD><TD>-25.07652777777777</TD></TR>
+<TR><TD>PNG 006.0+02.8</TD><TD>267.154625</TD><TD>-22.280361111111105</TD></TR>
+<TR><TD>PNG 006.0+03.1</TD><TD>266.9094166666667</TD><TD>-22.105444444444448</TD></TR>
+<TR><TD>PNG 006.0-03.6</TD><TD>273.3172083333333</TD><TD>-25.501555555555548</TD></TR>
+<TR><TD>PNG 006.0-41.9</TD><TD>316.47295833333334</TD><TD>-37.137944444444436</TD></TR>
+<TR><TD>PNG 006.1+08.3</TD><TD>262.2400833333333</TD><TD>-19.264944444444446</TD></TR>
+<TR><TD>PNG 006.2+01.0</TD><TD>268.9829583333333</TD><TD>-22.98372222222222</TD></TR>
+<TR><TD>PNG 006.2-03.7</TD><TD>273.5808333333333</TD><TD>-25.34724999999999</TD></TR>
+<TR><TD>PNG 006.3+03.3</TD><TD>266.89345833333323</TD><TD>-21.790249999999997</TD></TR>
+<TR><TD>PNG 006.3+04.4</TD><TD>265.87025</TD><TD>-21.164583333333326</TD></TR>
+<TR><TD>PNG 006.4+02.0</TD><TD>268.17270833333333</TD><TD>-22.36572222222222</TD></TR>
+<TR><TD>PNG 006.4-04.6</TD><TD>274.55741666666665</TD><TD>-25.636416666666666</TD></TR>
+<TR><TD>PNG 006.5-03.1</TD><TD>273.1403333333334</TD><TD>-24.83327777777777</TD></TR>
+<TR><TD>PNG 006.7-02.2</TD><TD>272.3746249999999</TD><TD>-24.20783333333332</TD></TR>
+<TR><TD>PNG 006.8+02.0</TD><TD>268.40304166666664</TD><TD>-21.977916666666662</TD></TR>
+<TR><TD>PNG 006.8+02.3</TD><TD>268.09395833333326</TD><TD>-21.85358333333333</TD></TR>
+<TR><TD>PNG 006.8+04.1</TD><TD>266.382125</TD><TD>-20.96716666666666</TD></TR>
+<TR><TD>PNG 006.8-03.4</TD><TD>273.61883333333327</TD><TD>-24.725944444444444</TD></TR>
+<TR><TD>PNG 006.8-08.6</TD><TD>278.7277083333333</TD><TD>-27.10630555555555</TD></TR>
+<TR><TD>PNG 006.8-19.8</TD><TD>290.5442499999999</TD><TD>-31.511055555555544</TD></TR>
+<TR><TD>PNG 007.0+06.3</TD><TD>264.55195833333335</TD><TD>-19.628222222222213</TD></TR>
+<TR><TD>PNG 007.0-06.0</TD><TD>276.23662499999995</TD><TD>-25.698277777777776</TD></TR>
+<TR><TD>PNG 007.0-06.8</TD><TD>276.9980833333333</TD><TD>-26.111277777777783</TD></TR>
+<TR><TD>PNG 007.2+01.8</TD><TD>268.7800833333333</TD><TD>-21.743861111111112</TD></TR>
+<TR><TD>PNG 007.5+04.3</TD><TD>266.58474999999993</TD><TD>-20.23172222222222</TD></TR>
+<TR><TD>PNG 007.5+07.4</TD><TD>263.7919166666667</TD><TD>-18.571888888888886</TD></TR>
+<TR><TD>PNG 007.6+06.9</TD><TD>264.3431666666666</TD><TD>-18.779222222222224</TD></TR>
+<TR><TD>PNG 007.8-03.7</TD><TD>274.3185416666666</TD><TD>-23.98088888888889</TD></TR>
+<TR><TD>PNG 007.8-04.4</TD><TD>275.0366666666667</TD><TD>-24.251583333333325</TD></TR>
+<TR><TD>PNG 007.9+10.1</TD><TD>261.65879166666656</TD><TD>-16.80797222222223</TD></TR>
+<TR><TD>PNG 008.0+03.9</TD><TD>267.313625</TD><TD>-20.009583333333325</TD></TR>
+<TR><TD>PNG 008.1-04.7</TD><TD>275.50491666666665</TD><TD>-24.177638888888886</TD></TR>
+<TR><TD>PNG 008.2+06.8</TD><TD>264.73908333333327</TD><TD>-18.293277777777774</TD></TR>
+<TR><TD>PNG 008.2-04.8</TD><TD>275.6322916666667</TD><TD>-24.1578611111111</TD></TR>
+<TR><TD>PNG 008.3-01.1</TD><TD>272.10566666666665</TD><TD>-22.28133333333333</TD></TR>
+<TR><TD>PNG 008.3-07.3</TD><TD>278.14487499999996</TD><TD>-25.128861111111114</TD></TR>
+<TR><TD>PNG 008.4-03.6</TD><TD>274.5985416666667</TD><TD>-23.41452777777777</TD></TR>
+<TR><TD>PNG 008.6-02.6</TD><TD>273.71183333333323</TD><TD>-22.731861111111105</TD></TR>
+<TR><TD>PNG 008.6-07.0</TD><TD>277.972375</TD><TD>-24.771555555555544</TD></TR>
+<TR><TD>PNG 008.8+05.2</TD><TD>266.5387083333334</TD><TD>-18.660249999999998</TD></TR>
+<TR><TD>PNG 009.0+04.1</TD><TD>267.6184166666666</TD><TD>-19.05336111111112</TD></TR>
+<TR><TD>PNG 009.3+02.8</TD><TD>268.9891666666667</TD><TD>-19.4733611111111</TD></TR>
+<TR><TD>PNG 009.3+04.1</TD><TD>267.73862499999996</TD><TD>-18.779444444444437</TD></TR>
+<TR><TD>PNG 009.4-05.0</TD><TD>276.43116666666657</TD><TD>-23.199805555555564</TD></TR>
+<TR><TD>PNG 009.4-09.8</TD><TD>281.17887499999995</TD><TD>-25.359527777777767</TD></TR>
+<TR><TD>PNG 009.6+10.5</TD><TD>262.26566666666656</TD><TD>-15.22252777777777</TD></TR>
+<TR><TD>PNG 009.6+14.8</TD><TD>258.51516666666674</TD><TD>-12.910166666666669</TD></TR>
+<TR><TD>PNG 009.6-10.6</TD><TD>282.05004166666674</TD><TD>-25.480361111111108</TD></TR>
+<TR><TD>PNG 009.8-04.6</TD><TD>276.26854166666664</TD><TD>-22.58141666666666</TD></TR>
+<TR><TD>PNG 009.8-07.5</TD><TD>279.09754166666664</TD><TD>-23.922250000000002</TD></TR>
+<TR><TD>PNG 010.1+00.7</TD><TD>271.30579166666666</TD><TD>-19.837111111111103</TD></TR>
+<TR><TD>PNG 010.4+04.5</TD><TD>268.01899999999995</TD><TD>-17.60416666666666</TD></TR>
+<TR><TD>PNG 010.6+03.2</TD><TD>269.27762499999994</TD><TD>-18.111944444444443</TD></TR>
+<TR><TD>PNG 010.7+07.4</TD><TD>265.5115833333333</TD><TD>-15.936861111111112</TD></TR>
+<TR><TD>PNG 010.7-06.4</TD><TD>278.47754166666664</TD><TD>-22.64438888888889</TD></TR>
+<TR><TD>PNG 010.7-06.7</TD><TD>278.7145833333333</TD><TD>-22.72297222222222</TD></TR>
+<TR><TD>PNG 010.8+18.0</TD><TD>256.4076666666666</TD><TD>-10.142333333333333</TD></TR>
+<TR><TD>PNG 010.8-01.8</TD><TD>274.0719166666667</TD><TD>-20.44980555555556</TD></TR>
+<TR><TD>PNG 011.0+05.8</TD><TD>267.08258333333333</TD><TD>-16.479</TD></TR>
+<TR><TD>PNG 011.0+06.2</TD><TD>266.7260833333333</TD><TD>-16.289861111111108</TD></TR>
+<TR><TD>PNG 011.0-05.1</TD><TD>277.29712499999994</TD><TD>-21.78144444444444</TD></TR>
+<TR><TD>PNG 011.1+07.0</TD><TD>266.17320833333326</TD><TD>-15.753666666666657</TD></TR>
+<TR><TD>PNG 011.1+11.5</TD><TD>262.14245833333325</TD><TD>-13.439027777777776</TD></TR>
+<TR><TD>PNG 011.3+02.8</TD><TD>270.0377916666666</TD><TD>-17.674916666666668</TD></TR>
+<TR><TD>PNG 011.3-09.4</TD><TD>281.6426666666667</TD><TD>-23.447277777777767</TD></TR>
+<TR><TD>PNG 011.7-00.0</TD><TD>272.9519583333334</TD><TD>-18.767444444444443</TD></TR>
+<TR><TD>PNG 011.7-00.6</TD><TD>273.43775</TD><TD>-19.07202777777778</TD></TR>
+<TR><TD>PNG 011.7-06.6</TD><TD>279.1427083333333</TD><TD>-21.815888888888885</TD></TR>
+<TR><TD>PNG 011.9+04.2</TD><TD>269.0814583333333</TD><TD>-16.48372222222222</TD></TR>
+<TR><TD>PNG 012.2+04.9</TD><TD>268.5868333333333</TD><TD>-15.930833333333332</TD></TR>
+<TR><TD>PNG 012.5-09.8</TD><TD>282.60820833333327</TD><TD>-22.572666666666667</TD></TR>
+<TR><TD>PNG 012.6-02.7</TD><TD>275.7836666666666</TD><TD>-19.285111111111107</TD></TR>
+<TR><TD>PNG 013.0-04.3</TD><TD>277.498</TD><TD>-19.677111111111106</TD></TR>
+<TR><TD>PNG 013.1+04.1</TD><TD>269.74316666666664</TD><TD>-15.537999999999997</TD></TR>
+<TR><TD>PNG 013.3+32.7</TD><TD>245.26849999999993</TD><TD>-0.26972222222222303</TD></TR>
+<TR><TD>PNG 013.4-03.9</TD><TD>277.37404166666664</TD><TD>-19.095749999999995</TD></TR>
+<TR><TD>PNG 013.7-10.6</TD><TD>283.8777083333334</TD><TD>-21.82747222222222</TD></TR>
+<TR><TD>PNG 013.8-02.8</TD><TD>276.51312499999995</TD><TD>-18.20158333333332</TD></TR>
+<TR><TD>PNG 013.8-07.9</TD><TD>281.3977083333333</TD><TD>-20.583416666666665</TD></TR>
+<TR><TD>PNG 014.0-05.5</TD><TD>279.1319583333333</TD><TD>-19.324249999999992</TD></TR>
+<TR><TD>PNG 014.2+04.2</TD><TD>270.2794583333333</TD><TD>-14.505361111111107</TD></TR>
+<TR><TD>PNG 014.2-07.3</TD><TD>281.0067083333333</TD><TD>-19.91527777777778</TD></TR>
+<TR><TD>PNG 014.3-05.5</TD><TD>279.29633333333334</TD><TD>-19.039444444444445</TD></TR>
+<TR><TD>PNG 014.6-04.3</TD><TD>278.3369166666666</TD><TD>-18.274999999999995</TD></TR>
+<TR><TD>PNG 014.7-11.8</TD><TD>285.5669166666666</TD><TD>-21.447583333333327</TD></TR>
+<TR><TD>PNG 014.8-25.6</TD><TD>299.55508333333324</TD><TD>-26.470944444444445</TD></TR>
+<TR><TD>PNG 014.9+06.4</TD><TD>268.60400000000004</TD><TD>-12.804888888888888</TD></TR>
+<TR><TD>PNG 014.9-03.1</TD><TD>277.29733333333337</TD><TD>-17.453611111111112</TD></TR>
+<TR><TD>PNG 015.4-04.5</TD><TD>278.95112499999993</TD><TD>-17.60230555555555</TD></TR>
+<TR><TD>PNG 015.6-03.0</TD><TD>277.5469583333333</TD><TD>-16.757388888888894</TD></TR>
+<TR><TD>PNG 015.9+03.3</TD><TD>271.87833333333333</TD><TD>-13.480916666666664</TD></TR>
+<TR><TD>PNG 016.0+13.5</TD><TD>262.88104166666665</TD><TD>-8.319472222222219</TD></TR>
+<TR><TD>PNG 016.0-04.3</TD><TD>279.035</TD><TD>-16.999666666666663</TD></TR>
+<TR><TD>PNG 016.1-04.7</TD><TD>279.4429166666667</TD><TD>-17.096333333333327</TD></TR>
+<TR><TD>PNG 016.4-01.9</TD><TD>276.9865416666666</TD><TD>-15.549250000000002</TD></TR>
+<TR><TD>PNG 016.9-02.0</TD><TD>277.33220833333326</TD><TD>-15.127861111111105</TD></TR>
+<TR><TD>PNG 017.3-21.9</TD><TD>296.6406666666667</TD><TD>-23.136777777777777</TD></TR>
+<TR><TD>PNG 017.6-10.2</TD><TD>285.2544166666666</TD><TD>-18.204277777777776</TD></TR>
+<TR><TD>PNG 017.7-02.9</TD><TD>278.49324999999993</TD><TD>-14.87391666666667</TD></TR>
+<TR><TD>PNG 017.9-04.8</TD><TD>280.3130833333333</TD><TD>-15.562972222222221</TD></TR>
+<TR><TD>PNG 018.0+20.1</TD><TD>258.2136666666666</TD><TD>-3.265916666666668</TD></TR>
+<TR><TD>PNG 018.6-02.2</TD><TD>278.2657083333333</TD><TD>-13.738888888888889</TD></TR>
+<TR><TD>PNG 018.9+03.6</TD><TD>273.04</TD><TD>-10.716333333333331</TD></TR>
+<TR><TD>PNG 018.9+04.1</TD><TD>272.6089583333333</TD><TD>-10.485666666666665</TD></TR>
+<TR><TD>PNG 019.2-02.2</TD><TD>278.5577083333333</TD><TD>-13.206833333333325</TD></TR>
+<TR><TD>PNG 019.4-05.3</TD><TD>281.4796666666666</TD><TD>-14.460472222222224</TD></TR>
+<TR><TD>PNG 019.4-13.6</TD><TD>289.2692083333333</TD><TD>-18.026166666666654</TD></TR>
+<TR><TD>PNG 019.4-19.6</TD><TD>295.13533333333334</TD><TD>-20.45002777777777</TD></TR>
+<TR><TD>PNG 019.7+03.2</TD><TD>273.81983333333335</TD><TD>-10.169777777777774</TD></TR>
+<TR><TD>PNG 019.7-04.5</TD><TD>280.90887499999997</TD><TD>-13.746861111111112</TD></TR>
+<TR><TD>PNG 019.8+05.6</TD><TD>271.7595416666666</TD><TD>-8.93311111111111</TD></TR>
+<TR><TD>PNG 019.8-23.7</TD><TD>299.38254166666655</TD><TD>-21.61022222222222</TD></TR>
+<TR><TD>PNG 019.9+00.9</TD><TD>276.03274999999996</TD><TD>-11.112416666666668</TD></TR>
+<TR><TD>PNG 020.2-00.6</TD><TD>277.572625</TD><TD>-11.614972222222223</TD></TR>
+<TR><TD>PNG 020.7-05.9</TD><TD>282.6846249999999</TD><TD>-13.517305555555552</TD></TR>
+<TR><TD>PNG 020.9-01.1</TD><TD>278.3700416666666</TD><TD>-11.122805555555555</TD></TR>
+<TR><TD>PNG 021.1-05.9</TD><TD>282.877875</TD><TD>-13.176833333333327</TD></TR>
+<TR><TD>PNG 021.2-03.9</TD><TD>281.0309583333334</TD><TD>-12.216166666666668</TD></TR>
+<TR><TD>PNG 021.7-00.6</TD><TD>278.31112499999995</TD><TD>-10.251972222222216</TD></TR>
+<TR><TD>PNG 021.8-00.4</TD><TD>278.17162499999995</TD><TD>-10.096805555555557</TD></TR>
+<TR><TD>PNG 022.0-03.1</TD><TD>280.7375833333333</TD><TD>-11.114777777777777</TD></TR>
+<TR><TD>PNG 022.1-02.4</TD><TD>280.0842083333334</TD><TD>-10.663166666666662</TD></TR>
+<TR><TD>PNG 022.5+01.0</TD><TD>277.1461666666666</TD><TD>-8.723388888888891</TD></TR>
+<TR><TD>PNG 022.5+04.8</TD><TD>273.803875</TD><TD>-6.953166666666665</TD></TR>
+<TR><TD>PNG 023.0+04.3</TD><TD>274.453125</TD><TD>-6.806666666666668</TD></TR>
+<TR><TD>PNG 023.3-07.6</TD><TD>285.3387916666666</TD><TD>-11.973250000000004</TD></TR>
+<TR><TD>PNG 023.8-01.7</TD><TD>280.2805833333333</TD><TD>-8.93311111111111</TD></TR>
+<TR><TD>PNG 023.9+01.2</TD><TD>277.62699999999995</TD><TD>-7.461333333333335</TD></TR>
+<TR><TD>PNG 023.9-02.3</TD><TD>280.83416666666665</TD><TD>-9.080305555555558</TD></TR>
+<TR><TD>PNG 024.1+03.8</TD><TD>275.3492916666666</TD><TD>-6.032888888888887</TD></TR>
+<TR><TD>PNG 024.2+05.9</TD><TD>273.57758333333334</TD><TD>-4.989222222222223</TD></TR>
+<TR><TD>PNG 024.2-05.2</TD><TD>283.5724583333334</TD><TD>-10.086277777777772</TD></TR>
+<TR><TD>PNG 024.3-03.3</TD><TD>281.95149999999995</TD><TD>-9.152305555555552</TD></TR>
+<TR><TD>PNG 024.8-02.7</TD><TD>281.6440416666667</TD><TD>-8.467083333333333</TD></TR>
+<TR><TD>PNG 025.0-11.6</TD><TD>289.8229583333333</TD><TD>-12.247722222222219</TD></TR>
+<TR><TD>PNG 025.3+40.8</TD><TD>242.934625</TD><TD>12.074305555555549</TD></TR>
+<TR><TD>PNG 025.3-04.6</TD><TD>283.58374999999995</TD><TD>-8.89233333333333</TD></TR>
+<TR><TD>PNG 025.4-04.7</TD><TD>283.65216666666663</TD><TD>-8.830333333333336</TD></TR>
+<TR><TD>PNG 025.8-17.9</TD><TD>295.9918333333334</TD><TD>-14.15202777777778</TD></TR>
+<TR><TD>PNG 025.9-00.9</TD><TD>280.52299999999997</TD><TD>-6.684083333333332</TD></TR>
+<TR><TD>PNG 025.9-02.1</TD><TD>281.6025416666666</TD><TD>-7.242805555555553</TD></TR>
+<TR><TD>PNG 025.9-10.9</TD><TD>289.58050000000003</TD><TD>-11.103277777777778</TD></TR>
+<TR><TD>PNG 026.0-01.8</TD><TD>281.36491666666666</TD><TD>-6.949416666666668</TD></TR>
+<TR><TD>PNG 026.3-02.2</TD><TD>281.88475</TD><TD>-6.89897222222222</TD></TR>
+<TR><TD>PNG 026.5-03.0</TD><TD>282.68691666666666</TD><TD>-7.025444444444443</TD></TR>
+<TR><TD>PNG 026.6-01.5</TD><TD>281.39649999999995</TD><TD>-6.308249999999996</TD></TR>
+<TR><TD>PNG 027.3-02.1</TD><TD>282.1942083333333</TD><TD>-5.934444444444445</TD></TR>
+<TR><TD>PNG 027.3-03.4</TD><TD>283.3717499999999</TD><TD>-6.487194444444444</TD></TR>
+<TR><TD>PNG 027.4-03.5</TD><TD>283.50795833333336</TD><TD>-6.438972222222222</TD></TR>
+<TR><TD>PNG 027.6+04.2</TD><TD>276.66683333333333</TD><TD>-2.7160277777777777</TD></TR>
+<TR><TD>PNG 027.6+16.9</TD><TD>265.4193333333332</TD><TD>3.117083333333332</TD></TR>
+<TR><TD>PNG 027.6-09.6</TD><TD>289.11758333333336</TD><TD>-9.043500000000002</TD></TR>
+<TR><TD>PNG 027.7+00.7</TD><TD>279.84083333333336</TD><TD>-4.330666666666666</TD></TR>
+<TR><TD>PNG 028.0+10.2</TD><TD>271.50312499999995</TD><TD>0.3768611111111106</TD></TR>
+<TR><TD>PNG 028.2-04.0</TD><TD>284.3217916666667</TD><TD>-5.994638888888885</TD></TR>
+<TR><TD>PNG 028.5+01.6</TD><TD>279.40158333333335</TD><TD>-3.099416666666667</TD></TR>
+<TR><TD>PNG 028.5+05.1</TD><TD>276.25233333333324</TD><TD>-1.5147222222222225</TD></TR>
+<TR><TD>PNG 028.7+02.7</TD><TD>278.55679166666664</TD><TD>-2.4604166666666663</TD></TR>
+<TR><TD>PNG 028.7-03.9</TD><TD>284.4584166666667</TD><TD>-5.46038888888889</TD></TR>
+<TR><TD>PNG 029.0+00.4</TD><TD>280.7062916666667</TD><TD>-3.2164999999999995</TD></TR>
+<TR><TD>PNG 029.2-00.0</TD><TD>281.22270833333334</TD><TD>-3.342638888888888</TD></TR>
+<TR><TD>PNG 029.2-05.9</TD><TD>286.48150000000004</TD><TD>-5.991166666666666</TD></TR>
+<TR><TD>PNG 029.8-07.8</TD><TD>288.4823333333333</TD><TD>-6.314111111111108</TD></TR>
+<TR><TD>PNG 030.6+06.2</TD><TD>276.24375000000003</TD><TD>0.8606944444444439</TD></TR>
+<TR><TD>PNG 030.8+03.4</TD><TD>278.8419583333333</TD><TD>-0.225416666666667</TD></TR>
+<TR><TD>PNG 031.0+04.1</TD><TD>278.3228333333332</TD><TD>0.19624999999999962</TD></TR>
+<TR><TD>PNG 031.0-10.8</TD><TD>291.75716666666665</TD><TD>-6.581638888888886</TD></TR>
+<TR><TD>PNG 031.2+05.9</TD><TD>276.7894166666666</TD><TD>1.241666666666666</TD></TR>
+<TR><TD>PNG 031.3-00.5</TD><TD>282.60299999999995</TD><TD>-1.669111111111111</TD></TR>
+<TR><TD>PNG 031.7+01.7</TD><TD>280.7642916666667</TD><TD>-0.2764722222222225</TD></TR>
+<TR><TD>PNG 031.9-00.3</TD><TD>282.66758333333337</TD><TD>-1.0538055555555559</TD></TR>
+<TR><TD>PNG 032.0-03.0</TD><TD>285.1429166666666</TD><TD>-2.1990833333333337</TD></TR>
+<TR><TD>PNG 032.1+07.0</TD><TD>276.1855</TD><TD>2.490999999999999</TD></TR>
+<TR><TD>PNG 032.5-03.2</TD><TD>285.5415</TD><TD>-1.8110833333333325</TD></TR>
+<TR><TD>PNG 032.7+05.6</TD><TD>277.7520833333333</TD><TD>2.4266111111111104</TD></TR>
+<TR><TD>PNG 032.7-02.0</TD><TD>284.60933333333327</TD><TD>-1.0626666666666662</TD></TR>
+<TR><TD>PNG 032.9+07.8</TD><TD>275.8404166666666</TD><TD>3.6078333333333332</TD></TR>
+<TR><TD>PNG 032.9-02.8</TD><TD>285.4025416666666</TD><TD>-1.3188055555555553</TD></TR>
+<TR><TD>PNG 033.0-05.3</TD><TD>287.6268749999999</TD><TD>-2.350527777777777</TD></TR>
+<TR><TD>PNG 033.1-06.3</TD><TD>288.6184583333333</TD><TD>-2.7073333333333323</TD></TR>
+<TR><TD>PNG 033.2-01.9</TD><TD>284.7143333333334</TD><TD>-0.5491111111111112</TD></TR>
+<TR><TD>PNG 033.8-02.6</TD><TD>285.6513749999999</TD><TD>-0.44638888888888906</TD></TR>
+<TR><TD>PNG 034.0+02.2</TD><TD>281.3523333333333</TD><TD>2.0231388888888886</TD></TR>
+<TR><TD>PNG 034.1-10.5</TD><TD>292.77933333333334</TD><TD>-3.7067222222222203</TD></TR>
+<TR><TD>PNG 034.3+06.2</TD><TD>277.94112499999994</TD><TD>4.086694444444444</TD></TR>
+<TR><TD>PNG 034.5-06.7</TD><TD>289.604125</TD><TD>-1.5980555555555551</TD></TR>
+<TR><TD>PNG 034.6+11.8</TD><TD>273.0310833333332</TD><TD>6.856861111111108</TD></TR>
+<TR><TD>PNG 035.1-00.7</TD><TD>284.53329166666674</TD><TD>1.6183888888888882</TD></TR>
+<TR><TD>PNG 035.7-05.0</TD><TD>288.6649166666666</TD><TD>0.22708333333333325</TD></TR>
+<TR><TD>PNG 035.9-01.1</TD><TD>285.25037499999996</TD><TD>2.1564722222222215</TD></TR>
+<TR><TD>PNG 036.0+17.6</TD><TD>268.3847916666666</TD><TD>10.622111111111108</TD></TR>
+<TR><TD>PNG 036.1-57.1</TD><TD>337.4114583333333</TD><TD>-20.837444444444444</TD></TR>
+<TR><TD>PNG 036.9-01.1</TD><TD>285.7470833333333</TD><TD>3.03911111111111</TD></TR>
+<TR><TD>PNG 036.9-02.6</TD><TD>287.0087083333333</TD><TD>2.3566388888888885</TD></TR>
+<TR><TD>PNG 037.5-05.1</TD><TD>289.584875</TD><TD>1.7807777777777773</TD></TR>
+<TR><TD>PNG 037.7-34.5</TD><TD>316.0451666666666</TD><TD>-11.365722222222225</TD></TR>
+<TR><TD>PNG 037.8-06.3</TD><TD>290.7372916666666</TD><TD>1.5129444444444442</TD></TR>
+<TR><TD>PNG 037.9-03.4</TD><TD>288.27762499999994</TD><TD>2.8803055555555543</TD></TR>
+<TR><TD>PNG 038.1-25.4</TD><TD>307.88812499999995</TD><TD>-7.089194444444444</TD></TR>
+<TR><TD>PNG 038.2+12.0</TD><TD>274.3856666666667</TD><TD>10.153749999999999</TD></TR>
+<TR><TD>PNG 038.4-03.3</TD><TD>288.34433333333334</TD><TD>3.4175833333333334</TD></TR>
+<TR><TD>PNG 038.7+01.9</TD><TD>283.7368333333333</TD><TD>6.044666666666666</TD></TR>
+<TR><TD>PNG 038.7-03.3</TD><TD>288.47416666666663</TD><TD>3.629277777777776</TD></TR>
+<TR><TD>PNG 039.5-02.7</TD><TD>288.39366666666666</TD><TD>4.635027777777777</TD></TR>
+<TR><TD>PNG 039.8+02.1</TD><TD>284.075875</TD><TD>7.122944444444441</TD></TR>
+<TR><TD>PNG 040.3-00.4</TD><TD>286.691</TD><TD>6.398833333333333</TD></TR>
+<TR><TD>PNG 040.4-03.1</TD><TD>289.1153749999999</TD><TD>5.2220555555555555</TD></TR>
+<TR><TD>PNG 041.2-00.6</TD><TD>287.3061666666667</TD><TD>7.095305555555555</TD></TR>
+<TR><TD>PNG 041.8+04.4</TD><TD>282.9230416666667</TD><TD>9.91455555555555</TD></TR>
+<TR><TD>PNG 041.8-02.9</TD><TD>289.6179583333333</TD><TD>6.53986111111111</TD></TR>
+<TR><TD>PNG 042.0+05.4</TD><TD>282.1366666666667</TD><TD>10.597472222222216</TD></TR>
+<TR><TD>PNG 042.5-14.5</TD><TD>300.1654166666666</TD><TD>1.7310833333333335</TD></TR>
+<TR><TD>PNG 042.9-06.9</TD><TD>293.6397083333333</TD><TD>5.684027777777776</TD></TR>
+<TR><TD>PNG 043.0-03.0</TD><TD>290.25475</TD><TD>7.616388888888883</TD></TR>
+<TR><TD>PNG 043.1+03.8</TD><TD>284.1385833333332</TD><TD>10.870499999999996</TD></TR>
+<TR><TD>PNG 043.1+37.7</TD><TD>251.12241666666665</TD><TD>23.79680555555555</TD></TR>
+<TR><TD>PNG 043.3+02.2</TD><TD>285.57550000000003</TD><TD>10.290027777777782</TD></TR>
+<TR><TD>PNG 043.3+11.6</TD><TD>276.9510833333334</TD><TD>14.485388888888881</TD></TR>
+<TR><TD>PNG 043.5-13.4</TD><TD>299.62191666666666</TD><TD>3.039611111111111</TD></TR>
+<TR><TD>PNG 044.0+05.2</TD><TD>283.2569166666666</TD><TD>12.267194444444442</TD></TR>
+<TR><TD>PNG 044.1+05.8</TD><TD>282.68425</TD><TD>12.609777777777772</TD></TR>
+<TR><TD>PNG 044.3+10.4</TD><TD>278.51045833333325</TD><TD>14.821777777777777</TD></TR>
+<TR><TD>PNG 044.3-05.6</TD><TD>293.16195833333325</TD><TD>7.46622222222222</TD></TR>
+<TR><TD>PNG 045.4-02.7</TD><TD>291.09141666666665</TD><TD>9.89855555555555</TD></TR>
+<TR><TD>PNG 045.6+01.5</TD><TD>287.36058333333324</TD><TD>12.013388888888883</TD></TR>
+<TR><TD>PNG 045.6+24.3</TD><TD>265.65458333333333</TD><TD>21.447361111111103</TD></TR>
+<TR><TD>PNG 045.7-04.5</TD><TD>292.89925</TD><TD>9.227277777777775</TD></TR>
+<TR><TD>PNG 045.9-01.9</TD><TD>290.61112499999996</TD><TD>10.689277777777773</TD></TR>
+<TR><TD>PNG 046.3-03.1</TD><TD>291.9365833333333</TD><TD>10.40572222222222</TD></TR>
+<TR><TD>PNG 046.4-04.1</TD><TD>292.81833333333327</TD><TD>10.056638888888886</TD></TR>
+<TR><TD>PNG 046.8+02.9</TD><TD>286.59641666666664</TD><TD>13.744861111111108</TD></TR>
+<TR><TD>PNG 046.8+03.8</TD><TD>285.78183333333334</TD><TD>14.116055555555546</TD></TR>
+<TR><TD>PNG 047.0+42.4</TD><TD>246.88920833333324</TD><TD>27.909638888888885</TD></TR>
+<TR><TD>PNG 047.1+04.1</TD><TD>285.667875</TD><TD>14.481083333333325</TD></TR>
+<TR><TD>PNG 047.1-04.2</TD><TD>293.3263333333333</TD><TD>10.61697222222222</TD></TR>
+<TR><TD>PNG 048.0-02.3</TD><TD>292.060125</TD><TD>12.326888888888883</TD></TR>
+<TR><TD>PNG 048.1+01.1</TD><TD>288.8772916666666</TD><TD>14.063861111111104</TD></TR>
+<TR><TD>PNG 048.5+04.2</TD><TD>286.21420833333326</TD><TD>15.793333333333335</TD></TR>
+<TR><TD>PNG 048.7+01.9</TD><TD>288.40845833333333</TD><TD>14.991611111111117</TD></TR>
+<TR><TD>PNG 048.7+02.3</TD><TD>288.0254166666666</TD><TD>15.150388888888882</TD></TR>
+<TR><TD>PNG 048.7-01.5</TD><TD>291.61016666666666</TD><TD>13.328444444444441</TD></TR>
+<TR><TD>PNG 049.3+88.1</TD><TD>194.86504166666663</TD><TD>27.637249999999998</TD></TR>
+<TR><TD>PNG 049.4+02.4</TD><TD>288.27241666666663</TD><TD>15.77822222222222</TD></TR>
+<TR><TD>PNG 050.1+03.3</TD><TD>287.880125</TD><TD>16.858916666666655</TD></TR>
+<TR><TD>PNG 050.4+05.2</TD><TD>286.1342083333334</TD><TD>17.95275</TD></TR>
+<TR><TD>PNG 050.4-01.6</TD><TD>292.5693333333333</TD><TD>14.789361111111113</TD></TR>
+<TR><TD>PNG 051.0+02.8</TD><TD>288.74999999999994</TD><TD>17.37988888888889</TD></TR>
+<TR><TD>PNG 051.0+03.0</TD><TD>288.5195833333333</TD><TD>17.526027777777774</TD></TR>
+<TR><TD>PNG 051.0-04.5</TD><TD>295.513125</TD><TD>13.844194444444442</TD></TR>
+<TR><TD>PNG 051.3+01.8</TD><TD>289.8264583333332</TD><TD>17.197027777777773</TD></TR>
+<TR><TD>PNG 051.4+09.6</TD><TD>282.448125</TD><TD>20.84427777777778</TD></TR>
+<TR><TD>PNG 051.5+06.1</TD><TD>285.90512499999994</TD><TD>19.35641666666666</TD></TR>
+<TR><TD>PNG 051.9+25.8</TD><TD>266.2379999999999</TD><TD>27.33527777777777</TD></TR>
+<TR><TD>PNG 051.9-03.8</TD><TD>295.2878333333333</TD><TD>14.94822222222222</TD></TR>
+<TR><TD>PNG 052.2+07.6</TD><TD>284.7632916666666</TD><TD>20.617472222222215</TD></TR>
+<TR><TD>PNG 052.2-04.0</TD><TD>295.57829166666664</TD><TD>15.151444444444438</TD></TR>
+<TR><TD>PNG 052.5-02.9</TD><TD>294.79158333333334</TD><TD>15.94716666666666</TD></TR>
+<TR><TD>PNG 052.9+02.7</TD><TD>289.7609999999999</TD><TD>19.03919444444444</TD></TR>
+<TR><TD>PNG 052.9-02.7</TD><TD>294.82675</TD><TD>16.354749999999992</TD></TR>
+<TR><TD>PNG 053.2-01.5</TD><TD>293.82612499999993</TD><TD>17.217333333333325</TD></TR>
+<TR><TD>PNG 053.3+03.0</TD><TD>289.6705833333333</TD><TD>19.565527777777778</TD></TR>
+<TR><TD>PNG 053.3+24.0</TD><TD>268.5957083333333</TD><TD>28.000055555555555</TD></TR>
+<TR><TD>PNG 053.8-03.0</TD><TD>295.5436666666666</TD><TD>17.08547222222222</TD></TR>
+<TR><TD>PNG 054.1-12.1</TD><TD>303.78875</TD><TD>12.701972222222222</TD></TR>
+<TR><TD>PNG 054.4-02.5</TD><TD>295.39149999999995</TD><TD>17.754861111111115</TD></TR>
+<TR><TD>PNG 055.1-01.8</TD><TD>295.1049166666666</TD><TD>18.821888888888886</TD></TR>
+<TR><TD>PNG 055.2+02.8</TD><TD>290.8533333333333</TD><TD>21.13347222222222</TD></TR>
+<TR><TD>PNG 055.3+02.7</TD><TD>290.9450416666666</TD><TD>21.111083333333323</TD></TR>
+<TR><TD>PNG 055.3+06.6</TD><TD>287.16387499999996</TD><TD>22.980944444444443</TD></TR>
+<TR><TD>PNG 055.4+16.0</TD><TD>277.82854166666664</TD><TD>26.938111111111112</TD></TR>
+<TR><TD>PNG 055.5-00.5</TD><TD>294.11066666666665</TD><TD>19.708333333333332</TD></TR>
+<TR><TD>PNG 055.6+02.1</TD><TD>291.65737499999994</TD><TD>21.159861111111105</TD></TR>
+<TR><TD>PNG 056.0+02.0</TD><TD>291.93341666666663</TD><TD>21.500972222222227</TD></TR>
+<TR><TD>PNG 056.4-00.9</TD><TD>294.89904166666656</TD><TD>20.317222222222227</TD></TR>
+<TR><TD>PNG 056.8-06.9</TD><TD>300.6506666666666</TD><TD>17.613805555555547</TD></TR>
+<TR><TD>PNG 057.2-08.9</TD><TD>302.61075</TD><TD>16.92219444444444</TD></TR>
+<TR><TD>PNG 057.9-01.5</TD><TD>296.3423333333334</TD><TD>21.334416666666666</TD></TR>
+<TR><TD>PNG 058.3-10.9</TD><TD>305.0365</TD><TD>16.73147222222223</TD></TR>
+<TR><TD>PNG 058.6+06.1</TD><TD>289.2647916666667</TD><TD>25.623999999999995</TD></TR>
+<TR><TD>PNG 058.6-05.5</TD><TD>300.425125</TD><TD>19.911499999999993</TD></TR>
+<TR><TD>PNG 058.9+01.3</TD><TD>294.0909166666666</TD><TD>23.663250000000005</TD></TR>
+<TR><TD>PNG 059.0+04.6</TD><TD>291.01166666666666</TD><TD>25.31363888888888</TD></TR>
+<TR><TD>PNG 059.0-01.7</TD><TD>297.10445833333335</TD><TD>22.16677777777777</TD></TR>
+<TR><TD>PNG 059.4+02.3</TD><TD>293.44470833333327</TD><TD>24.540861111111106</TD></TR>
+<TR><TD>PNG 059.7-18.7</TD><TD>312.5084583333333</TD><TD>13.55788888888889</TD></TR>
+<TR><TD>PNG 059.9+02.0</TD><TD>293.97675</TD><TD>24.913972222222213</TD></TR>
+<TR><TD>PNG 060.0-04.3</TD><TD>300.044875</TD><TD>21.71602777777777</TD></TR>
+<TR><TD>PNG 060.1-07.7</TD><TD>303.1785833333333</TD><TD>19.98955555555554</TD></TR>
+<TR><TD>PNG 060.3-07.3</TD><TD>302.9830416666666</TD><TD>20.334861111111113</TD></TR>
+<TR><TD>PNG 060.4+01.5</TD><TD>294.71783333333326</TD><TD>25.091916666666663</TD></TR>
+<TR><TD>PNG 060.5+01.8</TD><TD>294.53483333333327</TD><TD>25.261361111111107</TD></TR>
+<TR><TD>PNG 060.5-00.3</TD><TD>296.56525</TD><TD>24.18530555555555</TD></TR>
+<TR><TD>PNG 060.8-03.6</TD><TD>299.90062499999993</TD><TD>22.716805555555553</TD></TR>
+<TR><TD>PNG 061.0+08.0</TD><TD>288.62525</TD><TD>28.678611111111103</TD></TR>
+<TR><TD>PNG 061.3+03.6</TD><TD>293.2399166666666</TD><TD>26.879</TD></TR>
+<TR><TD>PNG 061.4-09.5</TD><TD>305.59337500000004</TD><TD>20.10508333333333</TD></TR>
+<TR><TD>PNG 061.8+02.1</TD><TD>294.91483333333326</TD><TD>26.51613888888889</TD></TR>
+<TR><TD>PNG 061.9+41.3</TD><TD>250.07558333333327</TD><TD>38.70558333333333</TD></TR>
+<TR><TD>PNG 062.4+09.5</TD><TD>287.7802083333333</TD><TD>30.548333333333332</TD></TR>
+<TR><TD>PNG 062.4-00.2</TD><TD>297.61724999999996</TD><TD>25.90599999999999</TD></TR>
+<TR><TD>PNG 063.1+13.9</TD><TD>283.39891666666665</TD><TD>33.0278611111111</TD></TR>
+<TR><TD>PNG 063.8-03.3</TD><TD>301.24429166666664</TD><TD>25.44363888888888</TD></TR>
+<TR><TD>PNG 064.6+48.2</TD><TD>241.11199999999994</TD><TD>40.682416666666676</TD></TR>
+<TR><TD>PNG 064.7+05.0</TD><TD>293.6884583333333</TD><TD>30.51630555555555</TD></TR>
+<TR><TD>PNG 064.9+15.5</TD><TD>282.507125</TD><TD>35.243111111111105</TD></TR>
+<TR><TD>PNG 064.9-02.1</TD><TD>300.84349999999995</TD><TD>27.01525</TD></TR>
+<TR><TD>PNG 065.0-27.3</TD><TD>322.4975833333333</TD><TD>12.174027777777775</TD></TR>
+<TR><TD>PNG 065.1-03.5</TD><TD>302.2687083333333</TD><TD>26.448111111111114</TD></TR>
+<TR><TD>PNG 065.2-05.6</TD><TD>304.33975</TD><TD>25.362083333333327</TD></TR>
+<TR><TD>PNG 065.9+00.5</TD><TD>298.75975</TD><TD>29.28924999999999</TD></TR>
+<TR><TD>PNG 066.7-28.2</TD><TD>324.22054166666663</TD><TD>12.788333333333334</TD></TR>
+<TR><TD>PNG 066.9+02.2</TD><TD>297.7525416666667</TD><TD>31.041916666666662</TD></TR>
+<TR><TD>PNG 066.9-05.2</TD><TD>304.908625</TD><TD>27.003833333333333</TD></TR>
+<TR><TD>PNG 067.9-00.2</TD><TD>300.7976666666666</TD><TD>30.542833333333338</TD></TR>
+<TR><TD>PNG 068.3-02.7</TD><TD>303.4911666666667</TD><TD>29.565555555555544</TD></TR>
+<TR><TD>PNG 068.6+01.1</TD><TD>299.82366666666655</TD><TD>31.921583333333334</TD></TR>
+<TR><TD>PNG 068.7+01.9</TD><TD>299.14170833333327</TD><TD>32.37024999999999</TD></TR>
+<TR><TD>PNG 068.7+03.0</TD><TD>297.9695833333333</TD><TD>32.98833333333332</TD></TR>
+<TR><TD>PNG 068.7+14.8</TD><TD>285.11525</TD><TD>38.35574999999999</TD></TR>
+<TR><TD>PNG 068.8-00.0</TD><TD>301.18299999999994</TD><TD>31.45727777777779</TD></TR>
+<TR><TD>PNG 069.2+02.8</TD><TD>298.50174999999996</TD><TD>33.366749999999996</TD></TR>
+<TR><TD>PNG 069.2+03.8</TD><TD>297.5007083333333</TD><TD>33.765305555555564</TD></TR>
+<TR><TD>PNG 069.4-02.6</TD><TD>304.099625</TD><TD>30.56505555555555</TD></TR>
+<TR><TD>PNG 069.6-03.9</TD><TD>305.4932916666666</TD><TD>29.990055555555557</TD></TR>
+<TR><TD>PNG 069.7-00.0</TD><TD>301.7341666666666</TD><TD>32.275944444444434</TD></TR>
+<TR><TD>PNG 071.6-02.3</TD><TD>305.265625</TD><TD>32.49008333333334</TD></TR>
+<TR><TD>PNG 072.1+00.1</TD><TD>303.19849999999997</TD><TD>34.34238888888889</TD></TR>
+<TR><TD>PNG 072.7-17.1</TD><TD>319.21812499999993</TD><TD>24.147583333333333</TD></TR>
+<TR><TD>PNG 073.0-02.4</TD><TD>306.2799166666666</TD><TD>33.57</TD></TR>
+<TR><TD>PNG 074.5+02.1</TD><TD>302.7184166666666</TD><TD>37.41183333333333</TD></TR>
+<TR><TD>PNG 075.6+04.3</TD><TD>301.09375</TD><TD>39.576166666666666</TD></TR>
+<TR><TD>PNG 075.7+35.8</TD><TD>258.44899999999996</TD><TD>49.260194444444444</TD></TR>
+<TR><TD>PNG 076.3+01.1</TD><TD>304.98495833333334</TD><TD>38.408694444444436</TD></TR>
+<TR><TD>PNG 076.4+01.8</TD><TD>304.31316666666663</TD><TD>38.83766666666665</TD></TR>
+<TR><TD>PNG 077.5+03.7</TD><TD>303.03908333333334</TD><TD>40.83755555555556</TD></TR>
+<TR><TD>PNG 077.6+14.7</TD><TD>289.7923333333334</TD><TD>46.243416666666654</TD></TR>
+<TR><TD>PNG 077.7+03.1</TD><TD>303.8170416666667</TD><TD>40.675694444444446</TD></TR>
+<TR><TD>PNG 078.3-02.7</TD><TD>310.5649166666666</TD><TD>37.67513888888888</TD></TR>
+<TR><TD>PNG 078.5+18.7</TD><TD>284.83708333333334</TD><TD>48.470499999999994</TD></TR>
+<TR><TD>PNG 078.6+05.2</TD><TD>302.17991666666666</TD><TD>42.502388888888895</TD></TR>
+<TR><TD>PNG 078.9+00.7</TD><TD>307.3283333333333</TD><TD>40.256249999999994</TD></TR>
+<TR><TD>PNG 079.6+05.8</TD><TD>302.25812499999995</TD><TD>43.72938888888889</TD></TR>
+<TR><TD>PNG 079.9+06.4</TD><TD>301.731125</TD><TD>44.239166666666655</TD></TR>
+<TR><TD>PNG 081.2-14.9</TD><TD>323.87291666666664</TD><TD>31.695749999999997</TD></TR>
+<TR><TD>PNG 082.1+07.0</TD><TD>302.59824999999995</TD><TD>46.46083333333332</TD></TR>
+<TR><TD>PNG 082.5+11.3</TD><TD>297.4440416666667</TD><TD>48.96116666666668</TD></TR>
+<TR><TD>PNG 083.5+12.7</TD><TD>296.20108333333326</TD><TD>50.52494444444444</TD></TR>
+<TR><TD>PNG 083.9-08.4</TD><TD>320.56929166666663</TD><TD>38.12088888888889</TD></TR>
+<TR><TD>PNG 084.0+09.5</TD><TD>300.9958333333332</TD><TD>49.31924999999998</TD></TR>
+<TR><TD>PNG 084.2+01.0</TD><TD>311.29158333333334</TD><TD>44.65455555555555</TD></TR>
+<TR><TD>PNG 084.2-04.2</TD><TD>316.9167499999999</TD><TD>41.18252777777777</TD></TR>
+<TR><TD>PNG 084.9+04.4</TD><TD>308.09674999999993</TD><TD>47.35097222222222</TD></TR>
+<TR><TD>PNG 084.9-03.4</TD><TD>316.7570416666666</TD><TD>42.236111111111114</TD></TR>
+<TR><TD>PNG 086.1+05.4</TD><TD>307.9695</TD><TD>48.87799999999998</TD></TR>
+<TR><TD>PNG 086.5-08.8</TD><TD>323.2834583333333</TD><TD>39.63352777777778</TD></TR>
+<TR><TD>PNG 087.4-03.8</TD><TD>319.5293333333333</TD><TD>43.81102777777778</TD></TR>
+<TR><TD>PNG 088.7+04.6</TD><TD>311.34454166666654</TD><TD>50.37775</TD></TR>
+<TR><TD>PNG 088.7-01.6</TD><TD>318.5633333333333</TD><TD>46.288527777777766</TD></TR>
+<TR><TD>PNG 089.0+00.3</TD><TD>316.57716666666664</TD><TD>47.852</TD></TR>
+<TR><TD>PNG 089.3-02.2</TD><TD>319.78154166666667</TD><TD>46.31322222222222</TD></TR>
+<TR><TD>PNG 089.8-00.6</TD><TD>318.5168333333333</TD><TD>47.74116666666667</TD></TR>
+<TR><TD>PNG 089.8-05.1</TD><TD>323.12895833333334</TD><TD>44.59658333333332</TD></TR>
+<TR><TD>PNG 091.6+01.8</TD><TD>317.7187083333333</TD><TD>50.785277777777765</TD></TR>
+<TR><TD>PNG 091.6-04.8</TD><TD>324.70383333333336</TD><TD>46.00819444444442</TD></TR>
+<TR><TD>PNG 092.1+05.8</TD><TD>313.30699999999996</TD><TD>53.76194444444444</TD></TR>
+<TR><TD>PNG 093.3-00.9</TD><TD>322.71454166666666</TD><TD>50.00247222222222</TD></TR>
+<TR><TD>PNG 093.3-02.4</TD><TD>324.2525416666666</TD><TD>48.93666666666666</TD></TR>
+<TR><TD>PNG 093.4+05.4</TD><TD>315.13641666666666</TD><TD>54.54138888888888</TD></TR>
+<TR><TD>PNG 093.5+01.4</TD><TD>320.1871666666666</TD><TD>51.890388888888886</TD></TR>
+<TR><TD>PNG 094.0+27.4</TD><TD>275.4606666666666</TD><TD>64.36802777777778</TD></TR>
+<TR><TD>PNG 094.5-00.8</TD><TD>323.9338333333333</TD><TD>50.9043611111111</TD></TR>
+<TR><TD>PNG 095.1-02.0</TD><TD>325.82333333333327</TD><TD>50.42083333333331</TD></TR>
+<TR><TD>PNG 095.2+00.7</TD><TD>322.9590416666667</TD><TD>52.56433333333332</TD></TR>
+<TR><TD>PNG 095.2+07.8</TD><TD>314.10941666666656</TD><TD>57.43233333333333</TD></TR>
+<TR><TD>PNG 096.3+02.3</TD><TD>322.502625</TD><TD>54.45830555555557</TD></TR>
+<TR><TD>PNG 096.4+29.9</TD><TD>269.63899999999995</TD><TD>66.633</TD></TR>
+<TR><TD>PNG 097.5+03.1</TD><TD>323.0444999999999</TD><TD>55.8793611111111</TD></TR>
+<TR><TD>PNG 097.6-02.4</TD><TD>329.424375</TD><TD>51.69463888888889</TD></TR>
+<TR><TD>PNG 098.1+02.4</TD><TD>324.79849999999993</TD><TD>55.76772222222224</TD></TR>
+<TR><TD>PNG 098.2+04.9</TD><TD>321.8602916666667</TD><TD>57.65183333333332</TD></TR>
+<TR><TD>PNG 100.0-08.7</TD><TD>337.9320416666665</TD><TD>47.80111111111112</TD></TR>
+<TR><TD>PNG 100.6-05.4</TD><TD>335.9823333333333</TD><TD>50.96680555555555</TD></TR>
+<TR><TD>PNG 101.8+08.7</TD><TD>321.60058333333336</TD><TD>62.89072222222223</TD></TR>
+<TR><TD>PNG 102.8-05.0</TD><TD>338.6908333333333</TD><TD>52.43441666666665</TD></TR>
+<TR><TD>PNG 102.9-02.3</TD><TD>336.57249999999993</TD><TD>54.827972222222215</TD></TR>
+<TR><TD>PNG 103.2+00.6</TD><TD>334.0138333333333</TD><TD>57.47805555555556</TD></TR>
+<TR><TD>PNG 103.7+00.4</TD><TD>335.12970833333327</TD><TD>57.6051111111111</TD></TR>
+<TR><TD>PNG 104.1+01.0</TD><TD>335.0692499999999</TD><TD>58.23800000000001</TD></TR>
+<TR><TD>PNG 104.1+07.9</TD><TD>326.54262500000004</TD><TD>63.78761111111109</TD></TR>
+<TR><TD>PNG 104.2-29.6</TD><TD>353.97312500000004</TD><TD>30.46722222222223</TD></TR>
+<TR><TD>PNG 104.4-01.6</TD><TD>338.0739166666666</TD><TD>56.173055555555564</TD></TR>
+<TR><TD>PNG 104.8-06.7</TD><TD>342.91049999999996</TD><TD>51.849</TD></TR>
+<TR><TD>PNG 106.5-17.6</TD><TD>351.4742083333333</TD><TD>42.53505555555557</TD></TR>
+<TR><TD>PNG 107.4-00.6</TD><TD>342.14537499999994</TD><TD>58.48455555555556</TD></TR>
+<TR><TD>PNG 107.4-02.6</TD><TD>343.7785833333333</TD><TD>56.70855555555554</TD></TR>
+<TR><TD>PNG 107.6-13.3</TD><TD>350.74158333333327</TD><TD>46.89919444444444</TD></TR>
+<TR><TD>PNG 107.7+07.8</TD><TD>333.3448333333332</TD><TD>65.89863888888888</TD></TR>
+<TR><TD>PNG 107.7-02.2</TD><TD>344.0820416666666</TD><TD>57.15591666666665</TD></TR>
+<TR><TD>PNG 107.8+02.3</TD><TD>340.08374999999995</TD><TD>61.28491666666665</TD></TR>
+<TR><TD>PNG 108.4-76.1</TD><TD>9.325749999999994</TD><TD>-13.703333333333326</TD></TR>
+<TR><TD>PNG 110.1+01.9</TD><TD>344.714875</TD><TD>61.96177777777778</TD></TR>
+<TR><TD>PNG 110.6-12.9</TD><TD>354.7858749999999</TD><TD>48.21038888888888</TD></TR>
+<TR><TD>PNG 111.0+11.6</TD><TD>334.89037499999995</TD><TD>70.9336666666667</TD></TR>
+<TR><TD>PNG 111.2+07.0</TD><TD>341.98645833333336</TD><TD>67.04269444444444</TD></TR>
+<TR><TD>PNG 111.8-02.8</TD><TD>351.56179166666664</TD><TD>58.1818611111111</TD></TR>
+<TR><TD>PNG 112.5+03.7</TD><TD>348.0631666666665</TD><TD>64.65538888888891</TD></TR>
+<TR><TD>PNG 112.5-00.1</TD><TD>351.08608333333325</TD><TD>60.949749999999995</TD></TR>
+<TR><TD>PNG 112.9-10.2</TD><TD>356.93695833333334</TD><TD>51.39925000000001</TD></TR>
+<TR><TD>PNG 113.6-06.9</TD><TD>356.6909999999999</TD><TD>54.74444444444444</TD></TR>
+<TR><TD>PNG 114.0-04.6</TD><TD>356.44779166666666</TD><TD>57.0668611111111</TD></TR>
+<TR><TD>PNG 116.2+08.5</TD><TD>352.9630416666666</TD><TD>70.3705</TD></TR>
+<TR><TD>PNG 117.5+18.9</TD><TD>340.6491249999999</TD><TD>80.4458611111111</TD></TR>
+<TR><TD>PNG 118.0-08.6</TD><TD>4.669375000000001</TD><TD>53.87752777777779</TD></TR>
+<TR><TD>PNG 118.7+08.2</TD><TD>0.3917083333333343</TD><TD>70.71163888888888</TD></TR>
+<TR><TD>PNG 118.8-74.7</TD><TD>11.766</TD><TD>-11.87266666666666</TD></TR>
+<TR><TD>PNG 119.3+00.3</TD><TD>4.997250000000001</TD><TD>62.98352777777778</TD></TR>
+<TR><TD>PNG 119.4+06.5</TD><TD>3.151375</TD><TD>69.17797222222222</TD></TR>
+<TR><TD>PNG 119.6-06.7</TD><TD>7.064500000000002</TD><TD>55.96530555555555</TD></TR>
+<TR><TD>PNG 120.0+09.8</TD><TD>3.254000000000002</TD><TD>72.52211111111112</TD></TR>
+<TR><TD>PNG 120.2-05.3</TD><TD>7.973083333333332</TD><TD>57.3758611111111</TD></TR>
+<TR><TD>PNG 121.6+03.5</TD><TD>9.723541666666668</TD><TD>66.39461111111112</TD></TR>
+<TR><TD>PNG 121.6-00.0</TD><TD>10.090166666666665</TD><TD>62.854611111111105</TD></TR>
+<TR><TD>PNG 122.1-04.9</TD><TD>11.400374999999997</TD><TD>57.956499999999984</TD></TR>
+<TR><TD>PNG 123.6+34.5</TD><TD>188.27808333333329</TD><TD>82.56391666666666</TD></TR>
+<TR><TD>PNG 124.0+10.7</TD><TD>16.783625000000004</TD><TD>73.55652777777777</TD></TR>
+<TR><TD>PNG 124.3-07.7</TD><TD>15.224375000000006</TD><TD>55.06069444444444</TD></TR>
+<TR><TD>PNG 125.9-47.0</TD><TD>14.989499999999998</TD><TD>15.735999999999999</TD></TR>
+<TR><TD>PNG 126.3+02.9</TD><TD>21.245375000000003</TD><TD>65.64347222222223</TD></TR>
+<TR><TD>PNG 128.0-04.1</TD><TD>22.665125</TD><TD>58.36674999999998</TD></TR>
+<TR><TD>PNG 129.2-02.0</TD><TD>25.65908333333333</TD><TD>60.168416666666666</TD></TR>
+<TR><TD>PNG 129.5+04.5</TD><TD>29.649416666666667</TD><TD>66.56772222222222</TD></TR>
+<TR><TD>PNG 130.2+01.3</TD><TD>29.398583333333324</TD><TD>63.32188888888888</TD></TR>
+<TR><TD>PNG 130.3-11.7</TD><TD>24.33066666666666</TD><TD>50.47022222222222</TD></TR>
+<TR><TD>PNG 130.4+03.1</TD><TD>30.918458333333334</TD><TD>64.95994444444445</TD></TR>
+<TR><TD>PNG 130.9-10.5</TD><TD>25.58933333333334</TD><TD>51.56852777777777</TD></TR>
+<TR><TD>PNG 131.4-05.4</TD><TD>28.260458333333332</TD><TD>56.40611111111111</TD></TR>
+<TR><TD>PNG 131.5+02.6</TD><TD>33.04837500000002</TD><TD>64.15119444444444</TD></TR>
+<TR><TD>PNG 132.4+04.7</TD><TD>36.626333333333314</TD><TD>65.79813888888887</TD></TR>
+<TR><TD>PNG 133.1-08.6</TD><TD>29.70533333333334</TD><TD>52.89549999999999</TD></TR>
+<TR><TD>PNG 136.1+04.9</TD><TD>44.720625000000005</TD><TD>64.49952777777777</TD></TR>
+<TR><TD>PNG 136.3+05.5</TD><TD>45.953500000000005</TD><TD>64.89116666666666</TD></TR>
+<TR><TD>PNG 138.1+04.1</TD><TD>47.75204166666665</TD><TD>62.80091666666667</TD></TR>
+<TR><TD>PNG 138.8+02.8</TD><TD>47.58004166666666</TD><TD>61.31705555555555</TD></TR>
+<TR><TD>PNG 141.7-07.8</TD><TD>43.05591666666667</TD><TD>50.59786111111111</TD></TR>
+<TR><TD>PNG 142.1+03.4</TD><TD>54.033125</TD><TD>60.06308333333332</TD></TR>
+<TR><TD>PNG 143.6+23.8</TD><TD>97.39729166666667</TD><TD>71.0676388888889</TD></TR>
+<TR><TD>PNG 144.3-15.5</TD><TD>41.35745833333335</TD><TD>42.54327777777778</TD></TR>
+<TR><TD>PNG 144.5+06.5</TD><TD>61.75300000000001</TD><TD>60.917333333333325</TD></TR>
+<TR><TD>PNG 146.7+07.6</TD><TD>66.46170833333332</TD><TD>60.12024999999999</TD></TR>
+<TR><TD>PNG 147.4-02.3</TD><TD>55.430833333333325</TD><TD>52.28344444444443</TD></TR>
+<TR><TD>PNG 147.8+04.1</TD><TD>63.312666666666665</TD><TD>56.94830555555556</TD></TR>
+<TR><TD>PNG 148.4+57.0</TD><TD>168.69354166666668</TD><TD>55.01658333333333</TD></TR>
+<TR><TD>PNG 149.0+04.4</TD><TD>65.18866666666668</TD><TD>56.30355555555556</TD></TR>
+<TR><TD>PNG 149.4-09.2</TD><TD>51.81429166666666</TD><TD>45.40536111111111</TD></TR>
+<TR><TD>PNG 149.7-03.3</TD><TD>57.27462500000001</TD><TD>50.004194444444444</TD></TR>
+<TR><TD>PNG 151.4+00.5</TD><TD>63.36320833333333</TD><TD>51.85044444444444</TD></TR>
+<TR><TD>PNG 153.7+22.8</TD><TD>100.98025000000003</TD><TD>61.79027777777778</TD></TR>
+<TR><TD>PNG 153.7-01.4</TD><TD>63.977375000000016</TD><TD>48.82799999999998</TD></TR>
+<TR><TD>PNG 156.9-13.3</TD><TD>56.361166666666655</TD><TD>37.81333333333334</TD></TR>
+<TR><TD>PNG 158.8+37.1</TD><TD>130.394125</TD><TD>58.231722222222224</TD></TR>
+<TR><TD>PNG 158.9+17.8</TD><TD>94.89291666666668</TD><TD>55.61183333333334</TD></TR>
+<TR><TD>PNG 159.0-15.1</TD><TD>56.88720833333334</TD><TD>35.046972222222216</TD></TR>
+<TR><TD>PNG 160.5-00.5</TD><TD>71.67804166666667</TD><TD>44.466777777777764</TD></TR>
+<TR><TD>PNG 161.2-14.8</TD><TD>59.09170833333333</TD><TD>33.875194444444446</TD></TR>
+<TR><TD>PNG 163.1-00.8</TD><TD>73.63124999999998</TD><TD>42.27688888888889</TD></TR>
+<TR><TD>PNG 164.8+31.1</TD><TD>119.46908333333334</TD><TD>53.42177777777776</TD></TR>
+<TR><TD>PNG 165.5-06.5</TD><TD>69.94975000000002</TD><TD>36.761861111111095</TD></TR>
+<TR><TD>PNG 165.5-15.2</TD><TD>62.32108333333333</TD><TD>30.776277777777768</TD></TR>
+<TR><TD>PNG 166.1+10.4</TD><TD>89.09974999999999</TD><TD>46.10466666666667</TD></TR>
+<TR><TD>PNG 166.4-06.5</TD><TD>70.72233333333334</TD><TD>36.11463888888889</TD></TR>
+<TR><TD>PNG 167.0-00.9</TD><TD>76.65783333333333</TD><TD>39.135416666666664</TD></TR>
+<TR><TD>PNG 167.4-09.1</TD><TD>69.15516666666667</TD><TD>33.65838888888889</TD></TR>
+<TR><TD>PNG 170.3+15.8</TD><TD>98.53079166666667</TD><TD>44.777111111111104</TD></TR>
+<TR><TD>PNG 170.7+04.6</TD><TD>85.34224999999999</TD><TD>39.25224999999999</TD></TR>
+<TR><TD>PNG 171.3-25.8</TD><TD>58.37370833333334</TD><TD>19.46413888888889</TD></TR>
+<TR><TD>PNG 173.5+03.2</TD><TD>85.64316666666666</TD><TD>36.15152777777777</TD></TR>
+<TR><TD>PNG 173.7+02.7</TD><TD>85.21891666666667</TD><TD>35.70966666666666</TD></TR>
+<TR><TD>PNG 173.7-05.8</TD><TD>76.78604166666666</TD><TD>30.83413888888889</TD></TR>
+<TR><TD>PNG 174.2-14.6</TD><TD>69.33675</TD><TD>25.04994444444445</TD></TR>
+<TR><TD>PNG 178.3-02.5</TD><TD>82.89833333333334</TD><TD>28.97800000000001</TD></TR>
+<TR><TD>PNG 181.5+00.9</TD><TD>88.20162499999999</TD><TD>28.107305555555563</TD></TR>
+<TR><TD>PNG 183.8+05.5</TD><TD>94.045625</TD><TD>28.3681111111111</TD></TR>
+<TR><TD>PNG 184.0-02.1</TD><TD>86.708375</TD><TD>24.36741666666666</TD></TR>
+<TR><TD>PNG 184.6+00.6</TD><TD>89.68891666666667</TD><TD>25.312222222222218</TD></TR>
+<TR><TD>PNG 184.8+04.4</TD><TD>93.47904166666666</TD><TD>26.882499999999986</TD></TR>
+<TR><TD>PNG 189.1+19.8</TD><TD>111.39704166666667</TD><TD>29.493277777777774</TD></TR>
+<TR><TD>PNG 189.8+07.7</TD><TD>99.33733333333333</TD><TD>24.009999999999994</TD></TR>
+<TR><TD>PNG 190.3-17.7</TD><TD>76.39325000000001</TD><TD>10.70602777777778</TD></TR>
+<TR><TD>PNG 192.5+07.2</TD><TD>100.04083333333332</TD><TD>21.415749999999996</TD></TR>
+<TR><TD>PNG 193.6-09.5</TD><TD>85.18499999999999</TD><TD>12.354777777777775</TD></TR>
+<TR><TD>PNG 194.2+02.5</TD><TD>96.48854166666668</TD><TD>17.79094444444445</TD></TR>
+<TR><TD>PNG 196.6-10.9</TD><TD>85.52654166666667</TD><TD>9.08838888888889</TD></TR>
+<TR><TD>PNG 197.2-14.2</TD><TD>82.94908333333335</TD><TD>6.935805555555557</TD></TR>
+<TR><TD>PNG 197.4-06.4</TD><TD>89.85312499999999</TD><TD>10.694611111111106</TD></TR>
+<TR><TD>PNG 197.8+17.3</TD><TD>112.29450000000001</TD><TD>20.910222222222227</TD></TR>
+<TR><TD>PNG 197.8-03.3</TD><TD>92.78654166666668</TD><TD>11.779833333333334</TD></TR>
+<TR><TD>PNG 198.6-06.3</TD><TD>90.59500000000001</TD><TD>9.650722222222223</TD></TR>
+<TR><TD>PNG 200.7+08.4</TD><TD>104.98595833333336</TD><TD>14.613027777777777</TD></TR>
+<TR><TD>PNG 201.7+02.5</TD><TD>99.98279166666669</TD><TD>11.108416666666665</TD></TR>
+<TR><TD>PNG 201.9-04.6</TD><TD>93.64008333333337</TD><TD>7.575638888888889</TD></TR>
+<TR><TD>PNG 204.0-08.5</TD><TD>91.19475000000001</TD><TD>3.940805555555556</TD></TR>
+<TR><TD>PNG 204.1+04.7</TD><TD>103.12675</TD><TD>9.963416666666669</TD></TR>
+<TR><TD>PNG 204.8-03.5</TD><TD>95.97858333333336</TD><TD>5.503444444444446</TD></TR>
+<TR><TD>PNG 205.1+14.2</TD><TD>112.262</TD><TD>13.241666666666664</TD></TR>
+<TR><TD>PNG 205.8-26.7</TD><TD>75.92420833333333</TD><TD>-6.1594444444444445</TD></TR>
+<TR><TD>PNG 206.4-40.5</TD><TD>63.571583333333336</TD><TD>-12.736472222222217</TD></TR>
+<TR><TD>PNG 208.5+33.2</TD><TD>131.72666666666666</TD><TD>17.875722222222223</TD></TR>
+<TR><TD>PNG 210.0+03.9</TD><TD>105.11537500000001</TD><TD>4.345638888888888</TD></TR>
+<TR><TD>PNG 210.3+01.9</TD><TD>103.391</TD><TD>3.1401388888888886</TD></TR>
+<TR><TD>PNG 211.2-03.5</TD><TD>98.93604166666667</TD><TD>-0.09474999999999964</TD></TR>
+<TR><TD>PNG 211.4+18.4</TD><TD>118.79704166666667</TD><TD>9.553194444444442</TD></TR>
+<TR><TD>PNG 211.9+22.6</TD><TD>122.81133333333332</TD><TD>10.95055555555555</TD></TR>
+<TR><TD>PNG 212.0+04.3</TD><TD>106.32995833333335</TD><TD>2.7831111111111104</TD></TR>
+<TR><TD>PNG 214.9+07.8</TD><TD>110.74091666666669</TD><TD>1.7603888888888888</TD></TR>
+<TR><TD>PNG 215.2-24.2</TD><TD>81.868</TD><TD>-12.696722222222219</TD></TR>
+<TR><TD>PNG 215.5-30.8</TD><TD>75.78345833333333</TD><TD>-15.603611111111114</TD></TR>
+<TR><TD>PNG 215.6+03.6</TD><TD>107.34204166666667</TD><TD>-0.8048333333333332</TD></TR>
+<TR><TD>PNG 215.6+11.1</TD><TD>114.02787500000002</TD><TD>2.7047777777777764</TD></TR>
+<TR><TD>PNG 216.0-00.2</TD><TD>104.05958333333335</TD><TD>-2.885583333333332</TD></TR>
+<TR><TD>PNG 216.3-04.4</TD><TD>100.39358333333335</TD><TD>-5.044305555555556</TD></TR>
+<TR><TD>PNG 217.1+14.7</TD><TD>117.91050000000001</TD><TD>3.0074722222222214</TD></TR>
+<TR><TD>PNG 217.4+02.0</TD><TD>106.70137500000001</TD><TD>-3.0785555555555546</TD></TR>
+<TR><TD>PNG 218.9-10.7</TD><TD>95.90525000000001</TD><TD>-10.223027777777775</TD></TR>
+<TR><TD>PNG 219.1+31.2</TD><TD>133.5547916666667</TD><TD>8.899638888888887</TD></TR>
+<TR><TD>PNG 220.3-53.9</TD><TD>53.313958333333325</TD><TD>-25.870111111111108</TD></TR>
+<TR><TD>PNG 221.3-12.3</TD><TD>95.4275</TD><TD>-12.986027777777775</TD></TR>
+<TR><TD>PNG 221.5+46.3</TD><TD>148.25208333333333</TD><TD>13.747472222222221</TD></TR>
+<TR><TD>PNG 221.7+05.3</TD><TD>111.641875</TD><TD>-5.364888888888888</TD></TR>
+<TR><TD>PNG 224.3+15.3</TD><TD>121.68849999999999</TD><TD>-2.8785555555555553</TD></TR>
+<TR><TD>PNG 224.9+01.0</TD><TD>109.35854166666668</TD><TD>-10.17786111111111</TD></TR>
+<TR><TD>PNG 226.4-03.7</TD><TD>105.69441666666668</TD><TD>-13.713944444444438</TD></TR>
+<TR><TD>PNG 226.7+05.6</TD><TD>114.32879166666669</TD><TD>-9.646694444444442</TD></TR>
+<TR><TD>PNG 228.2-22.1</TD><TD>88.77674999999999</TD><TD>-22.90027777777777</TD></TR>
+<TR><TD>PNG 228.8+05.3</TD><TD>115.09250000000002</TD><TD>-11.54169444444444</TD></TR>
+<TR><TD>PNG 229.6-02.7</TD><TD>108.14766666666667</TD><TD>-16.095416666666665</TD></TR>
+<TR><TD>PNG 231.4+04.3</TD><TD>115.51391666666666</TD><TD>-14.35336111111111</TD></TR>
+<TR><TD>PNG 231.8+04.1</TD><TD>115.45958333333333</TD><TD>-14.735638888888891</TD></TR>
+<TR><TD>PNG 232.0+05.7</TD><TD>117.01491666666668</TD><TD>-14.128527777777776</TD></TR>
+<TR><TD>PNG 232.4-01.8</TD><TD>110.3120833333333</TD><TD>-18.1433611111111</TD></TR>
+<TR><TD>PNG 232.8-04.7</TD><TD>107.81954166666668</TD><TD>-19.850861111111104</TD></TR>
+<TR><TD>PNG 233.0-10.1</TD><TD>102.67095833333335</TD><TD>-22.435916666666657</TD></TR>
+<TR><TD>PNG 233.5-16.3</TD><TD>96.759</TD><TD>-25.381805555555548</TD></TR>
+<TR><TD>PNG 234.3-06.6</TD><TD>106.73812500000001</TD><TD>-22.037277777777774</TD></TR>
+<TR><TD>PNG 234.8+02.4</TD><TD>115.48091666666666</TD><TD>-18.20911111111111</TD></TR>
+<TR><TD>PNG 234.9-01.4</TD><TD>111.98554166666668</TD><TD>-20.223194444444438</TD></TR>
+<TR><TD>PNG 235.3-03.9</TD><TD>109.83945833333335</TD><TD>-21.732027777777777</TD></TR>
+<TR><TD>PNG 236.0-10.6</TD><TD>103.62075000000002</TD><TD>-25.353222222222218</TD></TR>
+<TR><TD>PNG 236.7+03.5</TD><TD>117.54962500000003</TD><TD>-19.302583333333327</TD></TR>
+<TR><TD>PNG 238.0+34.8</TD><TD>144.78754166666667</TD><TD>-2.8090555555555556</TD></TR>
+<TR><TD>PNG 238.9+07.3</TD><TD>122.18345833333332</TD><TD>-19.230472222222218</TD></TR>
+<TR><TD>PNG 239.6+13.9</TD><TD>128.34787500000002</TD><TD>-16.148861111111106</TD></TR>
+<TR><TD>PNG 239.6-12.0</TD><TD>103.800375</TD><TD>-29.124555555555546</TD></TR>
+<TR><TD>PNG 240.3+07.0</TD><TD>122.67375</TD><TD>-20.52583333333333</TD></TR>
+<TR><TD>PNG 240.3-07.6</TD><TD>108.706375</TD><TD>-27.838416666666657</TD></TR>
+<TR><TD>PNG 241.0+02.3</TD><TD>118.79679166666669</TD><TD>-23.629361111111105</TD></TR>
+<TR><TD>PNG 242.6-11.6</TD><TD>105.70700000000001</TD><TD>-31.59480555555555</TD></TR>
+<TR><TD>PNG 243.3-01.0</TD><TD>116.85891666666669</TD><TD>-27.334944444444446</TD></TR>
+<TR><TD>PNG 243.8-37.1</TD><TD>75.75720833333334</TD><TD>-39.76222222222221</TD></TR>
+<TR><TD>PNG 244.5+12.5</TD><TD>130.05929166666667</TD><TD>-20.894805555555553</TD></TR>
+<TR><TD>PNG 245.4+01.6</TD><TD>120.61983333333333</TD><TD>-27.699333333333332</TD></TR>
+<TR><TD>PNG 248.7+29.5</TD><TD>146.39625</TD><TD>-13.170527777777776</TD></TR>
+<TR><TD>PNG 248.8-08.5</TD><TD>112.2300416666667</TD><TD>-35.754305555555554</TD></TR>
+<TR><TD>PNG 249.0+06.9</TD><TD>127.92833333333334</TD><TD>-27.759027777777785</TD></TR>
+<TR><TD>PNG 249.3-05.4</TD><TD>115.82883333333335</TD><TD>-34.7536111111111</TD></TR>
+<TR><TD>PNG 250.3+00.1</TD><TD>122.25541666666668</TD><TD>-32.67091666666666</TD></TR>
+<TR><TD>PNG 251.1-01.5</TD><TD>121.06058333333337</TD><TD>-34.26766666666666</TD></TR>
+<TR><TD>PNG 252.6+04.4</TD><TD>127.96912500000003</TD><TD>-32.102</TD></TR>
+<TR><TD>PNG 253.5+10.7</TD><TD>134.45562500000003</TD><TD>-28.944083333333335</TD></TR>
+<TR><TD>PNG 253.9+05.7</TD><TD>130.18445833333334</TD><TD>-32.36927777777778</TD></TR>
+<TR><TD>PNG 254.6+00.2</TD><TD>125.2364583333333</TD><TD>-36.22969444444445</TD></TR>
+<TR><TD>PNG 255.3-59.6</TD><TD>44.24283333333334</TD><TD>-44.171944444444435</TD></TR>
+<TR><TD>PNG 255.7+03.3</TD><TD>129.06812499999998</TD><TD>-35.264277777777785</TD></TR>
+<TR><TD>PNG 257.1-02.6</TD><TD>124.04208333333334</TD><TD>-39.86413888888888</TD></TR>
+<TR><TD>PNG 257.5+00.6</TD><TD>127.74145833333334</TD><TD>-38.33119444444443</TD></TR>
+<TR><TD>PNG 258.0-15.7</TD><TD>108.69995833333334</TD><TD>-46.95677777777777</TD></TR>
+<TR><TD>PNG 258.1-00.3</TD><TD>127.11654166666662</TD><TD>-39.39519444444444</TD></TR>
+<TR><TD>PNG 259.1+00.9</TD><TD>129.2840833333333</TD><TD>-39.440416666666664</TD></TR>
+<TR><TD>PNG 260.7+00.9</TD><TD>130.56670833333334</TD><TD>-40.73522222222222</TD></TR>
+<TR><TD>PNG 260.7-03.3</TD><TD>125.91833333333332</TD><TD>-43.21222222222222</TD></TR>
+<TR><TD>PNG 261.0+32.0</TD><TD>156.19125</TD><TD>-18.64386111111111</TD></TR>
+<TR><TD>PNG 261.6+03.0</TD><TD>133.37741666666665</TD><TD>-40.059583333333336</TD></TR>
+<TR><TD>PNG 261.9+08.5</TD><TD>139.00212499999998</TD><TD>-36.62544444444445</TD></TR>
+<TR><TD>PNG 262.6-04.6</TD><TD>125.97366666666667</TD><TD>-45.519416666666665</TD></TR>
+<TR><TD>PNG 263.0-05.5</TD><TD>125.16591666666669</TD><TD>-46.337055555555565</TD></TR>
+<TR><TD>PNG 263.2+00.4</TD><TD>132.16125000000002</TD><TD>-42.896083333333344</TD></TR>
+<TR><TD>PNG 263.3-08.8</TD><TD>121.2957083333334</TD><TD>-48.39169444444444</TD></TR>
+<TR><TD>PNG 264.1-08.1</TD><TD>122.883125</TD><TD>-48.72069444444445</TD></TR>
+<TR><TD>PNG 264.4-03.6</TD><TD>128.62029166666667</TD><TD>-46.427444444444426</TD></TR>
+<TR><TD>PNG 264.4-12.7</TD><TD>116.83579166666668</TD><TD>-51.25302777777778</TD></TR>
+<TR><TD>PNG 265.1-02.2</TD><TD>130.85054166666666</TD><TD>-46.14136111111112</TD></TR>
+<TR><TD>PNG 265.1-04.2</TD><TD>128.52933333333334</TD><TD>-47.27724999999999</TD></TR>
+<TR><TD>PNG 265.7+04.1</TD><TD>138.1109166666667</TD><TD>-42.42541666666666</TD></TR>
+<TR><TD>PNG 268.4+02.4</TD><TD>139.04233333333332</TD><TD>-45.479555555555564</TD></TR>
+<TR><TD>PNG 269.7-03.6</TD><TD>133.57470833333332</TD><TD>-50.53874999999999</TD></TR>
+<TR><TD>PNG 270.1+24.8</TD><TD>158.6276666666667</TD><TD>-29.187666666666658</TD></TR>
+<TR><TD>PNG 272.1+12.3</TD><TD>151.75741666666667</TD><TD>-40.43608333333334</TD></TR>
+<TR><TD>PNG 272.4-05.9</TD><TD>133.40304166666667</TD><TD>-54.085694444444435</TD></TR>
+<TR><TD>PNG 273.2-03.7</TD><TD>137.16979166666667</TD><TD>-53.318861111111104</TD></TR>
+<TR><TD>PNG 273.6+06.1</TD><TD>148.18666666666664</TD><TD>-46.28600000000001</TD></TR>
+<TR><TD>PNG 274.1+02.5</TD><TD>145.29295833333333</TD><TD>-49.37827777777777</TD></TR>
+<TR><TD>PNG 274.3+09.1</TD><TD>151.44325000000003</TD><TD>-44.362305555555544</TD></TR>
+<TR><TD>PNG 274.6+02.1</TD><TD>145.4016666666667</TD><TD>-49.96247222222222</TD></TR>
+<TR><TD>PNG 274.6+03.5</TD><TD>146.85108333333332</TD><TD>-48.971972222222234</TD></TR>
+<TR><TD>PNG 275.0-04.1</TD><TD>138.78183333333337</TD><TD>-54.87747222222222</TD></TR>
+<TR><TD>PNG 275.2-02.9</TD><TD>140.5266666666667</TD><TD>-54.162944444444435</TD></TR>
+<TR><TD>PNG 275.2-03.7</TD><TD>139.5055833333333</TD><TD>-54.65808333333331</TD></TR>
+<TR><TD>PNG 275.3-04.7</TD><TD>138.46770833333332</TD><TD>-55.47258333333333</TD></TR>
+<TR><TD>PNG 275.5-01.3</TD><TD>142.70266666666663</TD><TD>-53.16591666666666</TD></TR>
+<TR><TD>PNG 275.8-02.9</TD><TD>141.18654166666667</TD><TD>-54.60552777777777</TD></TR>
+<TR><TD>PNG 277.1-03.8</TD><TD>141.76445833333335</TD><TD>-56.105083333333326</TD></TR>
+<TR><TD>PNG 277.7-03.5</TD><TD>142.86308333333332</TD><TD>-56.294750000000015</TD></TR>
+<TR><TD>PNG 278.1-05.9</TD><TD>140.35666666666668</TD><TD>-58.31333333333334</TD></TR>
+<TR><TD>PNG 278.5-04.5</TD><TD>142.73304166666665</TD><TD>-57.616055555555555</TD></TR>
+<TR><TD>PNG 278.6-06.7</TD><TD>139.86633333333336</TD><TD>-59.20208333333333</TD></TR>
+<TR><TD>PNG 278.8+04.9</TD><TD>153.31754166666664</TD><TD>-50.33355555555558</TD></TR>
+<TR><TD>PNG 279.6-03.1</TD><TD>145.858375</TD><TD>-57.28327777777777</TD></TR>
+<TR><TD>PNG 280.0+02.9</TD><TD>152.99104166666663</TD><TD>-52.6375833333333</TD></TR>
+<TR><TD>PNG 281.0-05.6</TD><TD>144.6979583333333</TD><TD>-60.09119444444445</TD></TR>
+<TR><TD>PNG 299.4-04.1</TD><TD>184.13870833333328</TD><TD>-66.76066666666668</TD></TR>
+<TR><TD>PNG 282.9+03.8</TD><TD>157.88529166666672</TD><TD>-53.557527777777764</TD></TR>
+<TR><TD>PNG 283.3+03.9</TD><TD>158.57633333333334</TD><TD>-53.68294444444444</TD></TR>
+<TR><TD>PNG 283.6+25.3</TD><TD>171.68516666666665</TD><TD>-34.37086111111111</TD></TR>
+<TR><TD>PNG 283.8+02.2</TD><TD>157.88808333333333</TD><TD>-55.3483611111111</TD></TR>
+<TR><TD>PNG 283.8-04.2</TD><TD>150.95741666666666</TD><TD>-60.72963888888887</TD></TR>
+<TR><TD>PNG 283.9+09.7</TD><TD>163.67520833333333</TD><TD>-48.78352777777777</TD></TR>
+<TR><TD>PNG 283.9-01.8</TD><TD>153.89141666666666</TD><TD>-58.85291666666665</TD></TR>
+<TR><TD>PNG 285.4+01.5</TD><TD>159.63545833333333</TD><TD>-56.77591666666666</TD></TR>
+<TR><TD>PNG 285.4+02.2</TD><TD>160.33316666666667</TD><TD>-56.1551388888889</TD></TR>
+<TR><TD>PNG 285.4-01.1</TD><TD>157.1804166666667</TD><TD>-59.06958333333332</TD></TR>
+<TR><TD>PNG 285.4-05.3</TD><TD>152.340375</TD><TD>-62.611499999999985</TD></TR>
+<TR><TD>PNG 285.6-02.7</TD><TD>155.7877083333333</TD><TD>-60.54297222222223</TD></TR>
+<TR><TD>PNG 285.7+01.2</TD><TD>159.88320833333333</TD><TD>-57.10275</TD></TR>
+<TR><TD>PNG 285.7-14.9</TD><TD>136.77604166666666</TD><TD>-69.938</TD></TR>
+<TR><TD>PNG 286.0-06.5</TD><TD>151.84712500000003</TD><TD>-63.90899999999999</TD></TR>
+<TR><TD>PNG 286.2-06.9</TD><TD>151.7315</TD><TD>-64.3628888888889</TD></TR>
+<TR><TD>PNG 286.3+02.8</TD><TD>162.1795416666667</TD><TD>-56.05638888888888</TD></TR>
+<TR><TD>PNG 286.3-04.8</TD><TD>154.45991666666666</TD><TD>-62.66916666666668</TD></TR>
+<TR><TD>PNG 286.5+11.6</TD><TD>168.46066666666667</TD><TD>-48.092555555555556</TD></TR>
+<TR><TD>PNG 286.8-29.5</TD><TD>89.25850000000004</TD><TD>-75.67247222222224</TD></TR>
+<TR><TD>PNG 288.4+00.3</TD><TD>163.64550000000003</TD><TD>-59.163527777777766</TD></TR>
+<TR><TD>PNG 288.4-02.4</TD><TD>161.13129166666667</TD><TD>-61.66147222222223</TD></TR>
+<TR><TD>PNG 288.7+08.1</TD><TD>169.54075</TD><TD>-52.168583333333345</TD></TR>
+<TR><TD>PNG 288.8-05.2</TD><TD>158.94129166666664</TD><TD>-64.31783333333333</TD></TR>
+<TR><TD>PNG 288.9-00.8</TD><TD>163.49562500000002</TD><TD>-60.445000000000014</TD></TR>
+<TR><TD>PNG 289.6-01.6</TD><TD>164.01066666666668</TD><TD>-61.4673611111111</TD></TR>
+<TR><TD>PNG 289.8+07.7</TD><TD>171.00158333333331</TD><TD>-52.85591666666664</TD></TR>
+<TR><TD>PNG 290.1-00.4</TD><TD>165.981875</TD><TD>-60.60155555555556</TD></TR>
+<TR><TD>PNG 290.5+07.9</TD><TD>172.14950000000002</TD><TD>-52.93511111111111</TD></TR>
+<TR><TD>PNG 291.3-26.2</TD><TD>104.864125</TD><TD>-79.64641666666667</TD></TR>
+<TR><TD>PNG 291.4+19.2</TD><TD>178.1226666666667</TD><TD>-42.29325</TD></TR>
+<TR><TD>PNG 291.6-04.8</TD><TD>165.08154166666665</TD><TD>-65.2485</TD></TR>
+<TR><TD>PNG 291.7+03.7</TD><TD>171.84812499999998</TD><TD>-57.298805555555546</TD></TR>
+<TR><TD>PNG 292.4+04.1</TD><TD>173.32825</TD><TD>-57.10502777777777</TD></TR>
+<TR><TD>PNG 292.6+01.2</TD><TD>171.99658333333335</TD><TD>-59.958888888888886</TD></TR>
+<TR><TD>PNG 292.7+01.9</TD><TD>172.70283333333333</TD><TD>-59.28436111111109</TD></TR>
+<TR><TD>PNG 292.8+01.1</TD><TD>172.19991666666667</TD><TD>-60.10905555555555</TD></TR>
+<TR><TD>PNG 293.6+01.2</TD><TD>173.80245833333336</TD><TD>-60.281694444444454</TD></TR>
+<TR><TD>PNG 293.6+10.9</TD><TD>178.26595833333332</TD><TD>-50.84497222222221</TD></TR>
+<TR><TD>PNG 294.1+14.4</TD><TD>180.18158333333332</TD><TD>-47.553472222222204</TD></TR>
+<TR><TD>PNG 294.1+43.6</TD><TD>186.1293333333333</TD><TD>-18.785888888888884</TD></TR>
+<TR><TD>PNG 294.6+04.7</TD><TD>177.57891666666671</TD><TD>-57.18094444444443</TD></TR>
+<TR><TD>PNG 294.9-00.6</TD><TD>175.40783333333337</TD><TD>-62.48247222222222</TD></TR>
+<TR><TD>PNG 294.9-04.3</TD><TD>172.94387500000002</TD><TD>-65.97063888888889</TD></TR>
+<TR><TD>PNG 295.3-09.3</TD><TD>169.42895833333333</TD><TD>-70.82519444444443</TD></TR>
+<TR><TD>PNG 296.3-03.0</TD><TD>177.1612083333333</TD><TD>-65.14277777777778</TD></TR>
+<TR><TD>PNG 296.4-06.9</TD><TD>174.7975833333334</TD><TD>-68.8688888888889</TD></TR>
+<TR><TD>PNG 296.6-20.0</TD><TD>152.34170833333334</TD><TD>-80.8585</TD></TR>
+<TR><TD>PNG 297.4+03.7</TD><TD>182.29375</TD><TD>-58.70997222222222</TD></TR>
+<TR><TD>PNG 298.0+34.8</TD><TD>188.31091666666663</TD><TD>-27.809083333333334</TD></TR>
+<TR><TD>PNG 298.1-00.7</TD><TD>182.25479166666668</TD><TD>-63.11833333333333</TD></TR>
+<TR><TD>PNG 298.2-01.7</TD><TD>182.10841666666667</TD><TD>-64.2033611111111</TD></TR>
+<TR><TD>PNG 298.3-04.8</TD><TD>181.06374999999994</TD><TD>-67.30986111111112</TD></TR>
+<TR><TD>PNG 299.0+18.4</TD><TD>187.7169583333333</TD><TD>-44.239499999999985</TD></TR>
+<TR><TD>PNG 299.5+02.4</TD><TD>185.97141666666664</TD><TD>-60.220472222222234</TD></TR>
+<TR><TD>PNG 299.8-01.3</TD><TD>185.76091666666662</TD><TD>-64.03558333333334</TD></TR>
+<TR><TD>PNG 300.2+00.6</TD><TD>187.19037499999996</TD><TD>-62.09316666666667</TD></TR>
+<TR><TD>PNG 300.4-00.9</TD><TD>187.19495833333332</TD><TD>-63.74316666666666</TD></TR>
+<TR><TD>PNG 300.5-01.1</TD><TD>187.53199999999998</TD><TD>-63.88297222222222</TD></TR>
+<TR><TD>PNG 300.7-02.0</TD><TD>187.62645833333335</TD><TD>-64.85263888888889</TD></TR>
+<TR><TD>PNG 300.8-03.4</TD><TD>187.602375</TD><TD>-66.24052777777774</TD></TR>
+<TR><TD>PNG 302.2+02.5</TD><TD>191.47895833333328</TD><TD>-60.33741666666667</TD></TR>
+<TR><TD>PNG 302.3-01.3</TD><TD>191.4634583333333</TD><TD>-64.1605</TD></TR>
+<TR><TD>PNG 302.6-00.9</TD><TD>192.12954166666665</TD><TD>-63.8323611111111</TD></TR>
+<TR><TD>PNG 303.6+40.0</TD><TD>193.42249999999996</TD><TD>-22.86175</TD></TR>
+<TR><TD>PNG 304.2+05.9</TD><TD>195.17249999999996</TD><TD>-56.891194444444444</TD></TR>
+<TR><TD>PNG 304.5-04.8</TD><TD>197.20154166666666</TD><TD>-67.64247222222221</TD></TR>
+<TR><TD>PNG 304.8+05.1</TD><TD>196.44924999999998</TD><TD>-57.655944444444444</TD></TR>
+<TR><TD>PNG 305.1+01.4</TD><TD>197.40041666666667</TD><TD>-61.32602777777778</TD></TR>
+<TR><TD>PNG 305.6-13.1</TD><TD>203.56220833333336</TD><TD>-75.77463888888889</TD></TR>
+<TR><TD>PNG 305.7-03.4</TD><TD>199.87620833333332</TD><TD>-66.15230555555556</TD></TR>
+<TR><TD>PNG 306.4-00.6</TD><TD>200.64516666666665</TD><TD>-63.348805555555565</TD></TR>
+<TR><TD>PNG 307.2-03.4</TD><TD>203.42479166666666</TD><TD>-65.97472222222223</TD></TR>
+<TR><TD>PNG 307.2-09.0</TD><TD>206.35049999999998</TD><TD>-71.48036111111111</TD></TR>
+<TR><TD>PNG 307.3+05.0</TD><TD>201.09029166666667</TD><TD>-57.52219444444445</TD></TR>
+<TR><TD>PNG 307.5-04.9</TD><TD>204.89204166666661</TD><TD>-67.37938888888888</TD></TR>
+<TR><TD>PNG 308.2+07.7</TD><TD>202.02074999999996</TD><TD>-54.69913888888888</TD></TR>
+<TR><TD>PNG 308.6-12.2</TD><TD>213.8577083333333</TD><TD>-74.21397222222222</TD></TR>
+<TR><TD>PNG 309.0+00.8</TD><TD>205.648625</TD><TD>-61.375277777777754</TD></TR>
+<TR><TD>PNG 309.0-04.2</TD><TD>208.1292916666666</TD><TD>-66.3911111111111</TD></TR>
+<TR><TD>PNG 309.1-04.3</TD><TD>208.49125</TD><TD>-66.51447222222222</TD></TR>
+<TR><TD>PNG 309.2+01.3</TD><TD>205.99654166666662</TD><TD>-60.827888888888864</TD></TR>
+<TR><TD>PNG 309.5-02.9</TD><TD>208.61283333333333</TD><TD>-64.99111111111111</TD></TR>
+<TR><TD>PNG 310.3+24.7</TD><TD>201.40524999999997</TD><TD>-37.60433333333334</TD></TR>
+<TR><TD>PNG 310.4+01.3</TD><TD>208.3472083333333</TD><TD>-60.564416666666666</TD></TR>
+<TR><TD>PNG 310.7-02.9</TD><TD>211.4037083333333</TD><TD>-64.6825</TD></TR>
+<TR><TD>PNG 310.8-05.9</TD><TD>213.8461666666667</TD><TD>-67.53266666666667</TD></TR>
+<TR><TD>PNG 311.0+02.4</TD><TD>208.939125</TD><TD>-59.378055555555555</TD></TR>
+<TR><TD>PNG 311.1+03.4</TD><TD>208.73391666666663</TD><TD>-58.45519444444444</TD></TR>
+<TR><TD>PNG 311.4+02.8</TD><TD>209.55558333333332</TD><TD>-58.90827777777775</TD></TR>
+<TR><TD>PNG 312.3+10.5</TD><TD>207.7642083333333</TD><TD>-51.20452777777777</TD></TR>
+<TR><TD>PNG 312.6-01.8</TD><TD>214.67754166666666</TD><TD>-63.11977777777778</TD></TR>
+<TR><TD>PNG 313.8-12.6</TD><TD>230.291125</TD><TD>-72.2353611111111</TD></TR>
+<TR><TD>PNG 315.0-00.3</TD><TD>218.32624999999996</TD><TD>-60.82905555555555</TD></TR>
+<TR><TD>PNG 315.1-13.0</TD><TD>234.29908333333327</TD><TD>-71.91513888888888</TD></TR>
+<TR><TD>PNG 315.4+05.2</TD><TD>215.20379166666666</TD><TD>-55.465444444444444</TD></TR>
+<TR><TD>PNG 315.4+09.4</TD><TD>212.9674583333333</TD><TD>-51.43999999999998</TD></TR>
+<TR><TD>PNG 315.7+05.5</TD><TD>215.4976666666666</TD><TD>-55.03794444444445</TD></TR>
+<TR><TD>PNG 315.7-01.2</TD><TD>220.32387499999996</TD><TD>-61.33216666666667</TD></TR>
+<TR><TD>PNG 316.1+08.4</TD><TD>214.53895833333328</TD><TD>-52.17777777777778</TD></TR>
+<TR><TD>PNG 316.3-01.3</TD><TD>221.58933333333331</TD><TD>-61.22986111111111</TD></TR>
+<TR><TD>PNG 317.1-05.7</TD><TD>227.6663333333333</TD><TD>-64.67197222222222</TD></TR>
+<TR><TD>PNG 317.8+03.3</TD><TD>220.39887499999998</TD><TD>-56.25183333333332</TD></TR>
+<TR><TD>PNG 318.3-02.0</TD><TD>226.03662500000002</TD><TD>-60.889222222222216</TD></TR>
+<TR><TD>PNG 318.3-02.5</TD><TD>226.5034583333333</TD><TD>-61.35680555555555</TD></TR>
+<TR><TD>PNG 318.4+41.4</TD><TD>205.17183333333327</TD><TD>-19.882416666666664</TD></TR>
+<TR><TD>PNG 318.4-03.0</TD><TD>227.1784583333333</TD><TD>-61.73444444444445</TD></TR>
+<TR><TD>PNG 319.2+06.8</TD><TD>220.12512499999994</TD><TD>-52.580972222222215</TD></TR>
+<TR><TD>PNG 319.6+15.7</TD><TD>215.61054166666668</TD><TD>-44.15169444444443</TD></TR>
+<TR><TD>PNG 320.1-09.6</TD><TD>239.00554166666666</TD><TD>-66.15308333333334</TD></TR>
+<TR><TD>PNG 320.3-28.8</TD><TD>293.4621666666667</TD><TD>-74.54958333333335</TD></TR>
+<TR><TD>PNG 320.9+02.0</TD><TD>226.49704166666666</TD><TD>-55.98919444444444</TD></TR>
+<TR><TD>PNG 321.0+03.9</TD><TD>224.9739166666667</TD><TD>-54.30191666666666</TD></TR>
+<TR><TD>PNG 321.0+08.3</TD><TD>221.64574999999996</TD><TD>-50.39088888888888</TD></TR>
+<TR><TD>PNG 321.0-03.8</TD><TD>232.57762499999998</TD><TD>-61.027611111111106</TD></TR>
+<TR><TD>PNG 321.3+02.8</TD><TD>226.31954166666665</TD><TD>-55.18674999999999</TD></TR>
+<TR><TD>PNG 321.3-16.7</TD><TD>255.32024999999996</TD><TD>-70.10161111111113</TD></TR>
+<TR><TD>PNG 321.8+01.9</TD><TD>227.983625</TD><TD>-55.664222222222214</TD></TR>
+<TR><TD>PNG 322.1-06.6</TD><TD>238.0402916666666</TD><TD>-62.514666666666656</TD></TR>
+<TR><TD>PNG 322.4-00.1</TD><TD>230.92587499999993</TD><TD>-57.15486111111111</TD></TR>
+<TR><TD>PNG 322.4-02.6</TD><TD>233.56962499999997</TD><TD>-59.149861111111115</TD></TR>
+<TR><TD>PNG 322.5-05.2</TD><TD>236.91987499999996</TD><TD>-61.2175</TD></TR>
+<TR><TD>PNG 323.1-02.5</TD><TD>234.50195833333336</TD><TD>-58.74761111111112</TD></TR>
+<TR><TD>PNG 323.9+02.4</TD><TD>230.58199999999997</TD><TD>-54.13802777777778</TD></TR>
+<TR><TD>PNG 324.0+03.5</TD><TD>229.78712500000003</TD><TD>-53.163999999999994</TD></TR>
+<TR><TD>PNG 324.1+09.0</TD><TD>225.41879166666666</TD><TD>-48.35088888888889</TD></TR>
+<TR><TD>PNG 324.2+02.5</TD><TD>230.89908333333327</TD><TD>-53.85683333333333</TD></TR>
+<TR><TD>PNG 324.8-01.1</TD><TD>235.4894999999999</TD><TD>-56.61280555555554</TD></TR>
+<TR><TD>PNG 325.0+03.2</TD><TD>231.38591666666665</TD><TD>-52.84527777777779</TD></TR>
+<TR><TD>PNG 325.4-04.0</TD><TD>239.78829166666665</TD><TD>-58.39758333333332</TD></TR>
+<TR><TD>PNG 325.8+04.5</TD><TD>231.28333333333333</TD><TD>-51.32813888888888</TD></TR>
+<TR><TD>PNG 325.8-12.8</TD><TD>253.64720833333328</TD><TD>-64.24202777777778</TD></TR>
+<TR><TD>PNG 326.0-06.5</TD><TD>243.92499999999995</TD><TD>-59.900861111111105</TD></TR>
+<TR><TD>PNG 326.1-01.9</TD><TD>238.24416666666656</TD><TD>-56.398611111111094</TD></TR>
+<TR><TD>PNG 326.7+42.2</TD><TD>211.1087083333333</TD><TD>-17.22619444444444</TD></TR>
+<TR><TD>PNG 327.1-01.8</TD><TD>239.5373333333333</TD><TD>-55.697972222222226</TD></TR>
+<TR><TD>PNG 327.1-02.2</TD><TD>239.99237499999995</TD><TD>-55.923861111111115</TD></TR>
+<TR><TD>PNG 327.5+13.3</TD><TD>226.5572916666666</TD><TD>-42.9996111111111</TD></TR>
+<TR><TD>PNG 327.7-05.4</TD><TD>244.8159166666666</TD><TD>-57.97358333333331</TD></TR>
+<TR><TD>PNG 327.8+10.0</TD><TD>229.20804166666667</TD><TD>-45.64905555555554</TD></TR>
+<TR><TD>PNG 327.8-01.6</TD><TD>240.2483333333333</TD><TD>-55.094166666666666</TD></TR>
+<TR><TD>PNG 327.8-06.1</TD><TD>245.87787499999993</TD><TD>-58.32336111111112</TD></TR>
+<TR><TD>PNG 327.8-07.2</TD><TD>247.37645833333337</TD><TD>-59.15619444444445</TD></TR>
+<TR><TD>PNG 327.9-04.3</TD><TD>243.50504166666664</TD><TD>-56.99147222222222</TD></TR>
+<TR><TD>PNG 328.2+01.3</TD><TD>237.3857083333333</TD><TD>-52.508694444444444</TD></TR>
+<TR><TD>PNG 328.9-02.4</TD><TD>242.67062499999992</TD><TD>-54.95888888888888</TD></TR>
+<TR><TD>PNG 329.0+01.9</TD><TD>237.9219166666666</TD><TD>-51.52316666666666</TD></TR>
+<TR><TD>PNG 329.3-02.8</TD><TD>243.63362500000002</TD><TD>-54.95111111111111</TD></TR>
+<TR><TD>PNG 329.4-02.7</TD><TD>243.60270833333325</TD><TD>-54.794305555555546</TD></TR>
+<TR><TD>PNG 329.5+01.7</TD><TD>238.78674999999998</TD><TD>-51.39625</TD></TR>
+<TR><TD>PNG 329.5-02.2</TD><TD>243.14362500000001</TD><TD>-54.393222222222214</TD></TR>
+<TR><TD>PNG 330.2+05.9</TD><TD>235.55583333333337</TD><TD>-47.67930555555555</TD></TR>
+<TR><TD>PNG 330.6-02.1</TD><TD>244.30849999999998</TD><TD>-53.53425</TD></TR>
+<TR><TD>PNG 330.6-03.6</TD><TD>246.08804166666664</TD><TD>-54.60091666666667</TD></TR>
+<TR><TD>PNG 330.7+04.1</TD><TD>237.81783333333328</TD><TD>-48.750194444444446</TD></TR>
+<TR><TD>PNG 330.9+04.3</TD><TD>237.83283333333327</TD><TD>-48.43427777777778</TD></TR>
+<TR><TD>PNG 331.0-02.7</TD><TD>245.55474999999996</TD><TD>-53.68213888888888</TD></TR>
+<TR><TD>PNG 331.1-05.7</TD><TD>249.42558333333332</TD><TD>-55.707138888888885</TD></TR>
+<TR><TD>PNG 331.3+16.8</TD><TD>228.21041666666665</TD><TD>-38.124805555555554</TD></TR>
+<TR><TD>PNG 331.4+00.5</TD><TD>242.24754166666656</TD><TD>-51.03391666666666</TD></TR>
+<TR><TD>PNG 331.4-03.5</TD><TD>246.96504166666665</TD><TD>-54.02425</TD></TR>
+<TR><TD>PNG 331.5-02.7</TD><TD>246.1550833333333</TD><TD>-53.37616666666668</TD></TR>
+<TR><TD>PNG 331.5-03.9</TD><TD>247.49824999999998</TD><TD>-54.16019444444444</TD></TR>
+<TR><TD>PNG 331.7-01.0</TD><TD>244.30679166666658</TD><TD>-51.98505555555555</TD></TR>
+<TR><TD>PNG 332.0-03.3</TD><TD>247.471625</TD><TD>-53.38447222222221</TD></TR>
+<TR><TD>PNG 332.2+03.5</TD><TD>240.0914166666666</TD><TD>-48.259666666666675</TD></TR>
+<TR><TD>PNG 332.3-04.2</TD><TD>248.83954166666663</TD><TD>-53.83583333333332</TD></TR>
+<TR><TD>PNG 332.8-16.4</TD><TD>267.9709166666666</TD><TD>-60.38900000000002</TD></TR>
+<TR><TD>PNG 332.9-09.9</TD><TD>257.25620833333323</TD><TD>-56.91422222222223</TD></TR>
+<TR><TD>PNG 333.4+01.1</TD><TD>243.8345416666666</TD><TD>-49.22372222222223</TD></TR>
+<TR><TD>PNG 333.4-04.0</TD><TD>249.90629166666665</TD><TD>-52.82041666666667</TD></TR>
+<TR><TD>PNG 334.3-01.4</TD><TD>247.7783333333333</TD><TD>-50.453583333333334</TD></TR>
+<TR><TD>PNG 334.3-09.3</TD><TD>257.9392499999999</TD><TD>-55.400666666666666</TD></TR>
+<TR><TD>PNG 334.8-07.4</TD><TD>255.76079166666662</TD><TD>-53.92949999999999</TD></TR>
+<TR><TD>PNG 335.2-03.6</TD><TD>251.25058333333325</TD><TD>-51.205083333333334</TD></TR>
+<TR><TD>PNG 335.4+09.2</TD><TD>238.30258333333333</TD><TD>-41.84061111111111</TD></TR>
+<TR><TD>PNG 335.4-01.1</TD><TD>248.5619583333333</TD><TD>-49.35558333333333</TD></TR>
+<TR><TD>PNG 335.5+12.4</TD><TD>235.75283333333334</TD><TD>-39.32502777777777</TD></TR>
+<TR><TD>PNG 335.6-04.0</TD><TD>252.16762499999993</TD><TD>-51.15391666666665</TD></TR>
+<TR><TD>PNG 335.9-03.6</TD><TD>251.98920833333324</TD><TD>-50.70916666666667</TD></TR>
+<TR><TD>PNG 336.2+01.9</TD><TD>245.97791666666657</TD><TD>-46.70344444444442</TD></TR>
+<TR><TD>PNG 336.2-06.9</TD><TD>256.5612916666667</TD><TD>-52.4998611111111</TD></TR>
+<TR><TD>PNG 336.3-05.6</TD><TD>254.8986666666666</TD><TD>-51.70152777777778</TD></TR>
+<TR><TD>PNG 336.8-07.2</TD><TD>257.399375</TD><TD>-52.217555555555556</TD></TR>
+<TR><TD>PNG 336.9+08.3</TD><TD>240.5542499999999</TD><TD>-41.558694444444434</TD></TR>
+<TR><TD>PNG 336.9-11.5</TD><TD>263.61779166666656</TD><TD>-54.47983333333332</TD></TR>
+<TR><TD>PNG 337.4+01.6</TD><TD>247.60683333333333</TD><TD>-46.047583333333336</TD></TR>
+<TR><TD>PNG 337.4-09.1</TD><TD>260.65362499999986</TD><TD>-52.775138888888875</TD></TR>
+<TR><TD>PNG 337.5-05.1</TD><TD>255.40637499999994</TD><TD>-50.38244444444443</TD></TR>
+<TR><TD>PNG 337.6-04.2</TD><TD>254.3708333333333</TD><TD>-49.78116666666666</TD></TR>
+<TR><TD>PNG 338.1-08.3</TD><TD>260.19262499999996</TD><TD>-51.7553611111111</TD></TR>
+<TR><TD>PNG 338.8+05.6</TD><TD>244.8463749999999</TD><TD>-42.26</TD></TR>
+<TR><TD>PNG 339.9+88.4</TD><TD>193.8920833333333</TD><TD>25.891111111111105</TD></TR>
+<TR><TD>PNG 340.4-14.1</TD><TD>270.2467916666667</TD><TD>-52.73930555555556</TD></TR>
+<TR><TD>PNG 340.8+10.8</TD><TD>242.10974999999996</TD><TD>-37.14674999999999</TD></TR>
+<TR><TD>PNG 340.8+12.3</TD><TD>240.84216666666666</TD><TD>-36.01488888888888</TD></TR>
+<TR><TD>PNG 340.9-04.6</TD><TD>257.86404166666665</TD><TD>-47.41688888888889</TD></TR>
+<TR><TD>PNG 341.2-24.6</TD><TD>287.4384166666666</TD><TD>-55.57727777777777</TD></TR>
+<TR><TD>PNG 341.5-09.1</TD><TD>264.03162499999996</TD><TD>-49.42658333333334</TD></TR>
+<TR><TD>PNG 341.6+13.7</TD><TD>240.3370416666666</TD><TD>-34.54394444444443</TD></TR>
+<TR><TD>PNG 341.8+05.4</TD><TD>247.8789166666666</TD><TD>-40.256249999999994</TD></TR>
+<TR><TD>PNG 342.1+10.8</TD><TD>243.24512499999992</TD><TD>-36.22741666666668</TD></TR>
+<TR><TD>PNG 342.1+27.5</TD><TD>230.58041666666662</TD><TD>-23.625416666666663</TD></TR>
+<TR><TD>PNG 342.5-14.3</TD><TD>271.8297916666666</TD><TD>-51.01988888888888</TD></TR>
+<TR><TD>PNG 342.7+00.7</TD><TD>253.38145833333328</TD><TD>-42.65502777777777</TD></TR>
+<TR><TD>PNG 342.8-06.6</TD><TD>261.95175</TD><TD>-46.92625</TD></TR>
+<TR><TD>PNG 342.9-02.0</TD><TD>256.5952083333333</TD><TD>-44.220027777777766</TD></TR>
+<TR><TD>PNG 342.9-04.9</TD><TD>259.8853333333332</TD><TD>-45.8861111111111</TD></TR>
+<TR><TD>PNG 343.0-01.7</TD><TD>256.4134166666666</TD><TD>-43.957555555555565</TD></TR>
+<TR><TD>PNG 343.3-00.6</TD><TD>255.367</TD><TD>-43.09883333333333</TD></TR>
+<TR><TD>PNG 343.4+11.9</TD><TD>243.36554166666664</TD><TD>-34.59491666666666</TD></TR>
+<TR><TD>PNG 343.5-07.8</TD><TD>263.92179166666665</TD><TD>-46.997583333333324</TD></TR>
+<TR><TD>PNG 343.6+03.7</TD><TD>251.0987916666666</TD><TD>-40.05552777777776</TD></TR>
+<TR><TD>PNG 343.9+00.8</TD><TD>254.3490416666666</TD><TD>-41.63219444444445</TD></TR>
+<TR><TD>PNG 344.2+04.7</TD><TD>250.6393333333333</TD><TD>-38.9076111111111</TD></TR>
+<TR><TD>PNG 344.2-01.2</TD><TD>256.7483333333333</TD><TD>-42.6876111111111</TD></TR>
+<TR><TD>PNG 344.4+02.8</TD><TD>252.63824999999997</TD><TD>-40.05011111111111</TD></TR>
+<TR><TD>PNG 344.4-06.1</TD><TD>262.5167083333333</TD><TD>-45.38044444444443</TD></TR>
+<TR><TD>PNG 344.8+03.4</TD><TD>252.38666666666663</TD><TD>-39.35291666666666</TD></TR>
+<TR><TD>PNG 345.0+03.4</TD><TD>252.60612499999993</TD><TD>-39.13855555555555</TD></TR>
+<TR><TD>PNG 345.0+04.3</TD><TD>251.68854166666657</TD><TD>-38.61611111111111</TD></TR>
+<TR><TD>PNG 345.0-04.9</TD><TD>261.54966666666667</TD><TD>-44.191444444444436</TD></TR>
+<TR><TD>PNG 345.2-01.2</TD><TD>257.61474999999996</TD><TD>-41.880166666666675</TD></TR>
+<TR><TD>PNG 345.2-08.8</TD><TD>266.39833333333337</TD><TD>-46.08919444444444</TD></TR>
+<TR><TD>PNG 345.3-10.2</TD><TD>268.19674999999995</TD><TD>-46.698277777777776</TD></TR>
+<TR><TD>PNG 345.4+00.1</TD><TD>256.2875416666666</TD><TD>-40.88252777777778</TD></TR>
+<TR><TD>PNG 345.5+15.1</TD><TD>242.43337499999998</TD><TD>-30.900555555555552</TD></TR>
+<TR><TD>PNG 345.6+06.7</TD><TD>249.8671666666667</TD><TD>-36.57274999999999</TD></TR>
+<TR><TD>PNG 345.9+03.0</TD><TD>253.61258333333328</TD><TD>-38.73555555555554</TD></TR>
+<TR><TD>PNG 345.9-11.2</TD><TD>269.9023333333333</TD><TD>-46.64775000000001</TD></TR>
+<TR><TD>PNG 346.0+08.5</TD><TD>248.51775</TD><TD>-35.0905</TD></TR>
+<TR><TD>PNG 346.2-08.2</TD><TD>266.369125</TD><TD>-44.903194444444445</TD></TR>
+<TR><TD>PNG 346.3-06.8</TD><TD>264.83475</TD><TD>-44.16061111111109</TD></TR>
+<TR><TD>PNG 346.9+12.4</TD><TD>245.82208333333332</TD><TD>-31.74913888888888</TD></TR>
+<TR><TD>PNG 347.4+05.8</TD><TD>252.22279166666655</TD><TD>-35.786944444444444</TD></TR>
+<TR><TD>PNG 347.7+02.0</TD><TD>256.14212499999996</TD><TD>-37.88702777777778</TD></TR>
+<TR><TD>PNG 348.0+06.3</TD><TD>252.20158333333328</TD><TD>-35.015916666666676</TD></TR>
+<TR><TD>PNG 348.0-13.8</TD><TD>274.6303750000001</TD><TD>-45.98422222222222</TD></TR>
+<TR><TD>PNG 348.4-04.1</TD><TD>263.2013333333333</TD><TD>-40.973416666666665</TD></TR>
+<TR><TD>PNG 348.8-09.0</TD><TD>269.1382916666666</TD><TD>-43.05472222222222</TD></TR>
+<TR><TD>PNG 349.2-03.5</TD><TD>263.083625</TD><TD>-39.85563888888888</TD></TR>
+<TR><TD>PNG 349.3-01.1</TD><TD>260.5669583333333</TD><TD>-38.48269444444444</TD></TR>
+<TR><TD>PNG 349.3-04.2</TD><TD>263.9160833333333</TD><TD>-40.19997222222222</TD></TR>
+<TR><TD>PNG 349.5+01.0</TD><TD>258.4344583333332</TD><TD>-37.10172222222221</TD></TR>
+<TR><TD>PNG 349.8+04.4</TD><TD>255.27624999999998</TD><TD>-34.82755555555554</TD></TR>
+<TR><TD>PNG 350.1-03.9</TD><TD>264.12604166666654</TD><TD>-39.36727777777777</TD></TR>
+<TR><TD>PNG 350.5-05.0</TD><TD>265.7244583333333</TD><TD>-39.607861111111106</TD></TR>
+<TR><TD>PNG 350.8-02.4</TD><TD>263.0852499999999</TD><TD>-37.960583333333325</TD></TR>
+<TR><TD>PNG 350.9+04.4</TD><TD>256.15329166666663</TD><TD>-33.98663888888887</TD></TR>
+<TR><TD>PNG 351.0-10.4</TD><TD>272.241375</TD><TD>-41.806833333333316</TD></TR>
+<TR><TD>PNG 351.1+04.8</TD><TD>255.94395833333334</TD><TD>-33.497888888888895</TD></TR>
+<TR><TD>PNG 351.2+05.2</TD><TD>255.57974999999993</TD><TD>-33.16774999999999</TD></TR>
+<TR><TD>PNG 351.3+07.6</TD><TD>253.4047916666666</TD><TD>-31.67641666666666</TD></TR>
+<TR><TD>PNG 351.6-06.2</TD><TD>267.6849166666666</TD><TD>-39.29002777777779</TD></TR>
+<TR><TD>PNG 351.7-10.9</TD><TD>273.22024999999996</TD><TD>-41.50736111111111</TD></TR>
+<TR><TD>PNG 351.9+09.0</TD><TD>252.5705833333333</TD><TD>-30.331916666666668</TD></TR>
+<TR><TD>PNG 351.9-01.9</TD><TD>263.2522083333333</TD><TD>-36.73144444444443</TD></TR>
+<TR><TD>PNG 352.0-04.6</TD><TD>266.279625</TD><TD>-38.14683333333332</TD></TR>
+<TR><TD>PNG 352.1+05.1</TD><TD>256.3795416666667</TD><TD>-32.53583333333333</TD></TR>
+<TR><TD>PNG 352.6+00.1</TD><TD>261.600125</TD><TD>-35.0293611111111</TD></TR>
+<TR><TD>PNG 352.6+03.0</TD><TD>258.6787499999999</TD><TD>-33.41327777777778</TD></TR>
+<TR><TD>PNG 352.8-00.2</TD><TD>262.11362499999996</TD><TD>-35.12855555555556</TD></TR>
+<TR><TD>PNG 352.9+11.4</TD><TD>251.2044583333333</TD><TD>-28.068166666666666</TD></TR>
+<TR><TD>PNG 352.9-07.5</TD><TD>270.049875</TD><TD>-38.83102777777777</TD></TR>
+<TR><TD>PNG 353.2-05.2</TD><TD>267.68666666666667</TD><TD>-37.398305555555545</TD></TR>
+<TR><TD>PNG 353.3+06.3</TD><TD>256.07649999999995</TD><TD>-30.891361111111106</TD></TR>
+<TR><TD>PNG 353.5-04.9</TD><TD>267.45095833333335</TD><TD>-37.02416666666666</TD></TR>
+<TR><TD>PNG 353.7+06.3</TD><TD>256.3082083333333</TD><TD>-30.541138888888874</TD></TR>
+<TR><TD>PNG 353.7-12.8</TD><TD>276.6730833333333</TD><TD>-40.49755555555556</TD></TR>
+<TR><TD>PNG 354.2+04.3</TD><TD>258.5293333333333</TD><TD>-31.328416666666648</TD></TR>
+<TR><TD>PNG 354.4-07.8</TD><TD>271.2387916666667</TD><TD>-37.636055555555565</TD></TR>
+<TR><TD>PNG 354.5+03.3</TD><TD>259.71758333333327</TD><TD>-31.65163888888889</TD></TR>
+<TR><TD>PNG 354.9+03.5</TD><TD>259.83558333333326</TD><TD>-31.209388888888885</TD></TR>
+<TR><TD>PNG 355.1+02.3</TD><TD>261.11045833333327</TD><TD>-31.721638888888894</TD></TR>
+<TR><TD>PNG 355.1-02.9</TD><TD>266.3845416666666</TD><TD>-34.56552777777778</TD></TR>
+<TR><TD>PNG 355.1-06.9</TD><TD>270.63125</TD><TD>-36.64761111111112</TD></TR>
+<TR><TD>PNG 355.2-02.5</TD><TD>266.0591666666666</TD><TD>-34.29113888888888</TD></TR>
+<TR><TD>PNG 355.4-02.4</TD><TD>266.08541666666656</TD><TD>-34.111305555555546</TD></TR>
+<TR><TD>PNG 355.4-04.0</TD><TD>267.80116666666663</TD><TD>-34.923833333333334</TD></TR>
+<TR><TD>PNG 355.6-02.7</TD><TD>266.5264166666667</TD><TD>-34.06277777777776</TD></TR>
+<TR><TD>PNG 355.7-03.0</TD><TD>266.95829166666664</TD><TD>-34.133444444444436</TD></TR>
+<TR><TD>PNG 355.7-03.4</TD><TD>267.2432916666666</TD><TD>-34.365416666666654</TD></TR>
+<TR><TD>PNG 355.7-03.5</TD><TD>267.30845833333336</TD><TD>-34.38147222222222</TD></TR>
+<TR><TD>PNG 355.9+02.7</TD><TD>261.16737499999994</TD><TD>-30.86469444444444</TD></TR>
+<TR><TD>PNG 355.9+03.6</TD><TD>260.38445833333327</TD><TD>-30.34677777777778</TD></TR>
+<TR><TD>PNG 355.9-04.2</TD><TD>268.245875</TD><TD>-34.63972222222222</TD></TR>
+<TR><TD>PNG 356.1+02.7</TD><TD>261.3287083333333</TD><TD>-30.678916666666662</TD></TR>
+<TR><TD>PNG 356.1-03.3</TD><TD>267.4616249999999</TD><TD>-34.00433333333333</TD></TR>
+<TR><TD>PNG 356.2-04.4</TD><TD>268.63775</TD><TD>-34.37252777777777</TD></TR>
+<TR><TD>PNG 356.3-06.2</TD><TD>270.6331666666667</TD><TD>-35.218972222222234</TD></TR>
+<TR><TD>PNG 356.5+01.5</TD><TD>262.7440833333333</TD><TD>-31.018777777777782</TD></TR>
+<TR><TD>PNG 356.5+05.1</TD><TD>259.33366666666666</TD><TD>-28.991749999999996</TD></TR>
+<TR><TD>PNG 356.5-02.3</TD><TD>266.6896249999999</TD><TD>-33.14308333333333</TD></TR>
+<TR><TD>PNG 356.5-03.6</TD><TD>267.9602083333333</TD><TD>-33.79358333333332</TD></TR>
+<TR><TD>PNG 356.5-03.9</TD><TD>268.3362499999999</TD><TD>-33.93344444444445</TD></TR>
+<TR><TD>PNG 356.6-07.8</TD><TD>272.4535</TD><TD>-35.73680555555554</TD></TR>
+<TR><TD>PNG 356.7-04.8</TD><TD>269.3300833333333</TD><TD>-34.1636111111111</TD></TR>
+<TR><TD>PNG 356.7-06.4</TD><TD>271.1229583333333</TD><TD>-34.966583333333325</TD></TR>
+<TR><TD>PNG 356.8+03.3</TD><TD>261.2769166666666</TD><TD>-29.754138888888882</TD></TR>
+<TR><TD>PNG 356.8-05.4</TD><TD>270.07766666666663</TD><TD>-34.461638888888885</TD></TR>
+<TR><TD>PNG 356.8-11.7</TD><TD>276.951375</TD><TD>-37.26669444444444</TD></TR>
+<TR><TD>PNG 356.9+04.4</TD><TD>260.2678333333333</TD><TD>-29.04980555555556</TD></TR>
+<TR><TD>PNG 356.9+04.5</TD><TD>260.1387916666666</TD><TD>-29.01069444444445</TD></TR>
+<TR><TD>PNG 356.9-05.8</TD><TD>270.5122916666666</TD><TD>-34.46313888888889</TD></TR>
+<TR><TD>PNG 357.0+02.4</TD><TD>262.2089166666666</TD><TD>-30.131333333333327</TD></TR>
+<TR><TD>PNG 357.1+01.9</TD><TD>262.71429166666667</TD><TD>-30.28724999999999</TD></TR>
+<TR><TD>PNG 357.1+03.6</TD><TD>261.1438333333333</TD><TD>-29.40394444444444</TD></TR>
+<TR><TD>PNG 357.1+04.4</TD><TD>260.40791666666667</TD><TD>-28.920527777777767</TD></TR>
+<TR><TD>PNG 357.1-04.7</TD><TD>269.5645833333333</TD><TD>-33.79413888888888</TD></TR>
+<TR><TD>PNG 357.1-06.1</TD><TD>271.0194583333333</TD><TD>-34.47541666666666</TD></TR>
+<TR><TD>PNG 357.2+01.4</TD><TD>263.32095833333324</TD><TD>-30.44183333333333</TD></TR>
+<TR><TD>PNG 357.2+02.0</TD><TD>262.7802916666667</TD><TD>-30.176916666666664</TD></TR>
+<TR><TD>PNG 357.2+07.4</TD><TD>257.6744166666667</TD><TD>-27.145527777777776</TD></TR>
+<TR><TD>PNG 357.2-04.5</TD><TD>269.35483333333326</TD><TD>-33.59513888888889</TD></TR>
+<TR><TD>PNG 357.3+03.3</TD><TD>261.49537499999997</TD><TD>-29.364749999999997</TD></TR>
+<TR><TD>PNG 357.3+04.0</TD><TD>260.85395833333337</TD><TD>-28.984777777777783</TD></TR>
+<TR><TD>PNG 357.4-03.2</TD><TD>268.1435416666666</TD><TD>-32.76436111111111</TD></TR>
+<TR><TD>PNG 357.4-03.5</TD><TD>268.4087916666666</TD><TD>-32.98138888888888</TD></TR>
+<TR><TD>PNG 357.4-04.6</TD><TD>269.636125</TD><TD>-33.47683333333333</TD></TR>
+<TR><TD>PNG 357.5+03.1</TD><TD>261.8512916666666</TD><TD>-29.353611111111103</TD></TR>
+<TR><TD>PNG 357.5+03.2</TD><TD>261.74941666666655</TD><TD>-29.258805555555547</TD></TR>
+<TR><TD>PNG 357.6+01.0</TD><TD>263.93187499999993</TD><TD>-30.35805555555555</TD></TR>
+<TR><TD>PNG 357.6+01.7</TD><TD>263.1955833333333</TD><TD>-30.004138888888885</TD></TR>
+<TR><TD>PNG 357.6+02.6</TD><TD>262.43029166666656</TD><TD>-29.546944444444453</TD></TR>
+<TR><TD>PNG 357.6-03.3</TD><TD>268.3200416666666</TD><TD>-32.677944444444435</TD></TR>
+<TR><TD>PNG 357.9-03.8</TD><TD>269.05724999999995</TD><TD>-32.626027777777786</TD></TR>
+<TR><TD>PNG 357.9-05.1</TD><TD>270.3432083333333</TD><TD>-33.29561111111111</TD></TR>
+<TR><TD>PNG 358.0+02.6</TD><TD>262.59870833333326</TD><TD>-29.159444444444432</TD></TR>
+<TR><TD>PNG 358.0+07.5</TD><TD>258.12579166666666</TD><TD>-26.42580555555555</TD></TR>
+<TR><TD>PNG 358.0+09.3</TD><TD>256.443875</TD><TD>-25.400416666666658</TD></TR>
+<TR><TD>PNG 358.0-05.1</TD><TD>270.42749999999995</TD><TD>-33.25491666666665</TD></TR>
+<TR><TD>PNG 358.2+03.5</TD><TD>261.88608333333326</TD><TD>-28.519527777777764</TD></TR>
+<TR><TD>PNG 358.2+03.6</TD><TD>261.83570833333323</TD><TD>-28.46422222222221</TD></TR>
+<TR><TD>PNG 358.2+04.2</TD><TD>261.217375</TD><TD>-28.098583333333327</TD></TR>
+<TR><TD>PNG 358.2-01.1</TD><TD>266.51216666666664</TD><TD>-31.05888888888889</TD></TR>
+<TR><TD>PNG 358.3+01.2</TD><TD>264.2525416666667</TD><TD>-29.671472222222224</TD></TR>
+<TR><TD>PNG 358.3+03.0</TD><TD>262.420625</TD><TD>-28.67530555555556</TD></TR>
+<TR><TD>PNG 358.3-02.5</TD><TD>267.93641666666656</TD><TD>-31.600055555555553</TD></TR>
+<TR><TD>PNG 358.3-21.6</TD><TD>289.34662499999996</TD><TD>-39.613055555555555</TD></TR>
+<TR><TD>PNG 358.4+03.3</TD><TD>262.17412499999995</TD><TD>-28.455361111111106</TD></TR>
+<TR><TD>PNG 358.5+02.6</TD><TD>262.9455416666666</TD><TD>-28.699166666666656</TD></TR>
+<TR><TD>PNG 358.5+02.9</TD><TD>262.626875</TD><TD>-28.599027777777767</TD></TR>
+<TR><TD>PNG 358.5+03.7</TD><TD>261.94612499999994</TD><TD>-28.184249999999995</TD></TR>
+<TR><TD>PNG 358.5+05.4</TD><TD>260.29849999999993</TD><TD>-27.191027777777773</TD></TR>
+<TR><TD>PNG 358.5-02.5</TD><TD>268.04037500000004</TD><TD>-31.500944444444443</TD></TR>
+<TR><TD>PNG 358.5-04.2</TD><TD>269.7600833333333</TD><TD>-32.362333333333325</TD></TR>
+<TR><TD>PNG 358.5-07.3</TD><TD>273.0132916666666</TD><TD>-33.86680555555556</TD></TR>
+<TR><TD>PNG 358.6+01.8</TD><TD>263.8084583333333</TD><TD>-29.05305555555554</TD></TR>
+<TR><TD>PNG 358.6+07.8</TD><TD>258.1633749999999</TD><TD>-25.72561111111111</TD></TR>
+<TR><TD>PNG 358.6-05.5</TD><TD>271.23337499999997</TD><TD>-32.901</TD></TR>
+<TR><TD>PNG 358.7+05.2</TD><TD>260.6179583333333</TD><TD>-27.1431111111111</TD></TR>
+<TR><TD>PNG 358.7-02.7</TD><TD>268.40574999999995</TD><TD>-31.42583333333333</TD></TR>
+<TR><TD>PNG 358.7-05.2</TD><TD>270.97362499999997</TD><TD>-32.69391666666665</TD></TR>
+<TR><TD>PNG 358.8+03.0</TD><TD>262.78891666666664</TD><TD>-28.25019444444444</TD></TR>
+<TR><TD>PNG 358.8+04.0</TD><TD>261.78958333333327</TD><TD>-27.739999999999995</TD></TR>
+<TR><TD>PNG 358.8+04.1</TD><TD>261.72875</TD><TD>-27.67805555555555</TD></TR>
+<TR><TD>PNG 358.8-00.0</TD><TD>265.6770833333333</TD><TD>-29.859833333333327</TD></TR>
+<TR><TD>PNG 358.9+03.2</TD><TD>262.68274999999994</TD><TD>-28.068194444444444</TD></TR>
+<TR><TD>PNG 358.9+03.4</TD><TD>262.5122083333333</TD><TD>-27.9898611111111</TD></TR>
+<TR><TD>PNG 358.9-00.7</TD><TD>266.4902916666667</TD><TD>-30.2001111111111</TD></TR>
+<TR><TD>PNG 358.9-03.7</TD><TD>269.54612499999996</TD><TD>-31.715861111111106</TD></TR>
+<TR><TD>PNG 359.0+02.8</TD><TD>263.094</TD><TD>-28.24177777777778</TD></TR>
+<TR><TD>PNG 359.0-04.1</TD><TD>269.98662499999995</TD><TD>-31.90955555555554</TD></TR>
+<TR><TD>PNG 359.0-04.8</TD><TD>270.69499999999994</TD><TD>-32.158611111111114</TD></TR>
+<TR><TD>PNG 359.1+15.1</TD><TD>252.14125</TD><TD>-21.011</TD></TR>
+<TR><TD>PNG 359.1-01.7</TD><TD>267.5750416666666</TD><TD>-30.582083333333316</TD></TR>
+<TR><TD>PNG 359.1-02.3</TD><TD>268.19425000000007</TD><TD>-30.829055555555556</TD></TR>
+<TR><TD>PNG 359.1-02.9</TD><TD>268.77599999999995</TD><TD>-31.20625</TD></TR>
+<TR><TD>PNG 359.2+01.2</TD><TD>264.76225</TD><TD>-28.943722222222217</TD></TR>
+<TR><TD>PNG 359.2+04.7</TD><TD>261.4347083333333</TD><TD>-26.963333333333328</TD></TR>
+<TR><TD>PNG 359.2-33.5</TD><TD>304.8663333333333</TD><TD>-41.52499999999999</TD></TR>
+<TR><TD>PNG 359.3+01.4</TD><TD>264.67574999999994</TD><TD>-28.712749999999986</TD></TR>
+<TR><TD>PNG 359.3+03.6</TD><TD>262.56008333333324</TD><TD>-27.505722222222218</TD></TR>
+<TR><TD>PNG 359.3-00.9</TD><TD>266.98658333333333</TD><TD>-29.997972222222213</TD></TR>
+<TR><TD>PNG 359.3-01.8</TD><TD>267.828875</TD><TD>-30.398222222222216</TD></TR>
+<TR><TD>PNG 359.3-03.1</TD><TD>269.1084583333334</TD><TD>-31.072972222222223</TD></TR>
+<TR><TD>PNG 359.4+02.3</TD><TD>263.8134583333333</TD><TD>-28.118583333333323</TD></TR>
+<TR><TD>PNG 359.4-03.4</TD><TD>269.55308333333335</TD><TD>-31.135527777777778</TD></TR>
+<TR><TD>PNG 359.5+02.6</TD><TD>263.55808333333334</TD><TD>-27.93341666666666</TD></TR>
+<TR><TD>PNG 359.6+02.2</TD><TD>264.0595416666666</TD><TD>-28.01266666666666</TD></TR>
+<TR><TD>PNG 359.6-04.8</TD><TD>271.0290833333333</TD><TD>-31.65363888888889</TD></TR>
+<TR><TD>PNG 359.7-01.8</TD><TD>268.02275</TD><TD>-30.08822222222221</TD></TR>
+<TR><TD>PNG 359.7-02.6</TD><TD>268.90049999999997</TD><TD>-30.559027777777768</TD></TR>
+<TR><TD>PNG 359.7-04.4</TD><TD>270.72029166666664</TD><TD>-31.399305555555554</TD></TR>
+<TR><TD>PNG 359.8+02.4</TD><TD>263.9443749999999</TD><TD>-27.71794444444444</TD></TR>
+<TR><TD>PNG 359.8+03.7</TD><TD>262.6943333333333</TD><TD>-27.098972222222226</TD></TR>
+<TR><TD>PNG 359.8+05.2</TD><TD>261.3259999999999</TD><TD>-26.210527777777774</TD></TR>
+<TR><TD>PNG 359.8+05.6</TD><TD>261.00620833333335</TD><TD>-25.989833333333326</TD></TR>
+<TR><TD>PNG 359.8+06.9</TD><TD>259.80324999999993</TD><TD>-25.28780555555555</TD></TR>
+<TR><TD>PNG 359.8-07.2</TD><TD>273.710375</TD><TD>-32.61925</TD></TR>
+<TR><TD>PNG 359.9+05.1</TD><TD>261.4309583333333</TD><TD>-26.1983611111111</TD></TR>
+<TR><TD>PNG 359.9-04.5</TD><TD>270.9687916666666</TD><TD>-31.29586111111111</TD></TR>
+<TR><TD>PNG 359.9-05.4</TD><TD>271.83070833333335</TD><TD>-31.715027777777756</TD></TR>
+</TABLEDATA>
+</DATA>
+</TABLE>
+</RESOURCE>
+</VOTABLE>
