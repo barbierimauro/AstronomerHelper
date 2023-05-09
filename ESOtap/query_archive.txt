@@ -1,0 +1,56 @@
+select only MUSE datacubes
+
+SELECT s_ra,s_dec,target_name 
+from ivoa.ObsCore 
+where instrument_name like 'MUSE' 
+and dataproduct_type like 'cube' 
+and target_name not like 'SKY%'
+
+select HARPS data
+
+SELECT s_ra,s_dec,target_name 
+from ivoa.ObsCore 
+where instrument_name like 'HARPS' 
+
+
+count HARPS spectra per target 
+
+SELECT count(*) as N,target_name 
+from ivoa.ObsCore 
+where instrument_name like 'HARPS'  
+group by target_name order by N desc
+
+
+count the number of reduced observation per target and per instrument
+
+SELECT count(*), instrument_name
+FROM ivoa.ObsCore 
+WHERE target_name like 'saturn'
+GROUP BY instrument_name  
+
+
+count the number of raw observation per target and per instrument
+
+select count(*) as N, instrument
+FROM dbo.raw 
+WHERE dp_cat like 'SCIENCE'
+AND object like 'europa'
+GROUP BY instrument 
+ORDER BY n DESC
+
+how many U band reduced images are available 
+
+SELECT count(*)
+from ivoa.ObsCore 
+where em_max <=4e-7  
+and obstech like 'image'
+and dataproduct_subtype like 'exposure'
+
+which filters where used and how many times 
+
+SELECT count(*), filter_path
+from dbo.raw 
+where dp_tech like 'image'
+and dp_type in ('STD','OBJECT')
+group by filter_path
+order by filter_path asc

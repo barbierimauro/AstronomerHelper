@@ -1,0 +1,62 @@
+tap_vizier=pyvo.DAL.TAPService('http://TAPVizieR.u-strasbg.fr/TAPVizieR/tap/
+')
+
+result=tap_vizier.search("
+SELECT top 10 *
+FROM \"II/370/xmmom5s\"
+WHERE nobs=1
+").to_table
+
+
+XMMOM, ID, RAJ2000, DEJ200, epos, Nobs,
+UVW2mAB, UVM2mAB, UvW1mAB, UmAB, BmAB, VmAB
+e_UVW2mAB, e_UVM2mAB, e_UvW1mAB, e_UmAB, e_BmAB, e_VmAB
+
+
+from astroquery.xmatch import XMatch
+
+mass_psc.write('Data/2MASS_PSC.vot', format='votable', overwrite=True)
+sdss_results[0].write('Data/SDSS_DR9.vot', format='votable', overwrite=True)
+
+sdss_mass = XMatch.query(cat1=open('Data/2MASS_PSC.vot'),
+                         cat2='vizier:V/139/sdss9',
+                         max_distance=4 * u.arcsec, 
+                         colRA1='RAJ2000', colDec1='DEJ2000')
+sdss_mass
+
+
+
+
+
+ESO_TAP_OBS = "http://archive.eso.org/tap_obs"
+tapobs = tap.TAPService(ESO_TAP_OBS)
+
+# --- Query TAP for science raw
+print("Querying the ESO TAP service at %s" %(ESO_TAP_OBS))
+
+query="""SELECT top 4 dp_id
+FROM dbo.raw
+WHERE prog_id='%s'
+AND dp_cat='SCIENCE'
+""" % (run_id)
+rawframes = tapobs.search(query=query)
+print(rawframes.to_table())
+print("")
+
+
+
+SIMBAD
+
+SELECT top 100
+oid, main_id, ra, dec, nbRef
+FROM basic
+JOIN ids ON oid = oidref
+WHERE ids like '%TD1%';
+
+SELECT 
+oid, main_id, ra, dec, nbRef, tutti.ids
+FROM basic, ids as tutti
+JOIN ids ON oid = tutti.oidref
+WHERE tutti.ids like '%TD1%'
+
+

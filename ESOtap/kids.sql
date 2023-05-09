@@ -1,0 +1,19 @@
+select RAJ2000,DECJ2000,ID,SG_FLAG,SG2DPHOT,class_star,S_ELLIPTICITY,MAG_GAAP_u,MAG_GAAP_g,MAG_GAAP_r,MAG_GAAP_i,MAG_GAAP_z,MAG_GAAP_y,MAG_GAAP_j,MAG_GAAP_h,MAG_GAAP_ks,MAGERR_GAAP_u,MAGERR_GAAP_g,MAGERR_GAAP_r,MAGERR_GAAP_i,MAGERR_GAAP_z,MAGERR_GAAP_y,MAGERR_GAAP_j,MAGERR_GAAP_h,MAGERR_GAAP_ks,COLOUR_GAAP_u_g,COLOUR_GAAP_g_r,COLOUR_GAAP_r_i,COLOUR_GAAP_i_z,COLOUR_GAAP_z_y,COLOUR_GAAP_y_j,COLOUR_GAAP_j_h,COLOUR_GAAP_h_ks,EXTINCTION_u,EXTINCTION_g,EXTINCTION_r,EXTINCTION_i,EXTINCTION_z,EXTINCTION_y,EXTINCTION_j,EXTINCTION_h,EXTINCTION_ks
+ from
+KiDS_DR4_1_ugriZYJHKs_cat_fits
+where MAG_GAAP_u between 0 and 22
+and MAG_GAAP_g between 0 and 22
+and MAG_GAAP_r between 0 and 22
+and MAG_GAAP_i between 0 and 22
+and MAG_GAAP_z between 0 and 22
+and MAG_GAAP_y between 0 and 22
+and MAG_GAAP_j between 0 and 22
+and MAG_GAAP_h between 0 and 22
+and MAG_GAAP_ks between 0 and 22
+and RAJ2000 between 0 and 360
+and DECJ2000 between 0 and 360
+and class_star between 0 and 1
+
+
+
+

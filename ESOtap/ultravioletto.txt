@@ -1,0 +1,75 @@
+UAC = United ultrAviolet Catalogs
+
+distanza di correlazione 15 arcsec
+le controparti gaia con bp>15 sono chiaramente erronee
+
+UIT 
+J_ApJS_104_287
+bande passanti da ADPS
+http://ulisse.pd.astro.it/Astro/ADPS/Systems/Sys_139/index_139.html 
+sono state divise le osservazioni per ogni filtro e classe di oggetto
+FATTO
+
+MSX
+II_269
+sono stati divise le osservazioni in NUV e IUW
+FATTO
+
+CELESCOPE
+http://ulisse.pd.astro.it/Astro/ADPS/Systems/Sys_061/index_061.html
+II_6
+FATTO
+
+
+LUT
+massima distanza 5 arcsec
+le sorgenti con bp>13.5 sono spurie
+FATTO
+
+ANS
+massima distanza 15 arcsec
+le sorgenti con bp>11 sono spurie
+FATTO
+
+TD1
+massima distanza 15 arcsec
+le sorgenti con bp>11 sono spurie
+FATTO
+
+
+Henize
+massima distanza 15 arcsec
+le sorgenti con bp>10 sono spurie
+
+
+S201
+massima distanza 15 arcsec
+la fotometria fa cagare !!
+FATTO
+Monoceros  wl=1367       ,  602 obj
+--
+Orion      wl=1367 & 1519,  625 obj
+--
+zeta Sco   wl=1375 & 1781,  541 obj
+M8         wl=1375 & 1781,  780 obj
+--
+rho Oph    wl=1375 & 1781,  121 obj
+gal cen    wl=1375 & 1781,  649 obj
+Sco+Sag+GC wl=1375 & 1781, 1500 obj
+
+
+
+FAUST
+da fare vari cataloghi
+
+OAO2
+531 stelle in 12 filtri
+e' lo stesso satellite di Celescope: cosa fare ?
+
+
+SWIFT/UVOT
+II/339/uvotssc1
+da fare
+
+GALEX DR7
+da fare

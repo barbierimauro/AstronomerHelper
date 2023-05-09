@@ -1,0 +1,327 @@
+!NULL_object & !contains(object,"NAME") & !contains(object,"OBJECT")& !contains(object,"ACQ")& !contains(object,"SCREEN")& !contains(object,"FLAT")& !contains(object,"NONE")& !contains(object,"NOT_DEFINED")& !contains(object,"OFF")& !contains(object,"[]")& !contains(object,"\"")& !contains(object,"MASK")& !contains(object,"---")& !contains(object,"SOURCE")& !contains(object,"IMAGING")& !contains(object,"FIELD")& !contains(object,"UNKN")& !contains(object,"POINT")? object :  ""
+!NULL_target & !contains(target,"NAME") & !contains(target,"OBJECT")& !contains(target,"ACQ")& !contains(target,"SCREEN")& !contains(target,"FLAT")& !contains(target,"NONE")& !contains(target,"NOT_DEFINED")& !contains(target,"OFF")& !contains(target,"[]")& !contains(target,"\"")& !contains(target,"MASK")& !contains(target,"---")& !contains(target,"SOURCE")& !contains(target,"IMAGING")& !contains(target,"FIELD")& !contains(target,"UNKN")& !contains(target,"POINT")? target :  ""
+
+
+
+
+
+
+
+
+
+select distinct object, target, count(*) as n
+from dbo.raw
+where dp_cat like 'science%'
+and release_date < '2022-07-01'
+and (object is not null or target is not null)
+group by object, target
+order by n desc
+
+SELECT DISTINCT instrument, count(*) as n
+FROM dbo.raw
+WHERE ((dp_cat LIKE 'SCIENCE%' AND (dp_type LIKE 'OBJECT%' OR dp_type LIKE 'STAR%')) OR (dp_cat LIKE 'CAL%' AND dp_type LIKE 'STD%'))
+AND ra_pnt BETWEEN 1e-7 AND 360
+AND dec_pnt BETWEEN -90 AND 55
+AND tel_alt BETWEEN 10 AND 90
+AND tel_az BETWEEN 1e-7 AND 360
+AND exposure > 0
+GROUP BY instrument
+ORDER BY n
+
+
+
+
+SELECT DISTINCT telescope, count(*) as n
+FROM dbo.raw
+WHERE ((dp_cat LIKE 'SCIENCE%'
+AND dp_type LIKE 'OBJECT%') OR (dp_cat LIKE 'CAL%'
+AND dp_type LIKE 'STD%'))
+AND ra_pnt BETWEEN 1e-7 AND 360
+AND dec_pnt BETWEEN -90 AND 55
+AND tel_alt BETWEEN 10 AND 90
+AND tel_az BETWEEN 1e-7 AND 360
+AND exposure > 0
+GROUP BY telescope
+ORDER BY n
+
+UT4 	32
+ESO-VLT-Uv 	57
+MPG/ESO-2.2 	3165
+VST 	55892
+ESO-3P6 	72655
+APEX-12m 	134582
+ESO-VST 	323805
+ESO-VLT-U2 	643123
+ESO-NTT 	753740
+ESO-VLT-U4 	824815
+ESO-VLT-U3 	1090878
+ESO-VLT-U1 	1115095
+MPI-2.2 	1313372
+VISTA 	2056255
+
+
+
+SELECT DISTINCT prog_type, count(*) as n
+FROM dbo.raw
+WHERE ((dp_cat LIKE 'SCIENCE%'
+AND dp_type LIKE 'OBJECT%') OR (dp_cat LIKE 'CAL%'
+AND dp_type LIKE 'STD%'))
+AND ra_pnt BETWEEN 1e-7 AND 360
+AND dec_pnt BETWEEN -90 AND 55
+AND tel_alt BETWEEN 10 AND 90
+AND tel_az BETWEEN 1e-7 AND 360
+AND exposure > 0
+GROUP BY prog_type
+ORDER BY n
+
+6 	8923
+  	22970
+7 	44196
+5 	55495
+3 	66510
+2 	147527
+1 	235090
+4 	2572330
+0 	5234423
+
+SELECT count(*)
+FROM dbo.raw
+WHERE dp_cat LIKE 'SCIENCE%'
+AND dp_tech LIKE 'IMA%'
+AND dp_type LIKE 'OBJECT%'
+AND ra_pnt BETWEEN 1e-7 AND 360
+AND dec_pnt BETWEEN -90 AND 54
+AND tel_alt BETWEEN 1e-7 AND 90
+AND tel_az BETWEEN 1e-7 AND 360
+AND (slit_path LIKE 'FREE' OR slit_path IS null)
+AND exposure > 0.001
+
+5057659
+
+
+SELECT count(*)
+FROM dbo.raw
+WHERE dp_cat LIKE 'CAL%'
+AND dp_tech LIKE 'IMA%'
+AND dp_type LIKE 'STD%'
+AND ra_pnt BETWEEN 1e-7 AND 360
+AND dec_pnt BETWEEN -90 AND 54
+AND tel_alt BETWEEN 1e-7 AND 90
+AND tel_az BETWEEN 1e-7 AND 360
+AND (slit_path LIKE 'FREE' OR slit_path IS null)
+AND exposure > 0.001
+
+614430
+
+
+SELECT DISTINCT dp_tech, count(*) AS n
+FROM dbo.raw
+GROUP BY dp_tech
+ORDER BY n DESC
+
+IMAGE 	14598610
+IMAGE,JITTER 	2461398
+ECHELLE 	2212447
+SPECTRUM 	1991448
+IFU 	1247003
+INTERFEROMETRY 	1169223
+MOS 	1020063
+ECHELLE,SLIT 	336120
+POLARIMETRY 	318029
+ECHELLE,SLIT,NODDING 	290680
+IMAGE,OFFSET 	185624
+CONTINUUM 	174460
+MXU    163825
+
+
+SELECT DISTINCT dp_type, count(*) AS n
+FROM dbo.raw
+GROUP BY dp_type
+ORDER BY n DESC
+
+OBJECT 	9267350
+SKY 	2573835
+DARK 	1830093
+BIAS 	1736241
+FLAT,LAMP 	1577735
+STD 	1181901
+FLAT 	830393
+OTHER 	614926
+LAMP,AFC 	547639
+FLAT,SKY 	526236
+LAMP,FLAT 	489007
+WAVE,LAMP 	387969
+SLIT 	383413
+STAR,WAVE,G2 	333344
+FLAT,LAMP,DETCHECK 	319913
+WAVE 	306712
+CAL 	192007
+DISTORTION,FIBRE,NS 	167197
+OBJECT,POINT 	165692
+PTC,BIAS,PIXCHAR 	162035
+FOCUS 	159972
+3P2V 	151505
+LAMP,WAVE 	136068
+STD,FLUX 	125460
+LAMP,DFLAT 	120047
+OBJECT,SKY 	114028
+STD,TELLURIC 	110959
+PTC,BIAS,DETCHAR 	109875
+LAMP,QFLAT 	102603
+FRINGE,OBJECT 	101149
+DARK,DETCHECK 	94418
+SLIT,OBJECT 	87874
+FLAT,SCREEN 	87196
+LAMPFLAT 	85963
+DOME 	85701
+POINT 	80537
+FLAT,LINEARITY,DETCHAR 	77825
+SKY,FLAT 	77408
+FLAT,TWILIGHT 	74890
+LAMP,FMTCHK 	68976
+WAVE,SPECTEMPL 	68964
+SKYFLAT 	68115
+WAVE,3TEL 	67386
+LAMP,LAMP,TUN 	60923
+FLAT,DOME 	58315
+LAMP 	53929
+LINEARITY,LAMP 	46554
+
+SELECT DISTINCT dp_cat, count(*) AS n
+FROM dbo.raw
+GROUP BY dp_cat
+ORDER BY n DESC
+
+CALIB 	16420960
+SCIENCE 	11619730
+ACQUISITION 	936695
+
+
+SELECT DISTINCT instrument, count(*)
+FROM dbo.raw
+WHERE dp_cat LIKE 'SCIENCE%'
+AND dp_tech LIKE 'IMA%'
+AND ra BETWEEN 1e-7 AND 360
+AND dec BETWEEN -90 AND 54
+AND tel_alt BETWEEN 1e-7 AND 90
+AND tel_az BETWEEN 1e-7 AND 360
+AND (slit_path LIKE 'FREE' OR slit_path IS null)
+AND exposure > 0.001
+GROUP BY instrument
+ORDER BY instrument
+
++-------------+-----------+
+| instrument  | COUNT_ALL |
++-------------+-----------+
+|             | 54        |
+| CRIRES      | 5         |
+| EFOSC       | 138300    |
+| EFOSC/1.8   | 1327      |
+| EFOSC/2.19  | 637       |
+| EFOSC/2.4   | 247       |
+| EFOSC/2.9   | 1118      |
+| EFOSC/3.11  | 878       |
+| EFOSC/3.2   | 549       |
+| EFOSC/3.3   | 510       |
+| EFOSC/3.4   | 295       |
+| EFOSC/3.8   | 515       |
+| EFOSC/4.0   | 3         |
+| EFOSC/4.6   | 836       |
+| EMMI        | 15824     |
+| EMMI/1.11   | 1387      |
+| EMMI/1.27   | 101       |
+| EMMI/1.29   | 92        |
+| EMMI/1.3    | 9         |
+| EMMI/1.30   | 19        |
+| EMMI/1.34   | 4181      |
+| EMMI/1.42   | 497       |
+| EMMI/1.46   | 3         |
+| EMMI/1.47   | 1880      |
+| EMMI/1.57   | 770       |
+| EMMI/1.6    | 2         |
+| EMMI/1.9    | 1363      |
+| EMMI/2.0    | 13        |
+| EMMI/2.11   | 336       |
+| EMMI/2.15   | 1641      |
+| EMMI/2.3    | 3990      |
+| EMMI/2.6    | 757       |
+| EMMI/3.1    | 8         |
+| EMMI/3.15   | 36        |
+| EMMI/3.17   | 1666      |
+| EMMI/3.2    | 506       |
+| EMMI/5.11   | 2833      |
+| EMMI/5.2    | 13        |
+| EMMI/5.7    | 467       |
+| FORS1       | 35887     |
+| FORS2       | 232276    |
+| GROND       | 1107122   |
+| HAWKI       | 162094    |
+| ISAAC       | 373       |
+| MADD        | 6219      |
+| NAOS+CONICA | 413200    |
+| OMEGACAM    | 337575    |
+| SHOOT       | 539       |
+| SINFONI     | 479       |
+| SOFI        | 765694    |
+| SPHERE      | 106284    |
+| SUSI        | 2650      |
+| SUSI/1.26   | 2         |
+| SUSI/1.27   | 73        |
+| SUSI/1.29   | 1         |
+| SUSI/1.34   | 475       |
+| SUSI/1.46   | 155       |
+| SUSI/1.47   | 6216      |
+| SUSI/2.11   | 342       |
+| SUSI/2.6    | 1792      |
+| SUSI/3.1    | 1         |
+| SUSI/3.17   | 9249      |
+| SUSI/3.2    | 220       |
+| SUSI/5.2    | 12        |
+| SUSI/5.7    | 5140      |
+| SUSI2       | 18540     |
+| VIMOS       | 92868     |
+| VIRCAM      | 1932313   |
+| VISIR       | 28202     |
+| WFI         | 114543    |
+| XSHOOTER    | 13274     |
++-------------+-----------+
+
+
+SELECT DISTINCT(instrument), COUNT(*)
+FROM dbo.raw
+WHERE dp_cat LIKE 'CALIB%'
+AND dp_type = 'BIAS'
+GROUP BY instrument
+ORDER BY instrument
+
+SELECT DISTINCT(instrument), COUNT(*)
+FROM dbo.raw
+WHERE dp_cat LIKE 'CALIB%'
+AND dp_type = 'FLAT%'
+GROUP BY instrument
+ORDER BY instrument
+
+SELECT DISTINCT instrument, dp_type, COUNT(*)
+FROM dbo.raw
+WHERE dp_cat LIKE 'CALIB%'
+AND dp_type like 'DARK%'
+GROUP BY instrument,dp_type
+ORDER BY instrument
+
+
+WITH GLATRanges As (
+  SELECT FLOOR(gal_lat/5.00)*5     As GLATFloor, FLOOR(gal_lat/5.00)*5 + 4 As GLATCeiling
+  FROM dbo.raw
+)
+SELECT GLATFloor,CONCAT(GLATFloor, ' to ', GLATCeiling) AS GLATRange, COUNT(*) AS GLATCount
+FROM GLATRanges
+GROUP BY GLATFloor, CONCAT(GLATFloor, ' to ', GLATCeiling)
+ORDER BY GLATFloor
+
+SELECT DISTINCT filter_path,instrument, COUNT(filter_path)
+FROM dbo.raw
+WHERE dp_cat LIKE 'SCIENCE%'
+AND dp_tech LIKE 'IMA%'
+AND filter_path LIKE 'U%'
+GROUP BY filter_path,instrument
+ORDER BY filter_path

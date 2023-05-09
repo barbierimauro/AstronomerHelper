@@ -1,0 +1,16 @@
+PN M 2-9                   B,Ha,OIII
+PN M 1-42                  B,V,R,I,Ha,Hb
+
+
+SELECT OID,main_id,basic.RA,basic.DEC,main_id,nbref,plx_value,rvz_radvel
+FROM basic 
+JOIN TAP_UPLOAD.acker92 ON simbad_name = main_id
+
+
+SELECT id2.id
+FROM ident AS id1 
+JOIN ident AS id2 USING(oidref)
+WHERE id1.id = 'M13';
+
+
+!NULL_ang_size ? parseDouble(split(ang_size[0])) : NULL
