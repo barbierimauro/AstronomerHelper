@@ -1,0 +1,604 @@
+# "A Modern Mean Dwarf Stellar Color and Effective Temperature Sequence"
+# http://www.pas.rochester.edu/~emamajek/EEM_dwarf_UBVIJHK_colors_Teff.txt
+# Eric Mamajek
+# Version 2022.04.16
+#
+# Much of the original content of this table was incorporated into
+# Table 5 of Pecaut & Mamajek (2013, ApJS, 208, 9;
+# http://adsabs.harvard.edu/abs/2013ApJS..208....9P), so that
+# reference should be cited until an updated version of the table is
+# published.  Parts of this table for A/F/G stars also appeared in
+# Table 3 of Pecaut, Mamajek, & Bubar (2012, ApJ 756, 154).  For
+# example, Table 5 of Pecaut & Mamajek did not include the absolute
+# magnitude and luminosity estimates, nor the properties of dwarfs of
+# types L, T, Y, or O3-O8.
+# The author's notes on standard stars and mean parameters for stars
+# for each dwarf spectral type can be found in the directory at:
+# http://www.pas.rochester.edu/~emamajek/spt/. See further notes and
+# caveats after the table. Colors are based on Johnson UBV, Tycho
+# BtVt, Cousins RcIc, Gaia DR2 G/Bp/Rp, Sloan izY, 2MASS JHKs,
+# MKO JK (for Y dwarfs), WISE W1/W2/W3/W4 photometry.
+# G-V color is Gaia DR2 G - Johnson V.
+#
+
+The adopted mean masses a for a given dwarf subtype are tentative.
+With only a few minor exceptions (mainly for b-y colors; see notes
+below), this is *not* a compilation of values adopted from similar
+tables published by other authors. The author's motivation was to
+construct a "modern" table of mean stellar parameters based on an
+*independent* survey of the literature and catalog values. In the
+process, I've made judgements on which stars and stellar
+classifications reflect the "modern" MK system.  You can get a sense
+of the messiness and care that went into this process by perusing the
+spectral type note files in the previously mentioned directory. This
+is an independently constructed compendium, and the author will make
+small adjustments, corrections, and add content periodically.  Values
+in the table marked by a asterisk (*) are very preliminary, and
+probably shouldn't be used for any serious calculations yet. -EEM
+
+Further notes by spectral class, followed by summaries of updates. 
+
+OB stars: 
+
+A major redux of the Q-method of dereddening in Oct 2011 results in
+some shifts to the color scale among the late-O/early-B stars.  There
+are no O-B2 stars within the Local Bubble (at least out to 75 pc; this
+is a long standing problem with empirical color calibrations,
+e.g. Johnson & Morgan 1953), so one must attempt some bootstrap some
+dereddening in order to empirically derive the intrinsic color
+sequence. To augment the samples of negligibly reddened stars within
+75 pc, I have taken a sample of stars which have measured neutral
+hydrogen (H I) column densities, as measured through modeling of Lyman
+alpha absorption in UV spectra (e.g. Bohlin et al. 1983), then
+estimated E(B-V) from adoption of the E(B-V)/N_HI relation from Savage
+& Mathis (1979; N(HI)/E(B-V) = 4.8e21 atoms/cm^2/mag). While there may
+be intrinsic scatter in the N(HI)/E(B-V) relation through the ISM, we
+consider this a useful statistical dereddening technique for getting
+at the intrinsic color sequence of hot dwarf stars. While the
+E(B-V)/N_HI relation is calibrated using E(B-V)s for hot stars that
+rely on an intrinsic SpT vs. color sequence (and hence one could
+object that there is some circularity in our calibration scheme), the
+*slope* of the relation mostly rely on the HI column densities for hot
+stars with relatively large reddenings - hence any zero-point issues
+in the color sequence at the <few hundredths of a magnitude level in
+the determination of the N(HI)/E(B-V) slope will be negligible, and
+will have negligible impact on our "dereddenings" (using N_HI) of our
+lightly reddened OB stars.
+
+To piece together the intrinsic Q vs. (B-V)o vs. (U-B)o sequence, we
+combine 3 samples: 
+
+(1) Stars from the Hipparcos catalog with S/N > 8 parallaxes that
+place the stars within 75 pc, and have "A0V" classifications, and
+which have both B-V and U-B photometry in Mermilliod(1991). These will
+define the curve in the B-V vs. U-B sequence near zero colors.
+
+(2) Stars with B class and V luminosity class in the Hipparcos catalog
+with S/N > 8 parallaxes that place the stars within 75 pc, and which
+have both B-V and U-B photometry in Mermilliod(1991). These mostly
+define the approximately linear color sequence between ~B3V and ~B9V. 
+
+(3) A subsample of O/early-B spectral standard dwarf and/or subgiant
+stars (V or IV luminosity classifications, preferentially within a few
+hundred pc) with UBV photometry in the Mermilliod Johnson photometry
+compendium, *and* an estimate of the neutral hydrogen column
+density. All of the notes on the dereddening of these hot stars and
+adopted input parameters are listed in the files (sorted by MK
+subtype) in the directory at:
+http://www.pas.rochester.edu/~emamajek/spt/.
+
+If one adopts the Q parameter formula:
+
+Q = (U-B) - 0.72*(B-V)
+
+We have confirmed the Johnson reddening slope - we independently
+estimate an average reddening slopes of E(U-B)/E(B-V) = 0.732+-0.010
+for the ensemble of all Hipparcos O8-B9 dwarfs with UBV photometry in
+the Mermilliod compendium of Johnson photometry. We retain a slope of
+0.72 for continuity with published estimates of the "Q" parameter.
+
+The final fits for OB stars (i.e. (U-B)o < 0) are:
+
+(B-V)o = -4.776008156728d-03 + 5.522012574154d-01*Q +
+1.151583004497d+00*Q^2 + 1.829921229667d+00*Q^3 +
+8.933113140506d-01*Q^4 [-0.32 < (B-V)o < 0.02]
+
+(U-B)o = 6.230566666312d-03 + 1.533217755592d+00*Q +
+1.385407188924d+00*Q^2 + 2.167355580182d+00*Q^3 +
+1.075207514655d+00*Q^4 [-1.13 < (U-B)o < 0.02]
+
+(U-B)o = -1.368272076317e-02 + 1.590637348534e+00*(B-V) -
+1.477363936224e+01*(B-V)^2 + 5.039982446611e+01*(B-V)^3 +
+5.472117191781e+02*(B-V)^4 + 9.445941583982e+02*(B-V)^5
+[rms = 0.042 mag; -0.32 < (B-V)o < 0.02]
+
+(B-V)o = 8.440163260524e-03 + 5.780296047218e-01*(U-B) +
+1.322981897905e+00*(U-B)^2 + 2.141912996160e+00*(U-B)^3 +
+1.531076773342e+00*(U-B)^4 + 4.212960258861e-01*(U-B)^5
+[rms = 0.016 mag; -1.13 < (U-B)o < 0.02] 
+
+The extinction at V-band was then calculates using the relation
+listed in Olson (1975): 
+
+A_V(Johnson) = 3.25*E(B-V) + 0.25*(B-V)o*E(B-V) + 0.05*E(B-V)^2)
+
+Our revised Q-method relations were used to deredden the OB stars.
+The calculated E(B-V) values were then used to deredden
+the VIJHK photometry so that we could determine the intrinsic color
+sequence for the hot stars.
+
+From the reddening parameters in the Asiago photometric database, we
+adopted the following reddening relations for our OB stars:
+
+A_I(Cousins) = E(B-V)*(1.805 + 0.024*E(B-V))
+A_J(2MASS)   = E(B-V)*(0.832 + 0.013*E(B-V))
+A_H(2MASS)   = E(B-V)*(0.527 + 0.009*E(B-V))
+A_Ks(2MASS)  = E(B-V)*(0.356 + 0.006*E(B-V)) 
+
+For typical late-O/early-B type stars with (B-V) ~ -0.3, and small
+extinctions (like the stars used for our calibrations), these
+relations translate to familiar ratios of total-to-selective
+extinction of:
+
+A_I/A_V  ~ 0.57 
+A_J/A_V  ~ 0.26
+A_H/A_V  ~ 0.17
+A_Ks/A_V ~ 0.11 
+
+We then deredden the combined UBVIJHKs photometry using these
+relations (and the updated Q-method calibration to calculate E(B-V)),
+and fit color sequences to the OB stars for those stars that had
+reddenings of E(B-V) < 0.3. This was only done for stars that had a
+Hipparcos multiplicity flag of Ncomp=1, 2MASS photometry quality flags
+of "AAA" for the JHKs photometry (i.e. the highest reliability level
+for all 3 near-IR bands), and V-I colors in Hipparcos (which are a mix
+of published Cousins V-I colors and values carefully interpolated
+using other published color information, see the ESA 1997 Hipparcos &
+Tycho volume).
+
+There are very few stars with (V-Ks) < -0.8 that satisfied all of our
+criteria, so their intrinsic colors are an extrapolation of these
+color relations (and the few points available seem to support the
+extrapolation, within the photometric uncertainties).
+
+M Dwarfs:
+
+I *highly* recommend that you use the colors in this table, and
+spectral standards recommended in the files in the directory:
+http://www.pas.rochester.edu/~emamajek/spt/. The M standards have
+changes significantly since the 1950s-1970s, and the 1990s era
+standards used by Kirkpatrick, Henry, and collaborators have been
+heavily used over the past two decades. So older compilations of
+colors/Teffs from the 1980s and early 1990s are likely to be out of
+date primarily due to shifts in the use of accepted standard stars.
+Indeed the "dancing" of choice of the standard stars among the M
+subtypes was one of the motivations for putting together this table.
+
+L/T/Y Dwarfs: 
+
+The Teffs for L/T dwarfs are drawn from the author's compiled list of
+published Teffs for such objects (each type listed had at least 5
+published Teff estimates for representative members of that
+temperature subclass). I do not yet have note files by each spectral
+subtype yet for the L/T/Y dwarfs.
+
+# UPDATES (I'm obviously calling the version #s by year.month.day)
+
+2011.5.11: updated B9.5V-A2V colors very slightly - fixed a minor,
+previously unaccounted for discontinuity in V-K vs. B-V sequence,
+which had minor <0.01 magnitude effects on other colors.
+
+2011.6.21: fixed typo V-I(F4V) = 0.412 => 0.476 (thanks Rahul Patel,
+Stony Brook). Slightly adjusted colors for G2V stars based on updated
+discussion on solar color in: http://www.pas.rochester.edu/~emamajek/sun.txt .
+
+2011.6.26: I've added what I consider to be good consensus values for
+V-band bolometric correction (BCv), absolute V magnitude (Mv) and
+bolometric luminosities (logL, normalized to Sun) for spectral types
+A0V through M7V. The values are discussed in the individual spectral
+type files at: http://www.pas.rochester.edu/~emamajek/spt/ .
+
+2011.6.28: updated Mv, logL for K/M stars by incorporating the
+sequence of V-Ks vs. Mv by fitting Neill Reid's photometry for CNS3
+(nearby) stars. The fit is (for 2.0 < V-K < 9.1): Mv =
+1.018502543505d+01 - 9.263270647616d+00*(V-Ks) +
+6.602690052816d+00*(V-Ks)^2 - 2.147548532548d+00*(V-Ks)^3 +
+3.874832372602d-01*(V-Ks)^4 - 3.536870767807d-02*(V-Ks)^5 +
+1.260298536591d-03*(V-Ks)^6, with the rms = 0.46 mag in Mv.  This
+compares fairly well to the V-Ks vs. Mv sequence of Johnson & Apps
+(2009). Most of the new Mv values for a given spectral type are
+averages of the Mv vs. V-Ks sequence (for an adopted V-Ks) based on
+the Johnson & Apps (2009) and custom fit to Reid's photometry
+compendium for CNS3 stars. Also made minor shifts to the colors for
+M7V (adopting V-Ks=7.30 instead of 7.23).
+
+2011.8.17: I've added a preliminary 2MASS Ks minus WISE W1 color (Ks -
+W1) sequence based on the colors of thousands of nearby unreddened
+BAFGKM stars. I found an intrinsic color sequence for (Ks-W1) between
+-0.05 < (H-Ks) < 0.30 of (Ks-W1) = 3.401881177741d-02 -
+1.331277406699e-01*(H-Ks) - 9.041089929636e-01*(H-Ks)^2 +
+2.500587445557e+01*(H-Ks)^3 - 5.485829130472e+01*(H-Ks)^4. One can
+safely adopt an intrinsic color (Ks-W1) = 0.03 across the AFG dwarf
+spectral classes.
+
+2011.8.22: added log10(Teff) and uncertainties (assuming one integer
+subtype; i.e. uncertainty in Teff for B5V is simply approximated as
+[Teff(B4V)-Teff(B6V)]/2). Added line for O9V and O9.5V. Recheck of BCv
+scale of OB stars taking into account Lanz & Hubeny (2003, 2007)
+resulted in minute changes to BCv and logL scale. [I have since
+removed Teff uncertainties for now]
+
+2011.8.23: added preliminary Teffs for T9V, T9.5V, and Y0V based on
+Cushing et al. 2011 (http://arxiv.org/abs/1108.4678).
+
+2011.8.24: added (b-y) colors for A stars from Crawford 1979. (b-y)
+for A0V-A2V from Gray & Garrison 1987, values adopted for 100 < vsini
+< 200 km/s bin. (b-y) colors for O9V-B9.5V stars are from Warren
+(1976; MNRAS, 174, 111). (b-y) colors for F2V, F5V-F9V from Crawford
+1975 (AJ, 80, 955), with F1V, F3V, F4V colors interpolated.
+
+2011.9.17: minor changes to Teff for F0V and F1V, and minor shift in
+colors for F1V.
+
+2011.10.4: Bolometric corrections have been edited slightly. The
+current values were calculated using the median value calculated for
+the adopted Teff from multiple published calibrations, including Lanz
+& Hubeny (2003), Code et al. (1976), Balona et al. (1994), Bessell et
+al. (1998), Bertone et al. (2004), Flower et al. (1996), Masana et
+al. (2006), and Casagrande et al. (2008). While this median value may
+not represent the latest, greatest estimate, it does benefit from
+representing a concensus of literature calibrations (some of which are
+dependent on the same model atmospheres, e.g. Kurucz), and is
+relatively insensitive to outlier calibrations. I have added the
+column "uBCv" which is a naive estimate of the *systematic*
+uncertainty in the BCv(Teff) scale, calculated using the standard
+deviation of the BCv values calculated using the various BCv
+calibrations as a function of Teff. The meaning of uBCv should not be
+taken too literally (more detailed models in the future could
+concievably shift the BCv scale at the high and low Teff ends?), but
+it is a reasonable estimate of the scatter in the BCv scale given the
+published literature. For the M stars, I explicitly omitted Flower
+(1996) in the calculations as its BCv(Teff) values were seriously at
+odds with the Casagrande et al. (2008) BCv scale. The Flower (1996)
+calibration relies heavily on giants, and the Casagrande et
+al. calibration draws from modern stellar atmosphere models for cool
+stars and a large body of optical/near-IR photometry for dwarf
+stars. For example, for Teff = 3300 K, Flower (1996) predicts BCv =
+-3.12 mag, while Casagrande et al. (2008) predicts BCv = -1.86
+mag. For cooler stars, the Flower (1996) curve should probably be
+avoided. Use of erroneous bolometric corrections for M dwarfs could
+systematically, and drastically, affect the inferred luminosities (and
+hence ages and masses) of pre-MS M stars.
+
+2011.10.8: updated intrinsic (B-V) and (U-B) colors for O9V and O9.5V
+stars using updated Q-method calculations in the spectral type files.
+I largely recover a color sequence close to the original Johnson
+publications.
+
+2011.10.9: updated and screened (B-V), (U-B), Mv, logL, BCv values for
+O9V-B3V stars. These take into account the updated Q-method
+calibration and some new estimates of Mv among the standard stars, and
+the observed main sequence for the Orion Nebula Cluster (ONC) and
+Upper Sco (US). Added lines for B1.5V and B2.5V subtypes (b-y colors
+are simply interpolated halfway between the integer subtypes).
+
+2011.10.28: used the revised Q-method to deredden Hipparcos OB stars,
+and then with the derived Av values, dereddened UBVIJHK magnitudes and
+calculated recalculated colors for O9V-B9.5V stars.
+
+2011.11.1: Rewrote discussion on deriving the intrinsic color sequence
+of hot OB stars using the Q-method and dereddening of lightly reddened
+stars. I've added a column of predicted masses and ages ("lgAge" =
+log10(age/yr)) for the mean HR diagram positions using adopted
+"protosolar" evolutionary tracks of Bertelli et al. (2009) [Z=0.017,
+Y=0.26].
+
+2011.11.21: Reordered columns in table. 
+
+2011.12.2: Removed systematic uncertainty in BCv ("uBCv") and
+estimated uncertainty in logTeff (for one subtype uncertainty). J-H
+and H-Ks colors for L dwarfs come from mean estimates calculated using
+2MASS photometry with <0.1 mag photometric errors for L and T dwarfs
+within 0.5 subtype of a given subtype in the DwarfArchives.org
+database.
+
+2011.12.3: Using data from DwarfArchives.org, I fit polynomials to
+absolute J magnitude vs. subtype for L and T dwarfs. I find (x =
+subtype; 0 = 'L0', 10 = 'T0'): M_J = 1.166986798277e+01 +
+1.175748107692e+00*x - 6.522381898768e-01*x^2 + 1.992648437227e-01*x^3
+- 2.904023621364e-02*x^4 + 2.134433926696e-03*x^5 -
+7.715657229082e-05*x^6 + 1.099122975611e-06*x^7. I calculated absolute
+K magnitude using this M_J relation and the adopted J-H and H-K colors
+for each subtype. Note that the scatter in the absolute J magnitude
+vs. subtype is +-0.4 mag, and only 27 L dwarfs and 34 T dwarfs define
+the relation.
+
+2011.12.13: Slight revision to adopted masses for FGK stars and added
+masses for M0-M6 dwarfs.
+
+2011.12.21: Minor changes to bolometric correction BCv values of A/F/G
+stars at the +-0.01 mag level, from inclusion of Masana+2006 and
+Bertone+2004 BC values into the consensus estimates of BCv(Teff).
+
+2012.8.17: Minor shifts to mass scale for K5V-M5V stars taking into
+account M_Ks vs. mass calibration from Delfosse+2000. Added mass
+estimates for late M dwarfs.
+
+2012.11.25: Updated preamble text. Added list of publications citing
+this online table.
+
+2012.11.26: Updated Teff and BCv scale for O9V-B3V based on new
+assessments of median Teffs (calculated and from literature) for
+standard stars. See corresponding updates to notes in individual
+spectral type note files in directory at:
+http://www.pas.rochester.edu/~emamajek/spt/ (e.g. O9V.txt, B0V.txt,
+etc.).
+
+2012.11.30: Updated/reviewed Teff, BCv, logL for B7V, B8V, A0V based
+on reassessment of median Teffs for standards.
+
+2012.12.01: Updated/reviewed Teff, BCv, logL for B8V, B9V, B9.5V based
+on reassessment of median Teffs for standards.
+
+2012.12.10: Slight revision to Y0V Teff based on results from Leggett
+et al. 2013 (and check on Teffs for T9 and T9.5):
+http://arxiv.org/abs/1212.1210. And added line for T8.5V based on
+Teffs from Burgasser et al. 2011, Warren et al. 2007, and Burningham
+et al. 2011.
+
+2012.12.27: The M dwarf files in /spt/ are undergoing a major check up
+regarding assessing the rank/quality of standards, median colors,
+bolometric corrections, Teffs, etc. I've made a preliminary update to
+the Teff scale. Changes to colors have been minor, however the effects
+on bolometric corrections has been sizeable due to incorporation of
+results from Casagrande08, Leggett01, and Golimowski04. The overhaul
+should be done within a few weeks.
+
+2012.12.29: Updated G2V colors and Teff. Updated notes at:
+http://www.pas.rochester.edu/~emamajek/spt/G2V.txt
+
+2013.02.16: Minor updates to logL and Mbol values. Checked logTeff values. 
+
+2013.04.23: Teff, logT, BCv, logL, and Mbol checked, with some minor
+updates, for all K subtypes. Minor update to Teff scale for M dwarfs.
+Added approximate V-K colors and Mv estimates for L0 through L3 dwarfs
+based on Dahn02 photometry.
+
+2013.06.01: Made subtle edits to color tables (usually at 0.001 mag
+level) and for thorough update before publication of much of the O9-M9
+part of the table in Pecaut & Mamajek (submitted to ApJ). Teff
+estimates were re-checked, and minor shifts made for some GKM stars
+(usually at <+-50 K level). Added V-Rc colors based on V-Ic to V-R
+trend from Caldwell et al. (1993, SAAO Circulars, 15, 1) for B through
+mid-M dwarfs, and based on average V-Ic and R-Ic colors for late Ms
+from Liebert & Gizis (2006, PASP, 118, 659). Made minors shifts to
+mass scale for late O and B stars based on including some results from
+eclipsing binary masses.
+
+2013.06.18: Updated parameters for B0.5V stars due to reexamination of
+data for Beta Sco Aa (standard star) and B3V (absolute magnitudes).
+
+2013.06.23: Slight shift in absolute magnitude and luminosity for M4V
+due to inclusion of individual abs mag estimates for M4V standards.
+
+2013.07.02: Minor shifts to adopted optical colors for M6/M7/M8/M9
+dwarfs. The mean V-Ic and V-Rc colors for these late M dwarfs are
+uncertain at the ~0.05-0.1 mag level.
+
+2013.07.05: Based on discussion in Pecaut & Mamajek (2013), we adopt
+Vmag = -26.71+-0.02 mag and BCv(Sun,G2V) = -0.11. This results in a
+systematic shift of the bolometric correction scale at the 0.04 mag
+level, where BCv(Sun) = -0.07 (old) => -0.11 (new). I have shifted all
+of the BCv and Mbol values to reflect this shift. The new solar BCv
+value is commensurate with the revised solar constant from Kopp & Lean
+(2011), and revised inferred solar luminosity (Mamajek 2012), and is
+calculated as the synthetic V magnitude needed to fit the revised
+solar irradiance constant (Kopp & Lean 2011) using Teff=5772K BT-Settl
+model using solar composition. Note that the fitting of BT-Settl
+models to the empirically derived solar colors from Ramirez12 leads to
+a solar effective temperature (5776+-22K) which is spot on with the
+measured value (5772K). A slight shift in adopted V magnitude (~0.03
+mag level, from V=-26.74 => -26.71) is needed to force the solar
+diameter measurements to that predicted from the SED-fitting.  The new
+adopted Vmag is similar to that recently derived by Engelke08 using
+several different solar spectrum calibrations (their solar V mags are
+consistent with V = -26.71+-0.01).
+
+I still need to make the minor shift to the luminosity scale. 
+
+2014.01.23: Updated introduction information to mention Pecaut &
+Mamajek (2013).
+
+2014.02.23: Included Tycho Bt-Vt colors based on a new analysis of B-V
+vs. Bt-Vt colors of nearby dwarfs stars plus a small number of lightly
+reddened O-early-B-type dwarfs.
+
+2014.03.26: Updated J-H (2MASS system) colors for L3-Y0 dwarfs based
+on examination of Figure 5 of Kirkpatrick et al. (2011, ApJS, 197,
+19). Updated Mv estimates for L0-L5 dwarfs based on Dieterich+2014 Mvs
+as function of V-Ks.
+
+2014.11.14: Fixed equation for Av as function of E(B-V) and
+(B-V)o. Thanks to Cameron Bell!
+
+2015.06.18: Updated main sequence masses incorporating luminosity-mass
+calibrations of Eker+2015.
+
+2015.07.03: Added Teffs, BCv, LogL, Mbol, Mv for O3-O8.5V stars. B-V
+and U-B should be considered preliminary, and are based mainly on
+previous compilations (e.g. Johnson, Schmidt-Kaler). Minor adjustments
+to Mbol, logL, Mv for B dwarfs.
+
+2015.09.22: Updated L0-T9 Teffs, logL, and M_J values to those from
+Fillipazzo+2015.
+
+2016.02.19: Minor updates to temperatures and colors of early M
+dwarfs; added M1.5V and M2.5V.
+
+2016.04.24: added Sloan/SDSS i-z, Sloan/SDSS-UKIDSS z-Y, and WISE
+W1-W2 color for M5-T8 dwarfs from Skrzypek+ (2015; A&A 574, A78). The
+Y, W1, W2 photometry is already on the Vega system.  The Sloan/SDSS iz
+photometry is originally on the AB magnitude system, but Skrzypek+2015
+converts it to Vega system using the offsets from Hewett+2006.
+
+2016.05.13: added estimates for M4.5V and M5.5V subtypes. Slight
+revisions to B-V, U-B colors for mid Ms.
+
+2016.06.09: minor updates to K7/K8/K9V colors, bolometric magnitudes
+and corrections, etc.
+
+2016.08.01: minor shift in Teff for F8V.
+
+2016.08.21: minor shifts in adopted masses for K8V-M9V incorporating
+the new empirical mass-luminosity relation of Benedict+2016.
+
+2017.01.27: added line for M3.5V and made minor shift to Teff for M3V.
+
+2017.02.03: added fiducial Teffs and approximate absolute magnitudes
+for Y0-Y2 based on data from Leggett+2015 and Schneider+2015.
+
+2017.03.03: added line for M6.5V, minor shifts to surrounding Teff
+scale based on updates to Teffs for M standards.
+
+2017.03.14: added W1-W2, W1-W3, W1-W4 colors based on dwarf locus as
+function of Tycho Bt-Vt color from Patel+2014 for B5V-K5V.
+
+2017.09.01: minor edits to parameters for K5V, K6V & K7V after further
+screening of standards of non-standard field stars with multiple
+classifications of that subtype, and updating of Teffs and related
+quantities. i-z colors for M0V-M4V added from West+(2011; 2011AJ....141...97W).
+Added lines for M8.5V, M9.5V.
+
+2017.09.12: updated V-Ic colors for M6V-L5V following Dahn+2017
+(https://arxiv.org/abs/1709.02729).
+
+2017.09.25: Add dwarf sequence radius estimates based on Teff, logL -
+rounded to 3 significant figures. updated M0V parameters and Teff for
+K7V, and added M0.5V. K8V and K9V parameters are not well defined
+compared to K7V and M0V, and so in favor of continuity, I've favored
+simple linear interpolation of parameters for K8V and K9V.
+
+2017.10.07: Check and minor edits to luminosities and masses of O8-B0V stars.
+
+2017.10.10: Added V-G (Johnson-GaiaDR1) color based on a sample of
+stars within 75pc (negligible reddening), using V magnitudes from
+Mermilliod (1991) compendium of homogenized Johnson photometry and G
+magnitudes from Gaia DR1. Scatter in B-V vs. V-G color for stars
+between roughly A0V and K0V is ~0.025 mag. Stars near the main
+sequence with -0.04 < B-V < 0.90 are well fit by this low-order
+polynomial fit: V-G = -8.3585362075385319d-02 +
+6.8599239804051382d-01*(B-V) - 6.2235530089560731d-01*(B-V)^2 +
+4.1223236421001502d-01*(B-V)^3. 
+
+2017.10.17: Minor shift to most values for K1V.
+
+2018.01.02: Updated (b-y) colors for OB dwarfs to values from
+Kaltcheva et al. (2017). (b-y) colors for B0.5V-B9.5V stars adopted
+from Table 2 (low-reddened sample), and (b-y) colors for O4.5V-B0V
+taken from Table 1 of that paper (with some smoothing of the values
+for the subtypes whose mean values were calculated for only a few
+stars).
+
+2018.03.07: Updated K7V parameters taking into account
+well-characterized non-standard K7V stars along with the K7V
+standards.
+
+2018.03.22: Minor shift to most values for K3V, accounting for
+properties of more standards and stars with multiple K3V
+classifications.
+
+2018.05.19: Estimated parameters for K0.5V, K1.5V, K2.5V, K3.5V,
+K4.5V, K5.5V, K6.5V subtypes based on properties of nearby dwarf stars
+classified by Gray et al. (2006) on Keenan system of standards, and
+made some minor edits to parameters for some K dwarfs.
+
+2018.05.24: Changed "H-K" => "H-Ks" in Table column headers to reflect
+explicitly that the 'K' is explicitly 2MASS Ks (both H and Ks are
+2MASS system).
+
+2018.08.02: Accounted for latest dynamical mass vs. absolute Ks magnitude
+trend for dwarfs of type K1-L2 from Mann et al. (2018).
+
+2018.08.03: added line for F9.5V. Best standard is bet Com.
+
+2018.12.10: preliminary G-V colors added based on median colors of
+spectral standards from K0V to L0V (with the M7-L0 sequence smoothed),
+and from the fits for (G-V) as functions of (B-V), (V-Rc), and (V-Ic)
+from Evans+2018 (where I've plugged in current best estimates for
+those colors as functions of spectral type into the Evans+2018
+polynomials and taken the average G-V). I need to look at this trend a
+bit more closely for AFG stars.
+
+2019.03.01: added Bp-Rp colors for late K and M dwarfs based on
+GaiaDR2 colors for standard and stars within 10 pc with vetted
+spectral types.  Absolute G magnitudes (M_G) and G-Rp colors on Gaia
+DR2 system for L dwarfs come from Smart+2019
+(https://arxiv.org/abs/1902.07571).
+
+2019.03.22: added Gaia DR2 Bp-Rp, G-Rp colors for B9 through late K
+dwarfs, and included absolute G magnitude (M_G) for types where V-G
+colors were determinable. Based on d<60pc dwarf stars between B9V and
+late K in SIMBAD - the majority of which now have either Gaia DR2
+parallaxes now, or revised Hipparcos parallaxes (for the bright ones).
+
+2019.09.24: Reviewed and updated Teffs for OBAFGKM stars. Updated BCv
+values for FGK dwarfs to put them on system where BCv=-0.085 for
+Teff=5772K(Sun) - adopting this value based on estimates from
+Casagrande+2018 once their values are placed on IAU2015 bolometric
+magnitude system (they adopt a slightly different Mbol(Sun) and Lsun
+than IAU values). Reviewed Teff, Mv, Mbol, logL, Rad values and made
+some minor updates. Removed 0.5-subtype K dwarf entries (will review
+these and reassess whether these are worth including again).
+
+2019.10.18: For OB dwarfs, updated Teff, BCv, logL, Mbol, Rad.
+2019.11.03: For M dwarfs, updated Teff, logL, Mv, Rad, Mass.
+
+2020.02.07: For O3-B1 dwarfs, made minor shifts to U-B, B-V color
+sequences, Mv, HRD parameters (Mbol, logL, Teff, BCv, Rad).
+
+2020.04.02: Vetted and updated some masses for O through early L.  A
+good fit of log(Mass/Msun) for main sequence (V) stars as function of
+Mv between O7V and L2V for absolute magnitudes 20.9 < Mv < -4.8 is:
+a0 =  5.3132790322903922e-001
+a1 = -1.5853156020421624e-001
+a2 =  8.7346091280499586e-003
+a3 =  8.3698240396409276e-004
+a4 = -6.6566352189549794e-005
+a5 = -1.5435681229533762e-005
+a6 =  1.7714870318666100e-006
+a7 = -6.3188987403139114e-008
+a8 =  7.3812559571593096e-010
+log(M/Msun) = a0 + a1*Mv + a2*Mv^2 + a3*Mv^3 + a4*Mv^4 + a5*Mv^5 + a6*Mv^6 + a7*Mv^7 + a8*Mv^8
+
+2020.07.05: Minor shifts to HRD positions for B3V and B4V. Minor changes to B-V, Rad for M dwarfs.
+
+2020.08.06: Have done a full vetting of the Teff, Mv, V-Ks, J-H, and
+H-K values from O3 through L9 from the most recent estimates from the
+spectral type data files in directory
+http://www.pas.rochester.edu/~emamajek/spt/, and incorporated them
+into this table. g-r colors were added based on a mix of values from 1) Covey+2007,
+2) g-r values calculated from B-V colors using Bilir+2005 transformation, and
+3) g-r values calculated from R-I colors using Jordi+2006 transformation.
+
+2020.11.18: Have done a complete scrubbing of the adopted Gaia colors
+(Bp-Rp) and (G-Rp) for M dwarfs via comparison to colors for nearby
+dwarf standards and exemplars. (Bp-Rp) colors show a peak around M8.5V.
+
+2020.12.05: W1-W2 colors for T6V-Y4V adopted from polynomial trend of
+Kirkpatrick19.  WISE J1828+2650 was assigned Y2V and WISE J0855-0714
+assigned Y4V following Kirkpatrick20. Properties of late Ts and Ys
+draws heavily from Kirkpatrick19 and Kirkpatrick20.
+
+2021.03.02: Minor shifts to Mv, M_G, logL, Rad in K5V-M0V range.
+
+2022.04.08: Updated G-V colors for B1.5V-B9.5V stars based on fitting
+low reddening (E(B-V)<0.03) B dwarfs from Hipparcos catalog with plx >
+3 mas from Kervella+2019 catalog. For 627 B dwarfs with -0.79 < (V-Ks)
+< 0.10, I fit: (G-V) = 1.5662975867923815e-2 -
+4.5474915703530211e-2*(V-Ks) - 2.0632426850689073e-1*(V-Ks)^2 -
+1.0690949761461190e-1*(V-Ks)^3 (rms = 0.0148 mag).
+
+2022.04.16: Updated O dwarf masses. 
+
+# Please email me if you use the table in your research and/or have
+# any questions. - EEM
