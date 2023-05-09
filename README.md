@@ -1,4 +1,4 @@
-# EAstronomer Helper
+# Astronomer Helper
 
 This is a collection of software for working with astronomical data in FITS, CSV and other formats.
 
