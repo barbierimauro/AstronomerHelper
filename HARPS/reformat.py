@@ -1,78 +1,6 @@
 import pandas as pd
 import csv
-from fuzzywuzzy import fuzz, process
-import statistics
 import re
-
-
-class GlieseSearch:
-
-    def __init__(self, user_string, gliese_catalog):
-        self.user_string = user_string
-        self.gliese_catalog = gliese_catalog
-
-    def check_number_in_ranges(self, number):
-        if ((1 <= float(number) <= 915) or (1001 <= int(number) <= 2057) or (3001 <= int(number) <= 4388) or (9003 <= int(number) <= 9848)):
-            return True
-        return False
-
-    def normalize_input(self):
-        prefixes = ["Gliese", "gliese", "gj", "GJ", "Gl", "GL", "gl", "NN", "Wo"]
-        for prefix in prefixes:
-            if self.user_string.startswith(prefix):
-                self.user_string = self.user_string.replace(prefix, "GJ", 1)
-                break
-        return self.user_string
-
-    def find_best_matches(self, input_string, names_list):
-        methods = [fuzz.partial_ratio, fuzz.token_sort_ratio, fuzz.token_set_ratio, fuzz.ratio]
-        results = []
-
-        for name in names_list:
-            scores = [method(input_string, name) for method in methods]
-            median_score = statistics.median(scores)
-            results.append((name, median_score))
-
-        return sorted(results, key=lambda x: x[1], reverse=True)[:10]
-
-    def search(self):
-        normalized_string = self.normalize_input()
-
-        if normalized_string:
-            number = ''.join(c for c in normalized_string if c.isdigit() or c == '.')
-            if not self.check_number_in_ranges(number):
-                #print("Number is out of range")
-                label="GLIESE Number is out of range"
-                #return
-
-            if normalized_string in self.gliese_catalog:
-                #print("Exact match found:", normalized_string)
-                label=normalized_string
-            else:
-                best_matches = self.find_best_matches(normalized_string, self.gliese_catalog)
-                #for match, score in best_matches:
-                #    print("Match: {} with score: {}".format(match, score))
-                match, score = best_matches[0]
-                #print("Match: {} with score: {}".format(match, score))
-                label=match
-        else:
-            #print("Invalid input string")
-            label="GLIESE Invalid input string"
-        
-        return label
-
-
-
-
-
-
-
-
-
-# Load Gliese catalog outside of the class
-with open("gliese.csv", "r") as csvfile:
-    csvreader = csv.DictReader(csvfile)
-    correct_names = [row["correct_name"] for row in csvreader]
 
 # Load the data
 df = pd.read_csv('targets.csv')
@@ -85,7 +13,7 @@ replacements = {
     "$EPSILON$,CMA": 'EPS CMA',
     '$IOTA$,CAR': 'IOT CAR',
     'HD,151804': 'HD 151804',
-    'I,CAR': 'I CAR',
+    'I,CAR': 'V* I CAR',
     'BD+103022P':'TYC 964-1658-1',
     'BD+103022S':'TYC 964-160-1',
     'BD-013612P':'CSI-01 3612 1',
@@ -93,32 +21,51 @@ replacements = {
     'B-CD71-1579': 'CD-71 1579',
     'B-CD-80-28': 'CD-80 28',
     'B-TYC-8620': 'TYC 8620',
-    'B-V936-CEN': 'V936 CEN',
+    'B-V936-CEN': 'V* V936 CEN',
     'AHD187669': 'HD187669',
     'AHD231630': 'HD231630',
     'BHD104856': 'HD104856',
     'BHD312256': 'HD312256',
     'BHD327692': 'HD327692',
-    'BDCAP': 'BD CAP',
+    'BDCAP': 'V* BD CAP',
     'BD_12_4982_9.3' : 'BD-12 4982',
     'BD20594_PLEI':'BD+20 594',
     'LP771-95A':'BD-17 588A',
-    'LP_LIB': 'LP LIB',
-    'LP_MUS': 'LP MUS',
-    'LP_VIR': 'LP VIR',
+    'LP_LIB': 'V* LP LIB',
+    'LP_MUS': 'V* LP MUS',
+    'LP_VIR': 'V* LP VIR',
     'LPV-41682':'OGLE LMC-LPV-41682',
     'LPV41682':'OGLE LMC-LPV-41682',
     'TIC92304420 - 03H22':'TIC92304420',
     'HR4963SPHOT':'HR 4963',
-    'HR CAR':'HR CAR',
-    'HRCAR':'HR CAR',
-    'HR-CAR':'HR CAR',
-    'GL-CAR':'GL CAR',
-    'GI581' : 'GJ581'
-    'ROSS 128':'ROSS 128'
-#    '':'',
-#    '':'',
-#    '':'',
+    'HR CAR':'V* HR CAR',
+    'HRCAR':'V* HR CAR',
+    'HR-CAR':'V* HR CAR',
+    'GL-CAR':'V* GL CAR',
+    'GI581' : 'GJ581',
+    'ROSS 128':'ROSS 128',
+    'ACHERNAR':'ACHERNAR',
+    'PROCYON':'PROCYON',
+    'SIRIUS':'SIRIUS',
+    'CANOPUS':'CANOPUS',
+    'ACRUX':'ACRUX',
+    'ARCTURUS':'ARCTURUS',
+    'SIRIUS':'SIRIUS',
+    'FEIGE86':'FEIGE86',
+    'SW1143+0633UPPER':'SW1143+0633',
+    'TWHYDRA':'TW HYA',
+    'CCDM-J10573-6902A-B':'CCDM J10573-6902AB',
+    'CCDM-J12377-2708AB_F1V':'CCDM J12377-2708AB',
+    'PEACOCK':'PEACOCK',
+    '0654_AUMON':'V* AU MON',
+    '0108_PHE':'ZET PHE',
+    '0400_TAU':'LAM TAU',
+    'A-CAR':'A CAR',
+    'B-CAR':'B CAR',
+    'C-SCO':'C SCO',
+    'A-VEL':'A VEL',
+    'B-VEL':'B VEL',
+    'C-VEL':'C VEL',
 #    '':'',
 }
 # notes to the list
@@ -129,9 +76,20 @@ replacements = {
 # CANOPUS ACRUX ARCTURUS
 
 GLIESE_list = ['GJ','GJ','GLIESE']
-constellations = ["AND", "ANT", "APS", "AQR", "AQL", "ARA", "ARI", "AUR", "BOO", "CAE", "CAM", "CNC", "CVN", "CMA", "CMI", "CAP", "CAR", "CAS", "CEN", "CEP", "CET", "CHA", "CIR", "COL", "COM", "CRA", "CRB", "CRV", "CRT", "CRU", "CYG", "DEL", "DOR", "DRA", "EQU", "ERI", "FOR", "GEM", "GRU", "HER", "HOR", "HYA", "HYI", "IND", "LAC", "LEO", "LMI", "LEP", "LIB", "LUP", "LYN", "LYR", "MEN", "MIC", "MON", "MUS", "NOR", "OCT", "OPH", "ORI", "PAV", "PEG", "PER", "PHE", "PIC", "PSC", "PSA", "PUP", "PYX", "RET", "SGE", "SGR", "SCO", "SCL", "SCT", "SER", "SEX", "TAU", "TEL", "TRI", "TRA", "TUC", "UMA", "UMI", "VEL", "VIR", "VOL", "VUL"]
-greekletters = ["ALF", "BET", "GAM", "DEL", "EPS", "ZET", "ETA", "THE", "IOT", "KAP", "LAM", "MU", "NU", "XI", "OMI", "PI", "RHO", "SIG", "TAU", "UPS", "PHI", "CHI", "PSI", "OME"]
-solsys_list = ['ASTRAEA', 'CERES', 'COMET', 'EUROPA', 'GANYMEDE', 'JUNO', 'JUPITER', 'IRENE', 'IRIS', 'HERCULINA', 'MASSALIA', 'MELPOMENE', 'PALLAS', 'PARTHENOPE', 'TITAN', 'VENUS', 'VESTA', 'MOON', 'SKY']
+constellations = ["AND", "ANT", "APS", "AQR", "AQL", "ARA", "ARI", "AUR", "BOO", "CAE", 
+                  "CAM", "CNC", "CVN", "CMA", "CMI", "CAP", "CAR", "CAS", "CEN", "CEP", 
+                  "CET", "CHA", "CIR", "COL", "COM", "CRA", "CRB", "CRV", "CRT", "CRU", 
+                  "CYG", "DEL", "DOR", "DRA", "EQU", "ERI", "FOR", "GEM", "GRU", "HER", 
+                  "HOR", "HYA", "HYI", "IND", "LAC", "LEO", "LMI", "LEP", "LIB", "LUP", 
+                  "LYN", "LYR", "MEN", "MIC", "MON", "MUS", "NOR", "OCT", "OPH", "ORI", 
+                  "PAV", "PEG", "PER", "PHE", "PIC", "PSC", "PSA", "PUP", "PYX", "RET", 
+                  "SGE", "SGR", "SCO", "SCL", "SCT", "SER", "SEX", "TAU", "TEL", "TRI", 
+                  "TRA", "TUC", "UMA", "UMI", "VEL", "VIR", "VOL", "VUL"]
+greekletters = ["ALF", "BET", "GAM", "DEL", "EPS", "ZET", "ETA", "THE", "IOT", "KAP", 
+                "LAM", "MU" , "NU" , "XI" , "OMI", "PI" , "RHO", "SIG", "TAU", "UPS", 
+                "PHI", "CHI", "PSI", "OME"]
+solsys_list = ['ASTRAEA', 'CERES', 'COMET', 'EUROPA', 'GANYMEDE', 'JUNO', 'JUPITER', 'IRENE', 'IRIS', 'HERCULINA', 
+               'MASSALIA', 'MELPOMENE', 'PALLAS', 'PARTHENOPE', 'TITAN', 'VENUS', 'VESTA', 'MOON', 'SKY']
 solsys_repl = {'GIOVE':'JUPITER','GANIMEDE':'GANYMEDE', '6-HEBE':'HEBE', 'MOOON':'MOON','THE-MOON':'MOON', 'ZENITH':'SKY', 'SOLAR':'SKY', 'SUN':'SKY', 'TWILIGHT':'SKY'}
 
 
@@ -142,6 +100,7 @@ def curate_name(name):
     kuration=0  # imaginary part
     note = ""
     target_is_curated = False
+    ncur = 0
 
     # pre-processing
     name=name.replace('--', ' ')
@@ -152,6 +111,9 @@ def curate_name(name):
         name = name[2:]
         kuration = -1
     if name[0] in ['A', 'B', 'C', 'D', 'E', 'F'] and name[0].isalpha() and name[1] in ['_', '-'] and name[2:5] in ['HIP', 'TYC']:
+        name = name[2:]
+        kuration = -1+kuration
+    if name[0] in ['A', 'B', 'C', 'D', 'E', 'F'] and name[0].isalpha() and name[1] in ['_', '-']:
         name = name[2:]
         kuration = -10+kuration
     if name.startswith(('HD_', 'HD-')):
@@ -172,88 +134,257 @@ def curate_name(name):
         name = 'IO'
         curation = 100001
         target_is_curated = True
+        ncur = ncur +1
     if any(solsys in name for solsys in solsys_list) and not target_is_curated:
         name = [solsys for solsys in solsys_list if solsys in name][0]
         curation = 100001
         target_is_curated = True
+        ncur = ncur +1
     if any(solsys in name for solsys in solsys_repl.keys()) and not target_is_curated:
         name = solsys_repl[[solsys for solsys in solsys_repl.keys() if solsys in name][0]]
         curation = 100001
         target_is_curated = True
+        ncur = ncur +1
 
     # Stars
     if name in replacements and not target_is_curated:
         name = replacements[name]
         target_is_curated = True
         curation = 1
+        ncur = ncur +1
+    if 'PROXIMA' in original_name and not target_is_curated:
+        name = 'HIP 70890'
+        target_is_curated = True
+        curation = 1
+        ncur = ncur +1
+    if 'BARNARD' in original_name and not target_is_curated:
+        name = 'HIP 87937'
+        target_is_curated = True
+        curation = 1
+        ncur = ncur +1
+    # BAYER
+    if name.startswith('ALF') and not target_is_curated:
+        name = name.replace('-', ' ').replace('_', ' ')
+        curation = 101
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('ALP') and not target_is_curated:
+        name = name.replace('-', ' ').replace('_', ' ').replace('CENA', 'CEN A').replace('CENB', 'CEN B').replace('CENTAURI', 'CEN').replace('ALPHA', 'ALF ').replace('ALP', 'ALF ')
+        curation = 102
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('BET') and not target_is_curated:
+        name = name.replace('BETA', 'BET ').replace('-', ' ').replace('_', ' ').replace('BETCEN', 'BET CEN').replace('BETCRT', 'BET CRT').replace('BETHYI', 'BET HYI')
+        curation = 103
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('GAM') and not target_is_curated:
+        name = name.replace('GAMMA', 'GAM ').replace('-', ' ').replace('_', ' ').replace('GAMCIR', 'GAM CIR').replace('GAMCEN', 'GAM CEN')
+        curation = 104
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('DEL') and not target_is_curated:
+        name = name.replace('DELTA', 'DEL ').replace('-', ' ').replace('_', ' ').replace('DELERI', 'DEL ERI')
+        curation = 105
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('EPS') and not target_is_curated:
+        name = name.replace('EPSILON', 'EPS ').replace('-', ' ').replace('_', ' ').replace('EPSERI', 'EPS ERI').replace('EPSLUP', 'EPS LUP').replace('EPSIND', 'EPS IND').replace('ERIDANI', 'ERI').replace('EPS-INDI-A', 'EPS IND')
+        curation = 106
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('ZET') and not target_is_curated:
+        name = name.replace('ZETA', 'ZET ').replace('-', ' ').replace('_', ' ').replace('ZET02RET', 'ZET2 RET').replace('ZET1RET', 'ZET1 RET').replace('ZET2RET', 'ZET2 RET').replace('ZETTUC', 'ZET TUC')
+        curation = 107
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('ETA') and not target_is_curated:
+        name = name.replace('-', ' ').replace('_', ' ').replace('ETAAPS', 'ETA APS').replace('ETAORI', 'ETA ORI')
+        curation = 108
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('THE') and not target_is_curated:
+        name = name.replace('-', ' ').replace('THETA', 'THE ')
+        curation = 109
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('TET') and not target_is_curated: # THETA variants: TETA
+        name = name.replace('-', ' ').replace('TET', 'THE ')
+        curation = 110
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('IOT') and not target_is_curated:
+        name = name.replace('-', ' ').replace('_', ' ').replace('IOTHOR', 'IOT HOR').replace('IOTCAR', 'IOT CAR')
+        curation = 110
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('KAP') and not target_is_curated:
+        name = name.replace('-', ' ').replace('_', ' ').replace('KAPPA', 'KAP').replace('KAPFOR', 'KAP FOR').replace('KAP01', 'KAP1')
+        curation = 111
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('LAM') and not target_is_curated:
+        name = name.replace('-', ' ').replace('_', ' ').replace('LAMBDA', 'LAM')
+        curation = 112
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('MU') and not target_is_curated:
+        name = name.replace('MUARA', 'mu. ARA').replace('MU1SCO', 'mu.01 Sco').replace('MULUP', 'mu. LUP').replace('MUCEN', 'mu. CEN').replace('MU02CRU', 'mu.02 CRU')
+        curation = 113
+        target_is_curated = True
+        ncur = ncur +1
+        if name == 'MUS':
+            name = "ETA MUS"
+            curation = 113
+            target_is_curated = True
+    if name.startswith('NU') and not target_is_curated:
+        name = name.replace('-', ' ').replace('_', ' ').replace('NU', 'nu.')
+        curation = 114
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('XI') and not target_is_curated:
+        name = "ksi PHE"
+        curation = 115
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('OMI') and not target_is_curated:
+        name = name.replace('-', ' ').replace('0', ' ').replace('OMILUP', 'OMI LUP')
+        curation = 116
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('PI') and not target_is_curated:
+        name = "pi. HYA"
+        curation = 117
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('RHO') and not target_is_curated:
+        name = name.replace('-', ' ').replace('RHOPAV', 'RHO PAV')
+        curation = 118
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('SIG') and not target_is_curated:
+        name = name.replace('-', ' ').replace('_', ' ')
+        curation = 119
+        target_is_curated = True
+    if name.startswith('TAU') and not target_is_curated:
+        name = name.replace('-', ' ').replace('_', ' ').replace('CETI', 'CET').replace('TAUCET', 'TAU CET').replace('TAUBOO', 'TAU BOO')
+        curation = 120
+        target_is_curated = True
+        ncur = ncur +1
+        if name == 'TAU':
+            name = "lam TAU"
+            curation = 120
+            target_is_curated = True
+    if name.startswith('UPS') and not target_is_curated:
+        name = "UPS SCO"
+        curation = 121
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('PHI') and not target_is_curated:
+        name = name.replace('-', ' ').replace('_', ' ').replace('PHI2PAV', 'phi02 PAV')
+        curation = 122
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('CHI') and not target_is_curated:
+        name = name.replace('CHI-VIR_K2III', 'CHI VIR').replace('-', ' ').replace('_', ' ')
+        curation = 123
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('PSI') and not target_is_curated:
+        name = name.replace('-', ' ')
+        curation = 124
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('OME') and not target_is_curated:
+        name = name.replace('-', ' ')
+        curation = 125
+        target_is_curated = True
+
+    # stars
     if original_name.startswith('NGC') and not target_is_curated:
         if original_name.startswith('NGC '):
             name = original_name
             curation = 2
             target_is_curated = True
+            ncur = ncur +1
         elif original_name[3].isdigit():
             name = "NGC " + original_name[3:7] + " "
             name += ''.join(char for char in original_name[7:] if char.isdigit())
             curation = 2
             target_is_curated = True
+            ncur = ncur +1
     if original_name.startswith('IC') and not target_is_curated:
         if original_name[2].isdigit():
             name = "IC " + original_name[2:6] + " "
             name += ''.join(char for char in original_name[6:] if char.isdigit())
             curation = 3
             target_is_curated = True
+            ncur = ncur +1
     if name.startswith('TOI') and not target_is_curated:
         name = name.replace('-', ' ').replace('_', ' ')
         curation = 4
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('EPIC') and not target_is_curated:
         name = name.replace('-', ' ')
         curation = 5
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('WASP') and not target_is_curated:
         name = name.replace('_ORB', '').replace('_TRA', '')
         curation = 6
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('TYC') and not target_is_curated:
         name = name.replace('_', ' ').replace('TYC-', 'TYC ')
         curation = 7
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('BD') and not target_is_curated:
         name = name.replace('_', ' ').replace('--', '-')
         curation = 8
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('NLTT') and not target_is_curated:
         name = name.replace('-', ' ').replace('NLTT44619_F2V', 'NLTT44619')
         curation = 9
         target_is_curated = True
+        ncur = ncur +1
     if re.match("^HD[0-9]", name) and "_" in name and not target_is_curated:
         name = re.sub('_.*', '', name)
         curation = 10
         target_is_curated = True
+        ncur = ncur +1
     if re.match("^HD[0-9]", name) and "-" in name and not target_is_curated:
         name = re.sub('-.*', '', name)
         curation = 11
         target_is_curated = True
+        ncur = ncur +1
     if re.match("^HR[0-9]", name) and "_" in name and not target_is_curated:
         name = re.sub('_.*', '', name)
         curation = 12
         target_is_curated = True
+        ncur = ncur +1
     if re.match("^HR[0-9]", name) and "-" in name and not target_is_curated:
         name = re.sub('-.*', '', name)
         curation = 13
         target_is_curated = True
+        ncur = ncur +1
     if re.match("^HIP[0-9]", name) and "_" in name and not target_is_curated:
         name = re.sub('_.*', '', name)
         curation = 14
         target_is_curated = True
+        ncur = ncur +1
     if re.match("^HIP[0-9]", name) and "-" in name and not target_is_curated:
         name = re.sub('-.*', '', name)
         curation = 15
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('V ') and not target_is_curated:
         name = name.replace('V ', 'V* ')
         curation = 16
         target_is_curated = True
+        ncur = ncur +1
     if re.match("^V[0-9]", name) and any(name.endswith(c) for c in constellations) and not target_is_curated:
         name = "V* "+name
         name = name.replace('-', ' ').replace('_', ' ')
@@ -262,20 +393,24 @@ def curate_name(name):
         name=pref+" "+suff
         curation = 17
         target_is_curated = True
+        ncur = ncur +1
     if re.match(r"(V\d+)([A-Z]{3})", name) and any(name.endswith(c) for c in constellations) and not target_is_curated:
         match = re.match(r"(V\d+)([A-Z]{3})", name)
         name = " ".join(match.groups())
         curation = 18
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith(('LRC0', 'LRA0', 'IRA0', 'SRC0', 'SRA0')) and not target_is_curated:
         name = name.replace('_', ' ')
         note = "COROT"
         curation = 19
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('TIC') and not target_is_curated:
         name = name.replace('-', ' ').replace('_', ' ')
         curation = 20
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('HIP') and not target_is_curated:
         name = name.replace('-', ' ').replace('_', ' ')
         suff = name[-1:] 
@@ -283,6 +418,7 @@ def curate_name(name):
             name = name[:-1]
         curation = 21
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('HD') and not target_is_curated:
         name = name.replace('-', ' ').replace('_', ' ')
         suff = name[-1:] 
@@ -292,6 +428,7 @@ def curate_name(name):
             name = name[:-1]
         curation = 22
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('HR') and not target_is_curated:
         name = name.replace('-', ' ').replace('_', ' ')
         suff = name[-1:] 
@@ -301,106 +438,222 @@ def curate_name(name):
             name = name[:-1]
         curation = 23
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('LHS') and not target_is_curated:
         name = name.replace('LHS', 'LHS ')
         if '_' in name:
             name = name[:name.index('_')]
             curation = 24
             target_is_curated = True
+            ncur = ncur +1
     if name.startswith('CD') and not target_is_curated:
         name = name.replace('--', '-').replace('CD-53-251', 'CD-53 251').replace('CD-69 1055', 'CD-69 1055').replace('CD-71-1234', 'CD-71 1234').replace('CD-84-0080', 'CD-84 0080').replace('CD-TAU', 'CD TAU').replace('CD_CIR', 'CD CIR')
         curation = 25
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('HV') and not target_is_curated:
         name = name.replace('HV-LUP', 'HV LUP').replace('HV_LUP', 'HV LUP').replace('HVERI', 'HV ERI')
         curation = 26
         target_is_curated = True
+        ncur = ncur +1
     if re.fullmatch(r"E_\d{9}", name) and not target_is_curated:
         digits = re.search(r"\d{9}", name).group()
         name = "EPIC " + digits
         curation = 27
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('BLG') and not target_is_curated:
         parts = name.split('_')
         name = "OGLE " + " ".join(parts)
         curation = 28
         target_is_curated = True
+        ncur = ncur +1
     if re.fullmatch(r"LMC-CEP-\d{4}", name) and not target_is_curated:
         name = "OGLE " + name.replace('-', ' ')
         curation = 29
         target_is_curated = True
+        ncur = ncur +1
     if re.fullmatch(r"LMC\d{3}\.\d-\d+", name) and not target_is_curated:
         parts = name.split('-')
         name = "OGLE " + parts[0] + parts[1]
         curation = 30
         target_is_curated = True
+        ncur = ncur +1
     if re.fullmatch(r"LMC\d{3}\.\d{2}[-_.]\d+", name) and not target_is_curated:
         parts = re.split('[-_.]', name)
         name = "OGLE " + parts[0] + " " + parts[1]
         curation = 31
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('OGLE') and not target_is_curated:
         name = name.replace('-', ' ').replace('_', ' ')
         curation = 32
         target_is_curated = True
+        ncur = ncur +1
     if re.fullmatch(r"SMC-CEP-\d{4}", name) and not target_is_curated:
         name = "OGLE " + name.replace('-', ' ')
         curation = 33
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith(('GL', 'GJ')) and not target_is_curated:
         name = name.replace('-', '').replace('_', '').replace(' ', '')
         curation = 34
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('CPD') and not target_is_curated:
         name = name.replace('+', '-').replace('_', ' ').replace('-', 'X',1).replace('-', ' ',1).replace('X', '-',1)
         curation = 35
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('COROT') and not target_is_curated:
         name = name.replace('-', ' ', 1)
         curation = 36
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('GSC') and not target_is_curated:
         name = name.replace('-', ' ', 1).replace('_', ' ')
         curation = 37
         target_is_curated = True
+        ncur = ncur +1
     if re.fullmatch(r"HATS\d{3}\-\d{3}", name) and not target_is_curated:
         parts = re.split('[-_.]', name)
         name = name[:4]+" "+name[4:]
         note = "2MASS"
         curation = 38
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('LTT') and not target_is_curated:
         name = name.replace('-', ' ')
         curation = 39
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('LHS') and not target_is_curated:
         name = name.replace('-', ' ')
         curation = 40
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('LP') and not target_is_curated:
         name = name.replace('_', ' ')
         curation = 41
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('LMC') and not target_is_curated:
         name = "OGLE " + name.replace('-', ' ')
         curation = 42
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('SMC') and not target_is_curated:
         name = "OGLE " + name.replace('-', ' ')
         curation = 43
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('UCAC') and not target_is_curated:
         name = name.replace('_', ' ')
         curation = 44
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('V*') and not target_is_curated:
         name = name.replace('_', ' ')
         curation = 45
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('WOLF') and not target_is_curated:
         name = name.replace('-', ' ')
         curation = 46
         target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('2MASS') and not target_is_curated:
+        name = name.replace('_', ' ')
+        curation = 47
+        target_is_curated = True
+        ncur = ncur +1
+    if len(name)>=5 and re.match("^[A-Z][A-Z]", name) and any(name.endswith(c) for c in constellations) and not target_is_curated:
+        pref=name[:2]
+        suff=name[-3:]
+        name="V* "+pref+" "+suff
+        #print(original_name, " | ", name)
+        curation = 48
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('CCDM') and not target_is_curated:
+        name = name.replace('-', ' ',1)
+        curation = 49
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('M67') and not target_is_curated:
+        name = name.replace('-', ' ',1)
+        curation = 50
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('MELOTTE71') and not target_is_curated:
+        name = name.replace('NO.', ' ',1)
+        curation = 51
+        target_is_curated = True
+        ncur = ncur +1
+    if len(name)>=4 and re.match("^[A-Z]", name) and any(name.endswith(c) for c in constellations) and not target_is_curated:
+        pref=name[:1]
+        suff=name[-3:]
+        name="V* "+pref+" "+suff
+        #print(original_name, " | ", name)
+        curation = 52
+        target_is_curated = True
+        ncur = ncur +1
+    if re.match("^[0-9][0-9][0-9][0-9]_[A-Z][A-Z][-_]", name) and any(name.endswith(c) for c in constellations) and not target_is_curated:
+        pref=name[5:7]
+        suff=name[-3:]
+        name='V* '+pref+" "+suff
+        #print('aa ',original_name, " | ", name)
+        curation = 53
+        target_is_curated = True
+        ncur = ncur +1
+    if re.match("^[0-9][0-9][0-9][0-9]_V[0-9][0-9][0-9][-_]", name) and any(name.endswith(c) for c in constellations) and not target_is_curated:
+        pref=name[5:9]
+        suff=name[-3:]
+        name='V* '+pref+" "+suff
+        #print('bb ',original_name, " | ", name)
+        curation = 53
+        target_is_curated = True
+        ncur = ncur +1
+    if re.match("^[0-9][0-9][0-9][0-9]_V[0-9][0-9][0-9][0-9][-_]", name) and any(name.endswith(c) for c in constellations) and not target_is_curated:
+        pref=name[5:10]
+        suff=name[-3:]
+        name='V* '+pref+" "+suff
+        #print('cc ',original_name, " | ", name)
+        curation = 53
+        target_is_curated = True
+        ncur = ncur +1
+    if len(name)>=6 and re.match("^[0-9][0-9][0-9]", name) and any(name.endswith(c) for c in constellations) and not target_is_curated:
+        pref=name[:3]
+        suff=name[-3:]
+        name=pref+" "+suff
+        #print('x1',original_name, " | ", name)
+        curation = 54
+        target_is_curated = True
+        ncur = ncur +1
+    if len(name)>=5 and re.match("^[0-9][0-9]", name) and any(name.endswith(c) for c in constellations) and not target_is_curated:
+        pref=name[:2]
+        suff=name[-3:]
+        name=pref+" "+suff
+        #print('x2',original_name, " | ", name)
+        curation = 55
+        target_is_curated = True
+        ncur = ncur +1
+    if len(name)>=4 and re.match("^[0-9]", name) and any(name.endswith(c) for c in constellations) and not target_is_curated:
+        pref=name[:1]
+        suff=name[-3:]
+        name=pref+" "+suff
+        #print('x3',original_name, " | ", name)
+        curation = 56
+        target_is_curated = True
+        ncur = ncur +1
+    if len(name)>=4 and re.match("^[A-Z]", name) and any(name.endswith(c) for c in constellations) and not target_is_curated:
+        pref=name[:1]
+        suff=name[-3:]
+        name=pref+" "+suff
+        print('yy',original_name, " | ", name)
+        curation = 57
+        target_is_curated = True
+        ncur = ncur +1
 
 
 
@@ -409,131 +662,21 @@ def curate_name(name):
         note = "2MASS"
         curation = 1001
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('SERAM') and not target_is_curated:
         name = "nc"
         note = "2MASS"
         curation = 1002
         target_is_curated = True
+        ncur = ncur +1
     if name.startswith('SW') and name[2].isdigit():
         name = "nc"
         note = "2MASS"
         curation = 1003
         target_is_curated = True
+        ncur = ncur +1
 
 
-    # BAYER
-    if name.startswith('ALF') and not target_is_curated:
-        name = name.replace('-', ' ').replace('_', ' ')
-        curation = 101
-        target_is_curated = True
-    if name.startswith('ALP') and not target_is_curated:
-        name = name.replace('-', ' ').replace('_', ' ').replace('CENA', 'CEN A').replace('CENB', 'CEN B').replace('CENTAURI', 'CEN').replace('ALPHA', 'ALF ').replace('ALP', 'ALF ')
-        curation = 102
-        target_is_curated = True
-    if name.startswith('BET') and not target_is_curated:
-        name = name.replace('BETA', 'BET ').replace('-', ' ').replace('_', ' ').replace('BETCEN', 'BET CEN').replace('BETCRT', 'BET CRT').replace('BETHYI', 'BET HYI')
-        curation = 103
-        target_is_curated = True
-    if name.startswith('GAM') and not target_is_curated:
-        name = name.replace('GAMMA', 'GAM ').replace('-', ' ').replace('_', ' ').replace('GAMCIR', 'GAM CIR').replace('GAMCEN', 'GAM CEN')
-        curation = 104
-        target_is_curated = True
-    if name.startswith('DEL') and not target_is_curated:
-        name = name.replace('DELTA', 'DEL ').replace('-', ' ').replace('_', ' ').replace('DELERI', 'DEL ERI')
-        curation = 105
-        target_is_curated = True
-    if name.startswith('EPS') and not target_is_curated:
-        name = name.replace('EPSILON', 'EPS ').replace('-', ' ').replace('_', ' ').replace('EPSERI', 'EPS ERI').replace('EPSLUP', 'EPS LUP').replace('EPSIND', 'EPS IND').replace('ERIDANI', 'ERI').replace('EPS-INDI-A', 'EPS IND')
-        curation = 106
-        target_is_curated = True
-    if name.startswith('ZET') and not target_is_curated:
-        name = name.replace('ZETA', 'ZET ').replace('-', ' ').replace('_', ' ').replace('ZET02RET', 'ZET2 RET').replace('ZET1RET', 'ZET1 RET').replace('ZET2RET', 'ZET2 RET').replace('ZETTUC', 'ZET TUC')
-        curation = 107
-        target_is_curated = True
-    if name.startswith('ETA') and not target_is_curated:
-        name = name.replace('-', ' ').replace('_', ' ').replace('ETAAPS', 'ETA APS').replace('ETAORI', 'ETA ORI')
-        curation = 108
-        target_is_curated = True
-    if name.startswith('THE') and not target_is_curated:
-        name = name.replace('-', ' ').replace('THETA', 'THE ')
-        curation = 109
-        target_is_curated = True
-    if name.startswith('TET') and not target_is_curated: # THETA variants: TETA
-        name = name.replace('-', ' ').replace('TET', 'THE ')
-        curation = 110
-        target_is_curated = True
-    if name.startswith('IOT') and not target_is_curated:
-        name = name.replace('-', ' ').replace('_', ' ').replace('IOTHOR', 'IOT HOR').replace('IOTCAR', 'IOT CAR')
-        curation = 110
-        target_is_curated = True
-    if name.startswith('KAP') and not target_is_curated:
-        name = name.replace('-', ' ').replace('_', ' ').replace('KAPPA', 'KAP').replace('KAPFOR', 'KAP FOR').replace('KAP01', 'KAP1')
-        curation = 111
-        target_is_curated = True
-    if name.startswith('LAM') and not target_is_curated:
-        name = name.replace('-', ' ').replace('_', ' ').replace('LAMBDA', 'LAM')
-        curation = 112
-        target_is_curated = True
-    if name.startswith('MU') and not target_is_curated:
-        name = name.replace('MUARA', 'mu. ARA').replace('MU1SCO', 'mu.01 Sco').replace('MULUP', 'mu. LUP').replace('MUCEN', 'mu. CEN').replace('MU02CRU', 'mu.02 CRU')
-        curation = 113
-        target_is_curated = True
-        if name == 'MUS':
-            name = "ETA MUS"
-            curation = 113
-            target_is_curated = True
-    if name.startswith('NU') and not target_is_curated:
-        name = name.replace('-', ' ').replace('_', ' ').replace('NU', 'nu.')
-        curation = 114
-        target_is_curated = True
-    if name.startswith('XI') and not target_is_curated:
-        name = "ksi PHE"
-        curation = 115
-        target_is_curated = True
-    if name.startswith('OMI') and not target_is_curated:
-        name = name.replace('-', ' ').replace('0', ' ').replace('OMILUP', 'OMI LUP')
-        curation = 116
-        target_is_curated = True
-    if name.startswith('PI') and not target_is_curated:
-        name = "pi. HYA"
-        curation = 117
-        target_is_curated = True
-    if name.startswith('RHO') and not target_is_curated:
-        name = name.replace('-', ' ').replace('RHOPAV', 'RHO PAV')
-        curation = 118
-        target_is_curated = True
-    if name.startswith('SIG') and not target_is_curated:
-        name = name.replace('-', ' ').replace('_', ' ')
-        curation = 119
-        target_is_curated = True
-    if name.startswith('TAU') and not target_is_curated:
-        name = name.replace('-', ' ').replace('_', ' ').replace('CETI', 'CET').replace('TAUCET', 'TAU CET').replace('TAUBOO', 'TAU BOO')
-        curation = 120
-        target_is_curated = True
-        if name == 'TAU':
-            name = "lam TAU"
-            curation = 120
-            target_is_curated = True
-    if name.startswith('UPS') and not target_is_curated:
-        name = "UPS SCO"
-        curation = 121
-        target_is_curated = True
-    if name.startswith('PHI') and not target_is_curated:
-        name = name.replace('-', ' ').replace('_', ' ').replace('PHI2PAV', 'phi02 PAV')
-        curation = 122
-        target_is_curated = True
-    if name.startswith('CHI') and not target_is_curated:
-        name = name.replace('CHI-VIR_K2III', 'CHI VIR').replace('-', ' ').replace('_', ' ')
-        curation = 123
-        target_is_curated = True
-    if name.startswith('PSI') and not target_is_curated:
-        name = name.replace('-', ' ')
-        curation = 124
-        target_is_curated = True
-    if name.startswith('OME') and not target_is_curated:
-        name = name.replace('-', ' ')
-        curation = 125
-        target_is_curated = True
 
     # Replace characters as needed
     #name = name.replace('_', ' ', 1).replace('--', ' ')
@@ -542,7 +685,9 @@ def curate_name(name):
     if curation == 0 and kuration == 0:
         name = "nc"
         note = ""
-    
+    if ncur>1:
+        print(ncur, " | ", original_name, " | ", name)
+
     return name, curation,kuration,note
 
 
@@ -588,6 +733,3 @@ nm=nt-nc
 print("TARGETS    ",nt)
 print("CURATED    ",nm)
 print("NOT CURATED",nc)
-
-
-
