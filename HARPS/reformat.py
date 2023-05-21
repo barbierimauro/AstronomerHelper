@@ -112,9 +112,6 @@ def curate_name(name):
         kuration = -1
     if name[0] in ['A', 'B', 'C', 'D', 'E', 'F'] and name[0].isalpha() and name[1] in ['_', '-'] and name[2:5] in ['HIP', 'TYC']:
         name = name[2:]
-        kuration = -1+kuration
-    if name[0] in ['A', 'B', 'C', 'D', 'E', 'F'] and name[0].isalpha() and name[1] in ['_', '-']:
-        name = name[2:]
         kuration = -10+kuration
     if name.startswith(('HD_', 'HD-')):
         name = name.replace('_', '',1).replace('-', '',1)
@@ -242,8 +239,8 @@ def curate_name(name):
         curation = 114
         target_is_curated = True
         ncur = ncur +1
-    if name.startswith('XI') and not target_is_curated:
-        name = "ksi PHE"
+    if name.startswith(('XI','KSI')) and not target_is_curated:
+        name = name.replace('-', ' ').replace('_', ' ').replace('XI', 'KSI')
         curation = 115
         target_is_curated = True
         ncur = ncur +1
@@ -304,26 +301,30 @@ def curate_name(name):
     if original_name.startswith('NGC') and not target_is_curated:
         if original_name.startswith('NGC '):
             name = original_name
-            curation = 2
+            curation = 2002
             target_is_curated = True
             ncur = ncur +1
+            note = 'NGC'
         elif original_name[3].isdigit():
             name = "NGC " + original_name[3:7] + " "
             name += ''.join(char for char in original_name[7:] if char.isdigit())
-            curation = 2
+            curation = 2002
             target_is_curated = True
             ncur = ncur +1
+            note = 'NGC'
     if original_name.startswith('IC') and not target_is_curated:
         if original_name[2].isdigit():
             name = "IC " + original_name[2:6] + " "
             name += ''.join(char for char in original_name[6:] if char.isdigit())
-            curation = 3
+            curation = 2003
             target_is_curated = True
             ncur = ncur +1
+            note = 'IC'
     if name.startswith('TOI') and not target_is_curated:
         name = name.replace('-', ' ').replace('_', ' ')
-        curation = 4
+        curation = 2004
         target_is_curated = True
+        note = 'TESS'
         ncur = ncur +1
     if name.startswith('EPIC') and not target_is_curated:
         name = name.replace('-', ' ')
@@ -402,10 +403,10 @@ def curate_name(name):
         ncur = ncur +1
     if name.startswith(('LRC0', 'LRA0', 'IRA0', 'SRC0', 'SRA0')) and not target_is_curated:
         name = name.replace('_', ' ')
-        note = "COROT"
-        curation = 19
+        curation = 2019
         target_is_curated = True
         ncur = ncur +1
+        note = "EXODAT"
     if name.startswith('TIC') and not target_is_curated:
         name = name.replace('-', ' ').replace('_', ' ')
         curation = 20
@@ -465,36 +466,42 @@ def curate_name(name):
     if name.startswith('BLG') and not target_is_curated:
         parts = name.split('_')
         name = "OGLE " + " ".join(parts)
-        curation = 28
+        curation = 2028
         target_is_curated = True
         ncur = ncur +1
+        note = 'OGLE'
     if re.fullmatch(r"LMC-CEP-\d{4}", name) and not target_is_curated:
         name = "OGLE " + name.replace('-', ' ')
-        curation = 29
+        curation = 2029
         target_is_curated = True
         ncur = ncur +1
+        note = 'OGLE'
     if re.fullmatch(r"LMC\d{3}\.\d-\d+", name) and not target_is_curated:
         parts = name.split('-')
         name = "OGLE " + parts[0] + parts[1]
-        curation = 30
+        curation = 2030
         target_is_curated = True
         ncur = ncur +1
+        note = 'OGLE'
     if re.fullmatch(r"LMC\d{3}\.\d{2}[-_.]\d+", name) and not target_is_curated:
         parts = re.split('[-_.]', name)
         name = "OGLE " + parts[0] + " " + parts[1]
-        curation = 31
+        curation = 2031
         target_is_curated = True
         ncur = ncur +1
+        note = 'OGLE'
     if name.startswith('OGLE') and not target_is_curated:
         name = name.replace('-', ' ').replace('_', ' ')
-        curation = 32
+        curation = 2032
         target_is_curated = True
         ncur = ncur +1
+        note = 'OGLE'
     if re.fullmatch(r"SMC-CEP-\d{4}", name) and not target_is_curated:
         name = "OGLE " + name.replace('-', ' ')
-        curation = 33
+        curation = 2033
         target_is_curated = True
         ncur = ncur +1
+        note = 'OGLE'
     if name.startswith(('GL', 'GJ')) and not target_is_curated:
         name = name.replace('-', '').replace('_', '').replace(' ', '')
         curation = 34
@@ -506,7 +513,7 @@ def curate_name(name):
         target_is_curated = True
         ncur = ncur +1
     if name.startswith('COROT') and not target_is_curated:
-        name = name.replace('-', ' ', 1)
+        name = original_name
         curation = 36
         target_is_curated = True
         ncur = ncur +1
@@ -518,8 +525,8 @@ def curate_name(name):
     if re.fullmatch(r"HATS\d{3}\-\d{3}", name) and not target_is_curated:
         parts = re.split('[-_.]', name)
         name = name[:4]+" "+name[4:]
-        note = "2MASS"
-        curation = 38
+        note = "HATS"
+        curation = 2038
         target_is_curated = True
         ncur = ncur +1
     if name.startswith('LTT') and not target_is_curated:
@@ -542,11 +549,13 @@ def curate_name(name):
         curation = 42
         target_is_curated = True
         ncur = ncur +1
+        note = 'OGLE'
     if name.startswith('SMC') and not target_is_curated:
         name = "OGLE " + name.replace('-', ' ')
         curation = 43
         target_is_curated = True
         ncur = ncur +1
+        note = 'OGLE'
     if name.startswith('UCAC') and not target_is_curated:
         name = name.replace('_', ' ')
         curation = 44
@@ -585,11 +594,13 @@ def curate_name(name):
         curation = 50
         target_is_curated = True
         ncur = ncur +1
+        note = 'M67'
     if name.startswith('MELOTTE71') and not target_is_curated:
         name = name.replace('NO.', ' ',1)
         curation = 51
         target_is_curated = True
         ncur = ncur +1
+        note = 'MELOTTE71'
     if len(name)>=4 and re.match("^[A-Z]", name) and any(name.endswith(c) for c in constellations) and not target_is_curated:
         pref=name[:1]
         suff=name[-3:]
@@ -650,27 +661,76 @@ def curate_name(name):
         pref=name[:1]
         suff=name[-3:]
         name=pref+" "+suff
-        print('yy',original_name, " | ", name)
+        #print('yy',original_name, " | ", name)
         curation = 57
         target_is_curated = True
         ncur = ncur +1
+    if name.startswith('KELT') and not target_is_curated:
+        name = name.replace('_', '-')
+        curation = 58
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('HAT') and not target_is_curated:
+        name = name.replace('-', ' ',1).replace('_', ' ')
+        curation = 59
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('TWA') and not target_is_curated:
+        name = name.replace('-', ' ').replace('_', ' ')
+        curation = 60
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('SAO') and not target_is_curated:
+        name = name.replace('-', ' ').replace('_', ' ')
+        curation = 61
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith(('QSO','Q0515','HE-0515','HE0515')) and not target_is_curated:
+        name = 'QSO B0515-4414'
+        curation = 62
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('K2') and not target_is_curated:
+        name = original_name
+        curation = 63
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('IRAS') and not target_is_curated:
+        name = name.replace('_', ' ')
+        curation = 64
+        target_is_curated = True
+        ncur = ncur +1
+    if name.startswith('G') and not target_is_curated:
+        nome = name.replace(' ', '')
+        if re.match("^G[0-9][0-9][0-9]-[0-9]", nome):
+            name=nome
+            curation = 65
+            target_is_curated = True
+            ncur = ncur +1
+    if name.startswith('L') and not target_is_curated:
+        nome = name.replace(' ', '')
+        if re.match("^L[0-9][0-9][0-9]-[0-9]", nome):
+            name=nome
+            curation = 66
+            target_is_curated = True
+            ncur = ncur +1
 
 
 
     if name.startswith('J') and not target_is_curated:
-        name = "nc"
+        name = original_name
         note = "2MASS"
         curation = 1001
         target_is_curated = True
         ncur = ncur +1
     if name.startswith('SERAM') and not target_is_curated:
-        name = "nc"
+        name = original_name
         note = "2MASS"
         curation = 1002
         target_is_curated = True
         ncur = ncur +1
     if name.startswith('SW') and name[2].isdigit():
-        name = "nc"
+        name = original_name
         note = "2MASS"
         curation = 1003
         target_is_curated = True
@@ -724,8 +784,34 @@ df = df[cols]
 # Sort the DataFrame by the second column
 df.sort_values(by=df.columns[1], inplace=True)
 
+#df_filtered = df[df['curation'] == 0]
+#df_filtered.to_csv('targets1.csv', index=False)
+
+
+df_filtered = df[(df['curation'] > 0) & (df['curation'] < 1000) & (df['note'] == "")]
+df_filtered_unique = df_filtered['target_curated'].drop_duplicates()
+df_filtered_unique.to_csv('curation_output/targets_for_simbad.csv', index=False, header=False)
+df_filtered_unique = df_filtered.drop_duplicates(subset='target_curated')
+df_filtered_unique.to_csv('curation_output/targets_for_simbad.all.csv', index=False, header=True)
+
+
+df_filtered = df[(df['curation'] > 1000) & (df['curation'] < 10000)]
+df_filtered_unique = df_filtered['target_curated'].drop_duplicates()
+df_filtered_unique.to_csv('curation_output/targets_for_vizier.csv', index=False, header=False)
+df_filtered_unique = df_filtered.drop_duplicates(subset='target_curated')
+df_filtered_unique.to_csv('curation_output/targets_for_vizier.all.csv', index=False, header=True)
+
+df_filtered = df[df['curation'] == 0]
+df_filtered_unique = df_filtered.drop_duplicates(subset='target')
+df_filtered_unique.to_csv('curation_output/targets_not_simbad.all.csv', index=False, header=True)
+
+df_filtered = df[(df['curation'] > 100000)]
+df_filtered_unique = df_filtered.drop_duplicates(subset='target_curated')
+df_filtered_unique.to_csv('curation_output/targets_for_horizons.all.csv', index=False, header=True)
+
+
 # Write the result to a new CSV file
-df.to_csv('targets1.csv', index=False)
+#df.to_csv('targets1.csv', index=False)
 
 nt=df.shape[0]
 nc=df['curation'].value_counts().get(0, 0)
