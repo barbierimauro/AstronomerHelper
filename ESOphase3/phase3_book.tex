@@ -1,0 +1,479 @@
+\documentclass[a4paper,10pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{ucs}
+\usepackage{caption}
+\usepackage{multicol}
+%\usepackage{pst-all}
+\usepackage{rotating}
+\usepackage{subfigure}
+\usepackage{upgreek}
+\usepackage{xcolor}
+\usepackage{babel}
+\usepackage{graphicx}
+
+\usepackage[pdftex]{hyperref}
+\hypersetup{%
+   bookmarks=,%
+   bookmarksnumbered=,%
+   pdfcreator=,%
+   pdffitwindow=,%
+   pdfstartview=%
+}
+
+\title{Phase 3 book}
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+
+
+
+\chapter{Introduction to Phase 3}
+
+\section{Phase 3 Overview}
+
+\textbf{Phase 3} encompasses the meticulous process of the preparation, validation, and integration of Science Data Products (SDPs) into the ESO science archive facility. Consequently, these SDPs are made accessible to the broader scientific community. SDPs, in essence, are data products from which instrument and atmospheric signatures have been extracted. They are calibrated in physical units, and their noise attributes, such as limiting magnitude or signal-to-noise ratio, are quantified and documented.
+
+The production of SDPs can be attributed to:
+
+\begin{itemize}
+    \item Principal Investigators (PIs) of ESO observing programmes, primarily from ESO public surveys and large programmes.
+    \item ESO scientists employing ESO pipelines as a component of the Quality Control (QC) process or from specific, dedicated re-processing projects tailored for homogeneous raw data sets.
+    \item Users of non-ESO telescopes, such as GTC and NGTS.
+    \item PIs of ESO standard programmes on a voluntary basis.
+    \item Members of the scientific community interested in publishing data derived from archival research.
+\end{itemize}
+
+\section{ESO’s Phase 3 Policies}
+
+ESO’s policies governing Phase 3 are contingent on the type of observing programme. The execution of Phase 3 is imperative for ESO Public Surveys and for ESO Large Programmes commencing from period 75. While there is no obligation for other ESO programmes, PIs are encouraged to capitalize on Phase 3.
+
+\section{Support and Standards}
+
+To guarantee the efficacious incorporation of SDPs into the archive, ESO lends its support to users engaged in the Phase 3 process. This support is manifest in the definition of ESO/SDP data standards, the formulation of procedures, and the provision of infrastructure for the submission of SDPs, in addition to offering tools requisite for data preparation.
+
+\section{Purpose and Target Audience}
+
+This chapter serves to elucidate the policies, data standards, and submission procedures pertinent to the ESO Phase 3 process. It endeavors to furnish readers with the knowledge essential for the planning and triumphant fulfillment of the ESO Phase 3 process.
+
+The primary audience for this exposition comprises:
+
+\begin{enumerate}
+    \item Principal Investigators and their collaborators, who furnish reduced data products emanating from ESO or non-ESO observations for public dissemination to the astronomical community through the ESO archive.
+    \item ESO scientists participating in the Quality Control (QC) process or in dedicated re-processing ventures.
+    \item Instrument scientists and pipeline developers associated with both new and existing ESO instruments.
+    \item Archive users who necessitate an understanding of the structure and format of the SDPs for their scientific endeavors.
+\end{enumerate}
+
+
+\chapter{Policies}
+In accordance with the ESO Council document on the VLT/VLTI science operation policies (104 meeting, Dec. 17/18, 2004), the ESO/ST-ECF Science Archive Facility (SAF) is the collection point for the survey products and the primary point of publication/availability of these products to the ESO community.
+
+ESO assists the survey teams to define and package their data products in a manner consistent with SAF and Virtual Observatory standards and integrates the products into the SAF.
+
+\section{}
+The allocation of observing time for the scientific follow up of the surveys will be subject to the timely delivery of the surveys products and their compliance to the specifications.
+
+The Public Survey Panel will periodically review the progress of the surveys and will assess the compliance to the specification of the surveys products.
+
+The raw data will be made public worldwide immediately after passing quality control tests at ESO.
+
+\section{}
+Given the practical limitations on the ability of the archive to distribute large volumes of data, will ensure that the risks of other groups being able to scoop the science goals of the survey are very small.
+
+To ensure that this is even less likely, ESO may consider imposing further restrictions on the maximum amount of data that can be downloaded by a user not associated with the public surveys.
+
+\section{General policies on the delivery of data products from public surveys}
+
+
+Survey products will be delivered to the ESO archive in a format specified in the ESO Science Data Products standard.
+
+The following data products form part of the core delivery to the ESO archive:
+\begin{itemize}
+\item
+    Astrometrically and photometrically calibrated, co-added, re-gridded tiles, along with their respective confidence maps, in all of the project-relevant filters.
+\item
+    Source catalogues for a tile based on individual, co-added bands. The single band catalogs will be ingested and accessible from the ESO web pages as FITS files.
+\item
+    1D wavelength calibrated, and flux calibrated or continuum-normalised spectra, including extracted sky spectrum and error map.
+\item
+    Catalogues: they contain the list of parameters of individual objects across all of the observed filter bands. Their precise content to be delivered will depend on the scientific goals and exploitation possibilities of each PS. In coordination with the Public Survey Panel, ESO reserves the right to request from the PIs the expansion of the catalog contents with additional items that could enhance the scientific value of the data products, or their use by the community at large.
+\item
+    Survey data products must be supported and characterized by additional information, i.e. meta-data, which provides a full description for their scientific exploitation. For a description and definition of the meta-data we refer to the Phase 3 web pages.
+\end{itemize}
+
+
+\section{tile}
+In the case of VISTA the tile is defined to be the basic building block of the survey, because it allows a better synergy with the VST optical data products which will be present in the ESO archive also. For programmes which do not observe a full tile in an OB, the partially filled tiles should be the basic building block, although when these partial tiles can be combined to make the full tiles this should be done.
+
+\section{delivery}
+Following from the agreement signed by the ESO Director General and the PIs of the public surveys, the delivery of the data products to the ESO archive from an ESO Public Survey is the responsibility of the PI, who certifies the scientific quality and accuracy of the data products.
+
+\section{}
+The description of the product types and their specific format, the Phase 3 concepts and the support documentation for the submission and validation of the external data products for the public surveys are available on the Phase 3 web pages.
+
+
+% ******************************
+
+\chapter{Overview of the Phase 3 Process}
+
+The Phase 3 process encompasses several essential steps, each of which is described in detail below. Subsequently, the available features and optional actions of the Phase 3 system are elucidated in the Phase 3 User Help section.
+
+\section{Registering Your Phase 3 Submission}
+
+To commence the Phase 3 data submission process, access the Phase 3 Release Manager—a dedicated web application—by navigating your browser to \url{http://www.eso.org/rm}. Upon system prompt, log in to the ESO User Portal using your personal credentials.
+
+If your programme is not listed under Data Collections or if the display is empty, kindly register your Phase 3 submission by contacting the Phase 3 operations support staff at \url{https://support.eso.org/}. Please quote the subject as "REQUEST FOR PHASE 3 PROGRAMME PPP.C-NNNN", where 'PPP.C-NNNN' refers to your ESO programme identifier.
+
+Afterward, usually within one working day, you will receive a confirmation email stating that your programme has been successfully registered, and it will appear as a new Data Collection in the Phase 3 Release Manager.
+
+\section{Preparing Your Data}
+
+It is crucial to prepare your data in accordance with the data formats specified in the latest version of the ESO Science Data Products Standard. Please refer to the Phase 3 FAQ section while preparing your data.
+
+\section{Uploading Your Data to ESO}
+
+Transfer your data to the dedicated Phase 3 FTP server: \url{ftp://phase3ftp.eso.org/name/batch_MMMMM}, using the directory path displayed in the Phase 3 Release Manager. Here, 'name' represents your Phase 3 Data Collection, and MMMMM denotes the Batch ID.
+
+The recommended software for file transfer is either LFTP or FileZilla. For example:
+
+\begin{verbatim}
+lftp -u username phase3ftp.eso.org
+\end{verbatim}
+
+where "username" refers to your ESO User Portal credentials.
+
+Resolve any potential problems related to the file format before proceeding. If any corrections are necessary, please upload the corrected files. The system performs a series of Phase 3 checks during this stage. For more information on the checks, refer to the provided link.
+
+\section{Verifying Data Format Compliance}
+
+Once the data transfer is complete, "CLOSE" the submission by pressing the respective button in the Phase 3 Release Manager. This action triggers the Phase 3 format and provenance verification process on the ESO server. The completion time for this process varies depending on the data volume, ranging from a few minutes to several hours.
+
+You will receive an email notification upon completion of the verification process. If any problems are reported at this stage, they must be addressed before proceeding. The directory in the Phase3ftp server will remain in write-mode.
+
+Note: "Closing" the Phase 3 batch changes the respective FTP directory to read-only mode. As a result, you will be unable to upload additional files or replace/delete previously uploaded files.
+
+\section{Uploading the Data Release Description}
+
+To provide a comprehensive account of the release content, including originating observations, calibration and data reduction procedures, data quality, data format, and possibly the scientific context of the programme, please upload the data release description document associated with your Phase 3 data in PDF format.
+
+For further guidance on preparing the data release description, refer to the relevant documentation.
+
+\section{Finalizing Your Data Submission}
+
+Before making the data publicly available to the wider scientific community, press "SUBMIT" to confirm the completeness and consistency
+
+
+
+% ******************************
+
+
+
+\chapter{Phase 3 User Help}
+
+\section{introduction}
+
+This section elucidates the features available in the Phase 3 system, encompassing both the essential and the discretionary actions.
+
+\begin{itemize}
+    \item Phase 3 Software Documentation
+    \item Delegation of Phase 3 Permissions
+    \item Role of the Phase 3 Survey Manager
+    \item Uploading via Phase 3 FTP
+    \item Employing FITS Checksums and MD5 Hashes
+    \item Updating Pre-existing Phase 3 Data
+    \item Utilizing Test Mode
+    \item Reporting Data Issues
+\end{itemize}
+
+\section{Phase 3 Software Documentation}
+
+Below, you will find an in-depth elucidation of the Phase 3 software system:
+
+\begin{itemize}
+    \item Summary of checks executed at the time of data upload within Phase 3. \url{https://www.eso.org/sci/observing/phase3/phase3_checks_summary.txt}
+    \item Upon the conclusion of a batch, both provenance and unique catalogue identifier verifications are performed.
+    \item The Phase 3 Software User Manual (currently in preparation).
+\end{itemize}
+
+\section{Delegation of Phase 3 Permissions}
+
+As a Principal Investigator, you have the prerogative to delegate a subset of the Phase 3 tasks, such as data upload, data compliance testing, and verification of release completeness, to other distinguished members within your team. To bestow or withdraw Phase 3 permissions, please visit:
+
+\url{http://www.eso.org/ace/phase3Program/index}
+
+Permissions are configurable for each Phase 3 Data Collection, meaning that permissions are applicable to all batches that are part of a specific collection.
+
+The delegation of almost all Phase 3 actions is permissible, with the exception of the ultimate attestation that the uploaded data is both exhaustive and in harmony with the documentation.
+
+Though multiple delegates can collaboratively work on a single data release, the onus of ensuring the integrity and consistency of the release rests solely on the Principal Investigator.
+
+\section{Role of the Phase 3 Survey Manager}
+
+The Phase 3 Survey Manager is a specialized role dedicated exclusively to ESO public survey programs.
+
+Prior to initiating a Phase 3 submission, the Principal Investigator (P.I.) of the survey program is obligated to either self-assign or designate another user as the Survey Manager.
+
+The Survey Manager bears the ultimate responsibility for the delivery of Phase 3 data products in adherence to the initial survey management plan.
+
+The Survey Manager is granted an identical set of permissions as the P.I., including the submission of releases, but with the exception of the capability to reassign the Survey Manager role.
+
+\section{Uploading via Phase 3 FTP}
+
+You may employ an FTP client of your preference to establish a connection to:
+
+\url{ftp://phase3ftp.eso.org}
+
+Please authenticate by utilizing your personal ESO User Portal credentials.
+
+Subsequently, navigate to the directory:
+
+\texttt{/<Data collection name>/batch\_<ID>}
+
+This directory reflects the data collection name and batch ID as they appear in the Phase 3 Release Manager, enabling you to commence the data transfer.
+
+Note that the directory and its contents are exclusively accessible to the Principal Investigator who holds the ownership of the Phase 3 collection, the Survey Manager, and the appointed delegates. Throughout the preparation of the data release, you have the capability to manipulate files on the FTP server as necessary, including file replacement and deletion.
+
+[...]
+
+\section{Employing FITS Checksums and MD5 Hashes}
+
+FITS checksums serve as a critical mechanism to safeguard data transmission against any potential errors. As such, it is paramount that you update the corresponding checksum keywords prior to any data transfer.
+
+For non-FITS format ancillary files, a unique mechanism is employed to identify possible transmission errors, using their MD5 hashes. The MD5 hash must be stipulated using the dedicated keyword `ASSOMi` in the science file that defines the data set (Refer to ESO SDP standard for more details).
+
+\section{Updating Pre-existing Phase 3 Data}
+
+Pre-existing Phase 3 data can be updated through the submission of a new Phase 3 batch. The following use cases are recognized:
+
+\begin{itemize}
+    \item Successive updates to data releases, with an increasing signal-to-noise ratio in the final combined data product, could transpire in line with the progress of amassing increasing volumes of observational data over the course of a program aiming at very deep integrations on the same target. This scenario typically arises when observations are scheduled over more than one period.
+    \item Reprocessing of previously released data motivated by the improvement of data calibration procedures, enhanced quality control checks, or the advancement of data reduction algorithms, all leading to an overall improvement in data quality.
+\end{itemize}
+
+If you are uncertain whether your use case is recognized, feel free to reach out to the Phase 3 operations support staff at \url{https://support.eso.org/}, ensuring to quote the subject `PHASE 3`.
+
+\section{Correlating Old and New Files}
+
+Based on the naming convention adopted for the new files, there exist two distinct methodologies to provide the requisite link between new (updating) and old (to be updated) files.
+
+In cases where data sets consist of one primary science file and one or more ancillary files, the entire set of files needs to be updated concurrently. Ancillary files cannot be updated independently of the primary science file.
+
+[...]
+
+\section{Update Procedure}
+
+Though the procedure for submitting updates to Phase 3 batches essentially mirrors that of batches containing new data, the following points warrant special attention:
+
+\begin{itemize}
+    \item Improved versions of previously submitted files should be uploaded to a new Phase 3 batch within your pre-existing data collection.
+    \item Unless automatic version tracking is employed (as mentioned earlier), the CHANGES.USER file must be uploaded. This file can be uploaded via FTP before the batch is closed. Otherwise, upon closing the batch, a pop-up window will appear on the Release Manager interface, prompting the upload of this file.
+    \item In the data release description, please include a section documenting changes and improvements of the new data compared to the old data.
+    \item An important check for updates: when reviewing the completeness and consistency of the Phase 3 batch before submission, please verify that the update status is accurate (“UPDATING”) and the corresponding file counts are correct.
+\end{itemize}
+
+\section{Result}
+
+Upon the publication of the updating batch, the new data version becomes available, effectively replacing the old, obsolete version in any default archive query. Access to obsolete data is available only upon request.
+
+\section{Notes:}
+
+\begin{itemize}
+    \item NEW+UPDATING: Updates can be amalgamated with the submission of new data, i.e., data products which have not been submitted via Phase 3 yet, within the same Phase 3 batch.
+    \item The automatic tracking of data versions implies that previous data cannot be referenced in terms of ORIGFILE.
+\end{itemize}
+
+
+\subsection{Test Mode}
+
+To evaluate the conformity of a test data set with data format prerequisites without actual submission for archival and publication -- that is, circumventing the entire Phase 3 data submission workflow -- navigate to the Release Manager (RM) and select ``TEST YOUR DATA'' from the action menu of your Phase 3 batch.
+
+Through this process, the Phase 3 format and provenance verification procedures will be executed, after which the batch directory will revert to read/write mode, specifically to the ``OPEN'' state.
+
+A notification will be dispatched to your email upon the culmination of the validation process, and the ensuing test report can be accessed from the RM.
+
+\subsection{Reporting a Data Problem}
+
+Users of the ESO Science Archive Facility are emphatically encouraged to furnish feedback pertaining to the data quality of downloaded data products. This can be achieved by contacting the ESO Archive Science Group via the online form at \url{https://support.eso.org/}, under the topic: Phase 3.
+
+As a Phase 3 data provider, you may discover post-publication through the ESO Science Archive that certain Phase 3 data fails to meet the requisites for release as science data products, necessitating that these data be appropriately flagged within the user interface to alert archive users during data selection.
+
+In such instances, navigate to the RM and select ``REPORT DATA PROBLEM.'' Proceed to specify the collection that houses the data in question, the nature of the issue, and the compilation of files affected (denoted by their ORIGFILE name, not the ARCFILE name).
+
+Select the most apposite description for the issue from the available options, or, if the issue type is not enumerated, enter a custom description.
+
+\textbf{Default List of Data Problems:}
+
+\begin{itemize}
+    \item Data quality: data corrupted
+    \item Data quality: high background
+    \item Data quality: highly variable background
+    \item Data quality: telescope tracking error
+    \item Data quality: below quality cuts
+    \item Data quality: astronomical calibration failure
+    \item Data quality: flux calibration failure
+    \item Data quality: wavelength calibration failure
+    \item Data quality: other calibration failure
+    \item Data content: technical/calibration data, not science
+    \item Data content: does not belong to program
+    \item Data content: wrong pointing
+    \item Data content: spurious duplication
+    \item Header keywords: RA/DEC incorrect
+    \item Header keywords: non-compliant
+\end{itemize}
+
+Data issues are reported with respect to the “Phase 3 data set,” meaning the filename of the science file (with PRODCATG=SCIENCE.*) must be enumerated, and ancillary files, if any, will be incorporated automatically.
+
+The ESO Archive Science Group assumes responsibility for processing your report. Upon validation, the data sets in question will be denoted as “deprecated” within the ESO archive, rendering these data inaccessible by default and retrievable only upon explicit request.
+
+Who is entrusted with reporting Phase 3 data issues? The Principal Investigator, or equivalently, the proprietor of the Phase 3 collection, or the Phase 3 survey manager, possess the authority to report data problems.
+
+Should you proffer a revised, rectified version of the problematic data set, please refer to the use case Updating previously released Phase 3 data.
+
+
+\chapter{Data Release Description}
+
+The data release description is an essential component of any Phase 3 data release. It provides detailed information about the release content, including the originating observations, calibration and data reduction procedures, data quality, data format, and potentially the scientific context of the programme. This description is crucial for the data content validation performed by the Archive Science Group before ingesting the data into the ESO Archive. It is also vital for users of the ESO Archive, as it enables them to utilize the data products for their own scientific research.
+
+The principal investigator (PI) is responsible for preparing and delivering the data release description along with the data submission. To create the description, please utilize the provided template below and adhere to the accompanying guidelines. After addressing each question, please remove the guideline text (italic style).
+
+The completed release description must be a self-contained document in Portable Document Format (PDF), encompassing all necessary figures, plots, and tables. Prior to finalizing the release, please upload the release description via the Release Manager.
+
+It is important to note that the release description will be published exactly as submitted, without any further editing by ESO, to facilitate user access to the data release.
+
+
+%\textit{ESO observing programme (title)}
+
+\section{Abstract}
+
+Provide a concise overview of the data being released. Refer to the ESO programme, instrument, observational setup, filters/bands used, total sky coverage, number of epochs, resolution (if applicable), and touch upon the scientific context. Indicate if this is a catalogue data release.
+
+\section{Overview of Observations}
+
+Offer a brief summary of the observations underlying this data release. For imaging observations and surveys, provide the field layout with an indication of the bands used for each field, preferably accompanied by a finding chart or display of the covered fields/objects. For spectroscopy, provide finding charts if available.
+
+\section{Release Content}
+
+List the imaging data products, including field designation/target object, J2000 coordinates, filter, exposure time, observing date, seeing, and limiting magnitude. For spectroscopic data products, list the target name, J2000 coordinates, spectral range, resolution, exposure time, observing date, and signal-to-noise ratio.
+
+If the file list is extensive, such as in the case of surveys, provide a summary that includes the distribution of key parameters (e.g., seeing and limiting magnitude) if possible. Specify the total number of data files in any case.
+
+For catalogue data, provide a general description of the content in terms of catalogue parameters and the applied selection criteria. Address the following topics:
+
+\begin{itemize}
+\item Sky region covered by the data. Are there any gaps?
+\item Specify the total area covered in square degrees.
+\item Spectral band used for detection or if a multi-band detection image ("$\chi^2$ image") was used.
+\item Limiting magnitude of the source catalogue and the corresponding statistical significance of the faintest sources (e.g., 10 $\sigma$). Is the limiting magnitude uniform across the survey area?
+\item Total number of sources or catalogue records, and the total data volume in megabytes.
+\end{itemize}
+
+\section{Release Notes}
+
+Provide short descriptions of the reduction methods used, calibration procedures (astrometric, photometric, wavelength, etc.), characterization of the data quality, and a comparison with previous releases when applicable.
+
+\begin{itemize}
+\item For spectra, including 3D cubes, specify the spectral reference system (e.g., topocentric, heliocentric, barycentric) and whether the wavelength axis refers to measurements in dry air or vacuum.
+\item For images, specify the photometric reference system. Clearly document the color transformations applied to relate the photometric reference system to the instrumental system for each filter band. Describe the procedure used to establish a global photometric calibration for surveys.
+\end{itemize}
+
+\section{Data Reduction and Calibration}
+
+Address the following questions for scientific catalogue data, particularly in the case of source catalogues:
+
+\begin{itemize}
+\item Which source detection method was used to generate the catalogue? Were images filtered before detection? Specify the detection parameters (threshold, minimum area, etc.).
+\item How were very bright stars and resulting imaging artifacts handled?
+\item Describe the screening procedure used to remove spurious sources and artifacts from the catalogue.
+\item Explain the process of merging overlapping survey tiles into a single unique source catalogue (in the case of surveys).
+\item Specify the reference used for astrometric calibration (GSC1, GSC2, USNO, 2MASS catalogue).
+\item Specify the photometric reference system. Describe the procedure adopted to establish a global photometric calibration for surveys.
+\item Was the illumination effect corrected? If so, specify whether image pixels or source fluxes were corrected.
+\item What corrections were applied to photometric measurements to account for seeing variations (e.g., aperture corrections, PSF matching)?
+\item Discuss the loss of flux due to finite apertures and the estimation of total flux for point sources.
+\item Discuss the effect of intergalactic extinction. Were fluxes/magnitudes corrected for reddening?
+\end{itemize}
+
+\section{Data Quality}
+
+Provide an outline of the quality checks performed on the data, including a discussion of the following topics when applicable:
+
+\begin{itemize}
+\item Uniformity of the astrometric calibration across the survey region. Are there residuals due to individual detector chips or the tiling scheme of the survey?
+\item Is the zeropoint uniform across the tile/image? Discuss residuals due to chip-to-chip variations and the illumination effect.
+\item Uniformity of photometric calibration across the survey region, different filters, and between different epochs. Assess the quality of the color indices.
+\item Quality of source parameters for point sources versus extended sources.
+\item Contamination of the source catalogue. What is the fractional amount of spurious objects at the faintest flux level?
+\item Quantification of catalogue completeness.
+\end{itemize}
+
+\section{Known Issues}
+
+\textit{If any}
+
+\section{Previous Releases}
+
+This section applies only to subsequent releases with release numbers greater than 1. Provide the release numbers of previous Phase 3 releases for this data collection and list the changes in this release (N) with respect to the immediately preceding data release (N-1).
+
+\section{Data Format}
+
+\subsection{File Types}
+
+Describe the types of files included in this release and the file naming conventions used.
+
+\subsection{Catalogue Columns}
+
+List the label, data format, and description for each catalogue column.
+
+
+
+
+\chapter{Links}
+Phase3\\
+\url{https://www.eso.org/sci/observing/phase3.html}\\
+~\\
+Release Manager\\
+\url{http://www.eso.org/rm}\\
+~\\
+Data Releases\\
+\url{http://eso.org/rm/publicAccess#/dataReleases}\\
+~\\
+Data Streams\\
+\url{https://www.eso.org/sci/observing/phase3/data_streams.html}\\
+~\\
+Phase 3 standards\\
+\url{https://www.eso.org/sci/observing/phase3/p3sdpstd.pdf}\\
+~\\
+Phase 3 release\\
+\url{https://www.eso.org/sci/observing/phase3/release-description-tmpl.doc}\\
+~\\
+Phase3 FAQ\\
+\url{https://www.eso.org/sci/observing/phase3/faq.html}\\
+~\\
+Phase3 checks\\
+\url{https://www.eso.org/sci/observing/phase3/phase3_checks_summary.txt}\\
+~\\
+ESO data interface control document\\
+\url{https://archive.eso.org/cms/tools-documentation/dicb/ESO-044156_6DataInterfaceControlDocument.pdf}\\
+~\\
+FITS standard\\
+\url{https://fits.gsfc.nasa.gov/standard30/fits_standard30aa.pdf}\\
+~\\
+IVOA Spectral data model\\
+\url{https://www.ivoa.net/documents/SpectrumDM/20111120/index.html}\\
+~\\
+An IVOA Standard for Unified Content Descriptors\\
+\url{https://www.ivoa.net/documents/cover/UCD-20050812.html}\\
+~\\
+FITS format description for pipeline products with data, error and data quality information\\
+\url{ftp://ftp.eso.org/pub/dfs/pipelines/doc/VLT-SPE-ESO-19500-5667_DataFormat.pdf}\\
+~\\
+Note on the description of polarization data\\
+\url{https://www.ivoa.net/documents/Notes/Polarization/}\\
+~\\
+The UCD1+ controlled vocabulary\\
+\url{https://www.ivoa.net/documents/UCD1+/20180527/index.html}\\
+
+
+\end{document}
