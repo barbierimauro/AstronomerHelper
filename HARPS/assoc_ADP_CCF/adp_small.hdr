@@ -1,0 +1,52 @@
+HIERARCH ESO TEL TARG ALPHA  =   132700.420 / Alpha coordinate for the target
+HIERARCH ESO TEL TARG DELTA  =  -473916.470 / Delta coordinate for the target
+HIERARCH ESO TEL TARG COORDTYPE= 'M       ' / Coordinate type (M=mean A=apparent
+HIERARCH ESO TEL TARG EPOCH  =     2000.000 / Epoch
+HIERARCH ESO TEL TARG EPOCHSYSTEM= 'J       ' / Epoch system (default J=Julian)
+HIERARCH ESO TEL TARG EQUINOX=     2000.000 / Equinox
+HIERARCH ESO TEL TARG PARALLAX=       0.000 / Parallax
+HIERARCH ESO TEL TARG PMA    =     0.000000 / Proper Motion Alpha
+HIERARCH ESO TEL TARG PMD    =     0.000000 / Proper motion Delta
+HIERARCH ESO TEL TARG RADVEL =      227.800 / Radial velocity
+HIERARCH ESO INS ADC1 RA     = 132659.319891 / ~~:~~:~~.~ RA (J2000) pointing [d
+HIERARCH ESO INS ADC1 DEC    = -473913.779750 / -~~:~~:~~.~ DEC (J2000) pointing
+HIERARCH ESO INS ADC1 END    =     171.8690 / Position angle at end [deg].
+HIERARCH ESO INS ADC2 RA     = 132659.319891 / ~~:~~:~~.~ RA (J2000) pointing [d
+HIERARCH ESO INS ADC2 DEC    = -473913.779750 / -~~:~~:~~.~ DEC (J2000) pointing
+HIERARCH ESO INS ADC2 END    =     297.0330 / Position angle at end [deg].
+HIERARCH ESO TEL AZ          =      311.657 / Az angle at start (deg) S=0,W=90
+HIERARCH ESO TEL ALT         =       52.612 / Alt angle at start (deg)
+HIERARCH ESO INS DET1 TMMEAN =         0.51 / Normalised mean exposure time.
+HIERARCH ESO TEL PARANG START=      -75.870 / Parallactic angle at start (deg)
+HIERARCH ESO TEL PARANG END  =      -58.060 / Parallactic angle at end (deg)
+HIERARCH ESO ADA ABSROT START=    307.08872 / Abs rot angle at exp start (deg)
+HIERARCH ESO ADA ABSROT END  =    307.08872 / Abs rot angle at exp end (deg)
+HIERARCH ESO ADA GUID STATUS = 'OFF     '   / Status of autoguider
+HIERARCH ESO ADA POSANG      =      0.00000 / Position angle at start
+HIERARCH ESO TEL TRAK STATUS = 'NORMAL  '   / Tracking status
+HIERARCH ESO INS ID          = 'HARPS/1.57' / Instrument ID.
+HIERARCH ESO TEL ID          = 'v 332739'   / TCS version number
+HIERARCH ESO TEL DATE        = '2009-06-05T01:00:00' / TCS installation date
+HIERARCH ESO TEL GEOLAT      =     -29.2584 / Tel geo latitute (+=North) (deg)
+HIERARCH ESO TEL GEOLON      =     -70.7345 / Tel geo longitude (+=East) (deg)
+HIERARCH ESO TEL GEOELEV     =         2400. / Elevation above sea level (m)
+HIERARCH ESO TEL FOCU LEN    =       28.914 / Focal length (m)
+HIERARCH ESO TEL FOCU SCALE  =        7.120 / Focal scale (arcsec/mm)
+HIERARCH ESO TEL FOCU VALUE  =       12.002 / M2 setting (mm)
+HIERARCH ESO TEL MOON RA     =   180.258734 / 12:01:02.0 RA (J2000) (deg)
+HIERARCH ESO TEL MOON DEC    =      3.91187 / 03:54:42.7 DEC (J2000) (deg)
+SPECSYS = 'BARYCENT'           / Reference frame
+GAIN    =                 0.66 / Conversion from electrons to ADU
+DETRON  =                  3.3 / Readout noise per output (e-)
+HIERARCH ESO DRS VERSION = 'EGGS_3.8' / DRS version
+HIERARCH ESO DRS BJD = 2459984.77576015 / Barycentric Julian Day
+HIERARCH ESO DRS BERV = 24.4375206972698 / Barycentric Earth Radial Velocity
+HIERARCH ESO DRS BERVMX = 26.098235738727 / Maximum BERV
+HIERARCH ESO DRS CAL LOC BCKGRD = 0.280272685051094 / mean background [%]
+HIERARCH ESO DRS CAL TH LAMP USED = 'THAR1   ' / Lamp used for wavelength calibr
+HIERARCH ESO DRS CAL LOC FILE = 'HARPS.2023-02-08T21:21:40.099_loco_A.fits' / Lo
+HIERARCH ESO DRS CAL FLAT FILE = 'HARPS.2023-02-08T20:26:50.582_flat_A.fits' / F
+HIERARCH ESO DRS CAL TH FILE = 'HARPS.2023-02-08T20:43:40.879_wave_A.fits' / Wav
+HIERARCH ESO DRS CAL TH GUESS LINES = 'th_lines_o36_4_EGGS.txt' / filename  gues
+HIERARCH ESO DRS CAL TH FILE LINES = 'TH_sel_R100000_A0.5-0.25-0.1.dat' / file n
+HIERARCH ESO DRS BLAZE FILE = 'HARPS.2023-02-08T20:26:50.582_blaze_A.fits' / Bla
