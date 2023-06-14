@@ -10,17 +10,59 @@ import logging
 import numpy as np
 from astropy.io import fits
 
+def butter_lowpass(cutoff, nyq_freq, order=4):
+    normal_cutoff = float(cutoff) / nyq_freq
+    b, a = signal.butter(order, normal_cutoff, btype='lowpass')
+    return b, a
+
+def butter_lowpass_filter(data, cutoff_freq, nyq_freq, order=4):
+    b, a = butter_lowpass(cutoff_freq, nyq_freq, order=order)
+    y = signal.filtfilt(b, a, data)
+    return y
+
+def butter_highpass(cutoff, nyq_freq, order=4):
+    normal_cutoff = float(cutoff) / nyq_freq
+    b, a = signal.butter(order, normal_cutoff, btype='highpass')
+    return b, a
+
+
+def butter_highpass_filter(data, cutoff_freq, nyq_freq, order=4):
+    b, a = butter_highpass(cutoff_freq, nyq_freq, order=order)
+    y = signal.filtfilt(b, a, data)
+    return y
+
+def statistics(y):
+    max_y = np.nanmax(y)
+    min_y = np.nanmin(y)
+    sum_y = np.nansum(y)
+    mean_y = np.nanmean(y)
+    median_y = np.nanmedian(y)
+    rms_y = np.nanstd(y, ddof=1)
+    skew_y = st.skew(y/max(y), nan_policy='omit')
+    kurt_y = st.kurtosis(y/max(y), nan_policy='omit')
+    return max_y, min_y, sum_y, mean_y, median_y, rms_y, skew_y, kurt_y
+
+
+
 
 logging.basicConfig(filename='error.log', level=logging.ERROR)
-
 
 # Filter the warning
 warnings.filterwarnings('ignore', category=UserWarning, append=True)
 
 # Location to store the downloaded files
 storage_path = '/scratch/mbarbier/mylocal/machines/Desktop_media/SeagateHub/DATA/HARPS/harpstar/data'
-cache_path = '/scratch/mbarbier/mylocal/machines/Desktop_media/SeagateHub/DATA/HARPS/harpstar/data/.cache'
+cache_path = storage_path + '/.cache'
 exec_path='/home/mbarbier/mylocal/harpsrvcatalog/output'
+
+# minimum and maximum usable wavelenghts in the blue and red ccds in anstrong
+wl_min_b=3783.0
+wl_max_b=5304.0
+bw_b = wl_max_b-wl_min_b # 1521.0
+wl_min_r=5338.0
+wl_max_r=6912.0
+bw_b = wl_max_r-wl_min_r # 1574.0
+
 
 file_names = ['adp', 'ccf', 'bis', 'gui']
 base_filename = 'drs.{}.kwlist'
@@ -81,7 +123,15 @@ for row in data:
         spectra_file = os.path.join(storage_path, dateobs, archive_id_spectra)       
         try:
             with fits.open(spectra_file) as hdulist:
-                spectra_data = hdulist[0].data
+                hdu=fits.open(fname,ignore_missing_end=True)
+                hdr0    = hdu[0].header
+                hdr1    = hdu[1].header
+                spec    = hdu[1].data
+                wl=0.0
+                flux=0.0
+                wl      = spec.field('WAVE')
+                flux    = spec.field('FLUX')
+                npoints = flux.size
         except FileNotFoundError:
             print(f'ADP file {spectra_file} not found.')
             continue
