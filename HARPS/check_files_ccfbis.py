@@ -50,6 +50,7 @@ warnings.filterwarnings('ignore', category=UserWarning, append=True)
 
 
 
+
 # ------------------------------  BEGIN FUNCTION ------------------------------ #
 def fit_absorption_line2(wavelengths, intensities, wc,ws):
     line_center0 = wc
@@ -258,8 +259,6 @@ def negative_lorentzian(x, const, amplitude, x0, gamma):
 def fit_absorption_line(wavelengths, intensities, wc,ws, flagd):
     plot=flagd
     log=flagd
-    #line_center0 = 6562.81 # H-alpha
-    #line_center0 = 4262.27 #Tc I
     line_center0 = wc
     wl_span = ws
     mask = (wavelengths > (line_center0 - wl_span)) & (wavelengths < (line_center0 + wl_span))
@@ -267,9 +266,10 @@ def fit_absorption_line(wavelengths, intensities, wc,ws, flagd):
     flux = intensities[mask]
     npt=len(wavelengths[mask])
     
+    #for attempt in range(5):
     const_guess = np.mean(flux)
     amplitude_guess = np.min(flux) - const_guess
-    mean_guess = line_center0
+    mean_guess = line_center0 #*(attempt+1)
     stddev_guess = 0.1
 
     #fit Gaussian
@@ -312,12 +312,8 @@ def fit_absorption_line(wavelengths, intensities, wc,ws, flagd):
         amplitude_error = errors[1]
         line_center_error = errors[2]
         gamma_error = errors[3]
-    
-   
-    
         delta_wl=line_center0-popt_lorentzian[2]
         rv = (line_center/line_center0 - 1)*const.c.to(u.km/u.s).value
-        
         mask1 = (wl > (line_center - 2 * gamma)) & (wl < (line_center + 2 * gamma))
         
         # Subset of flux and y_fit
@@ -335,7 +331,21 @@ def fit_absorption_line(wavelengths, intensities, wc,ws, flagd):
         ss_res = np.sum(residuals ** 2)
         ss_tot = np.sum((flux_subset - np.mean(flux_subset)) ** 2)
         r_squared = 1 - (ss_res / ss_tot)
+        if r_squared<0 :
+            print("************************************")
+            print("************************************")
+            print("* W A R N I N G       R2<0          ")
+            print("************************************")
+            print("************************************")
+            #    break
+            
     
+    #if ERRORE == 0:
+        #print('attempt ',attempt)
+        #if attempt==1000:
+        #        plot=False
+        #        log=False
+                
         flux1=1-flux_subset
         sum_flux = sum(flux1)
         npt_subset = len(flux_subset)
@@ -343,7 +353,8 @@ def fit_absorption_line(wavelengths, intensities, wc,ws, flagd):
         skewness = sum(flux1[i] * (wl_subset[i] - line_center)**3 for i in range(npt_subset)) / (sum_flux * sigma**3)
         kurtosis = sum(flux1[i] * (wl_subset[i] - line_center)**4 for i in range(npt_subset)) / (sum_flux * sigma**4) - 3
 
-        if amplitude>0 and line_center0>line_center-gamma and line_center0<line_center+gamma and abs(line_center-line_center0)<0.25:
+        #if amplitude>0 and line_center0>line_center-gamma and line_center0<line_center+gamma and abs(line_center-line_center0)<0.25:
+        if plot == True:    
     #       log=True
             if log == True:
                 print('continuum         ',continuum, continuum_error)
@@ -365,38 +376,109 @@ def fit_absorption_line(wavelengths, intensities, wc,ws, flagd):
             #Red: '#D62728'
             #Purple: '#9467BD'
     #        plot = True
+     
             if plot == True:
+                print(rv/const.c.to(u.km/u.s).value)
                 x1 = line_center0 - wl_span
                 x2 = line_center0 + wl_span
-                fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True, gridspec_kw={'height_ratios': [3, 1]})
-                manager = plt.get_current_fig_manager()
-                manager.window.wm_geometry("1200x600+0+0")
-                ax1.plot(wl,flux/continuum, label='Data')
-                ax1.plot(wl, y_fit_lorentzian/continuum, label='Lorentzian Fit', linestyle='dashed')
-                ax1.axvline(line_center0, color='black', linestyle='dashed', label='Center')
-                ax1.axvline(line_center , color='cyan', linestyle='dashed', label='Center')
-                ax1.axvline(line_center-gamma, color='red', linestyle='dashed', label='Center')
-                ax1.axvline(line_center+gamma, color='red', linestyle='dashed', label='Center')
-                ax1.set_xlim(x1, x2)
-                ax1.set_ylabel('Flux')
-                #ax1.set_title('H-alpha Line')
-                ax1.grid(True)
-                #ax1.legend()
-                ax2.plot(wl, (flux - y_fit_lorentzian)/continuum, label='Residuals')
-                ax2.axvline(line_center0, color='black', linestyle='dashed', label='Center')
-                ax2.axvline(line_center-gamma, color='red', linestyle='dashed', label='Center')
-                ax2.axvline(line_center+gamma, color='red', linestyle='dashed', label='Center')
-                ax2.set_xlim(x1, x2)
-                ax2.set_xlabel('Wavelength [AA]')
-                ax2.set_ylabel('Residuals')
-                ax2.grid(True)
-                plt.tight_layout()
-                plt.show()
+                #x1 = line_center0 - 2
+                #x2 = line_center0 + 2
+                lambda_values = absorption_lines_data['lambda_air']
+                loggf_values = absorption_lines_data['log_gf']
+                elements = absorption_lines_data['specie']
+                mask_lines = (lambda_values > (line_center0 - wl_span)) & (lambda_values < (line_center0 + wl_span)) 
+                #mask_lines2 = (lambda_values > (line_center0 - wl_span)) & (lambda_values < (line_center0 + wl_span)) & np.isnan(loggf_values)
+                #new_wl = wl*(1+rv/const.c.to(u.km/u.s).value)
+                #flux_interpolator = interp1d(new_wl, flux, kind='cubic', bounds_error=False, fill_value=0)
+                #new_flux = flux_interpolator(wl)
+                new_wl = wl*(1-rv/const.c.to(u.km/u.s).value)
+                new_flux = flux
+                print("Radial velocity (km/s):", rv)
+                print("Speed of light (km/s):", const.c.to(u.km/u.s).value)
+                print("Expected shift in Angstroms:", 6562 * (rv / const.c.to(u.km/u.s).value))
+                print('mean shift in wavelength',np.mean(wl-new_wl),'mean difference in flux',np.mean(flux-new_flux))
+                #for w, f, new_w, new_f in zip(wl, flux, new_wl, new_flux):
+                #    print(w, f, new_w, new_f)
+                print()
+                num_plot = 1
+                if num_plot == 1:
+                    fig, ax1 = plt.subplots(1, 1)
+                    manager = plt.get_current_fig_manager()
+                    manager.window.wm_geometry("1400x1200+0+0")
+                    original = False
+                    if original == True:
+                        ax1.plot(new_wl,new_flux/continuum, color='orange', linestyle ='dashed', label='Data')
+                        ax1.axvline(line_center0, color='#00FF00', linestyle='dashed', label='Center')
+                        ax1.axvline(line_center , color='#FF00FF', linestyle='dashed', label='Center')
+                        ax1.axvline(line_center-gamma, color='#FF00FF', linestyle='dashed', label='Center')
+                        ax1.axvline(line_center+gamma, color='#FF00CC', linestyle='dashed', label='Center')
+                    else:
+                        ax1.plot(new_wl,new_flux/continuum, label='Data')
+                        ax1.plot(new_wl, y_fit_lorentzian/continuum, label='Lorentzian Fit', linestyle='dashed')
+                        ax1.axvline(line_center0, color='#00FF00', linestyle='dashed', label='Center')
+                        jj=-1
+                        for lam, elem in zip(lambda_values[mask_lines], elements[mask_lines]):
+                            jj= jj+1
+                            ax1.axvline(lam, color = '#bbbbff', linestyle='dotted')
+                            ax1.text(lam, ax1.get_ylim()[0]+0.0001*jj, elem, rotation=45, va='bottom')
+                        #for lam, elem in zip(lambda_values[mask_lines2], elements[mask_lines2]):
+                        #    ax1.axvline(lam, linestyle='dotted')
+                        #    ax1.text(lam, ax1.get_ylim()[0], elem, rotation=45, va='bottom')
+                    ax1.set_xlim(x1, x2)
+                    ax1.set_ylabel('Flux')
+                    ax1.grid(True)
+                    plt.tight_layout()
+                    plt.show()
+                elif num_plot == 2:
+                    fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True, gridspec_kw={'height_ratios': [3, 1]})
+                    manager = plt.get_current_fig_manager()
+                    manager.window.wm_geometry("1800x600+0+0")
+                    original = False
+                    if original == True:
+                        ax1.plot(new_wl,new_flux/continuum, color='orange', linestyle ='dashed', label='Data')
+                        ax1.axvline(line_center0, color='#00FF00', linestyle='dashed', label='Center')
+                        ax1.axvline(line_center , color='#FF00FF', linestyle='dashed', label='Center')
+                        ax1.axvline(line_center-gamma, color='#FF00FF', linestyle='dashed', label='Center')
+                        ax1.axvline(line_center+gamma, color='#FF00CC', linestyle='dashed', label='Center')
+                    else:
+    #                    ax1.plot(wl,flux/continuum, color ='#fdfdfd', label='Data')
+                        ax1.plot(new_wl,new_flux/continuum, label='Data')
+                        ax1.plot(new_wl, y_fit_lorentzian/continuum, label='Lorentzian Fit', linestyle='dashed')
+                        ax1.axvline(line_center0, color='#00FF00', linestyle='dashed', label='Center')
+                        for lam, elem in zip(lambda_values[mask_lines], elements[mask_lines]):
+                            ax1.axvline(lam, color='#00e000', linestyle='dotted')
+                            ax1.text(lam, ax1.get_ylim()[0], elem, rotation=45, va='top', color='#00a000')
+                        for lam, elem in zip(lambda_values[mask_lines2], elements[mask_lines2]):
+                            ax1.axvline(lam, color='#d000b0', linestyle='dotted')
+                            ax1.text(lam, ax1.get_ylim()[0], elem, rotation=45, va='bottom', color='#8000b0')
+                    ax1.set_xlim(x1, x2)
+                    ax1.set_ylabel('Flux')
+                    #ax1.set_title('H-alpha Line')
+                    ax1.grid(True)
+                    #ax1.legend()
+                    ax2.plot(new_wl, (flux - y_fit_lorentzian)/continuum, label='Residuals')
+                    ax2.axvline(line_center0, color='#00FF00', linestyle='dashed', label='Center')
+                    #ax2.axvline(line_center-gamma, color='red', linestyle='dashed', label='Center')
+                    #ax2.axvline(line_center+gamma, color='red', linestyle='dashed', label='Center')
+                    for lam, elem in zip(lambda_values[mask_lines], elements[mask_lines]):
+                        ax2.axvline(lam, color='#000080', linestyle='dotted')
+                    ax2.set_xlim(x1, x2)
+                    ax2.set_xlabel('Wavelength [AA]')
+                    ax2.set_ylabel('Residuals')
+                    ax2.grid(True)
+                    plt.tight_layout()
+                    plt.show()
+                else:
+                    figatomare = True
             
+        new_wl = wl*(1-rv/const.c.to(u.km/u.s).value)
+        new_flux = flux
+        speck=new_flux/continuum
+        speck_wl=new_wl
     else:
         figatomare = True
 
-    return rv,reduced_chisq,gamma,skewness,kurtosis
+    return rv,reduced_chisq,gamma,skewness,kurtosis,speck,speck_wl
 # ------------------------------  END   FUNCTION ------------------------------ #
 
 # ------------------------------  BEGIN FUNCTION ------------------------------ #
@@ -630,8 +712,8 @@ def process_gui_file(gui_files, datakw):
         isfits = testfilefits(gui_file)
         if isfits:
             # Open the file
-            with fits.open(gui_file) as hdulist:
-                hdr0 = hdulist[0].header
+            with fits.open(gui_file) as harps_list_obs:
+                hdr0 = harps_list_obs[0].header
                 # Loop through the keywords
                 for keyword in datakw['gui']['keywords']:
                     column_name = keyword.replace('HIERARCH ESO ', '').replace(' ', '_').lower()
@@ -685,8 +767,8 @@ for index, row in stellar_templates.iterrows():
     spt = row['spt']
     template_file = row['template_file']
     
-    with fits.open(template_file) as hdulist:
-        spectpl = hdulist[1].data
+    with fits.open(template_file) as harps_list_obs:
+        spectpl = harps_list_obs[1].data
         tpl_wl_vacuum = spectpl.field('WAVE')
         tpl_wl_air = convert_to_air_wavelengths(tpl_wl_vacuum)
         flux = spectpl.field('FLUX')
@@ -706,6 +788,15 @@ for index, row in stellar_templates.iterrows():
 templates_spectra = [tpl_M, tpl_K, tpl_G, tpl_F, tpl_A, tpl_B]
 
 
+
+#
+
+#with fits.open('spectral_line_list_coluzzi_harps.fits') as absorption_lines:
+#    absorption_lines_data = absorption_lines[1].data
+
+with fits.open('nist_lines_output.fits') as absorption_lines:
+    absorption_lines_data = absorption_lines[1].data
+    
 
 
 # Dictionary to store keywords and comments for different file types
@@ -731,28 +822,47 @@ for file_type in file_names:
     datakw[file_type] = {'keywords': keywords_list, 'comments': comments_list}
 
 # Open the FITS file
-with fits.open('harps_simbad_crossmatch_nearest.fits') as hdulist:
-    hdulist_data = hdulist[1].data
-    indices = np.arange(len(hdulist_data))
+with fits.open('harps_simbad_crossmatch_nearest.fits') as harps_list_obs:
+    harps_list_obs_data = harps_list_obs[1].data
+    indices = np.arange(len(harps_list_obs_data))
     # Shuffle the indices
     np.random.shuffle(indices)
     # Use the shuffled indices to access the rows in random order
-    shuffled_hdulist_data = hdulist_data[indices]
+    shuffled_harps_list_obs_data = harps_list_obs_data[indices]
 
-#mask_acen = [(row['ra']>219.84) & (row['ra']<219.9) & (row['dec']<-60.826) & (row['dec']>-60.844)  for row in hdulist_data]
-#mask_bethyi= [(row['ra']>6.34) & (row['ra']<6.48) & (row['dec']>-77.265) & (row['dec']<-77.245)  for row in hdulist_data]
+#print('begin masking')
+
+#mask_spt = [not row['spt_obj'].startswith(('O','B','A','F', 'G', 'K', 'M', 'N', '-')) for row in shuffled_harps_list_obs_data]
+#mask_spt = [row['spt_obj'].startswith(('C','W','Q','R', 'S', '?')) for row in shuffled_harps_list_obs_data]
+#mask_acen = [(row['ra']>219.84) & (row['ra']<219.9) & (row['dec']<-60.826) & (row['dec']>-60.844)  for row in harps_list_obs_data]
+#mask_bethyi= [(row['ra']>6.34) & (row['ra']<6.48) & (row['dec']>-77.265) & (row['dec']<-77.245)  for row in harps_list_obs_data]
+#mask_pole= [(row['dec']>-70) & (row['dec']<-90)  for row in harps_list_obs_data]
 #mask=mask_acen
 #mask=mask_bethyi
-# Apply the mask to select only the rows that meet the conditions
-# Sort the selected_rows by 'COLUMN_MY_3' in descending order
-#selected_rows = [row for row, m in zip(hdulist_data, mask) if m]
+#mask=mask_pole
+
+## Apply the mask to select only the rows that meet the conditions
+#selected_rows = [row for row, m in zip(harps_list_obs_data, mask) if m]
+#selected_rows = [row for row, m in zip(shuffled_harps_list_obs_data, mask) if m]
+## Sort the selected_rows by 'mjd_obs' in descending order
 #selected_rows = sorted(selected_rows, key=lambda x: x['mjd_obs'], reverse=False)
 
-k = 0
-# Loop over all rows
-#for row in hdulist_data:
+#print(len(selected_rows))
 #for row in selected_rows:
-for row in shuffled_hdulist_data:
+#    print(row['spt_obj'])
+    
+#print('end masking')
+#sys.exit()
+k = 0
+speck = None
+#speck_wl = None
+# Loop over all rows
+
+#for row in harps_list_obs_data:
+#
+#for row in selected_rows:
+#
+for row in shuffled_harps_list_obs_data:
     k += 1
     #print()
     #if(k>1000):
@@ -781,11 +891,11 @@ for row in shuffled_hdulist_data:
         #adp_data['num_pmde'] = {'value': None,'comment': None}
         isfits = testfilefits(spectra_file)
         if isfits == True:
-            hdulist = fits.open(spectra_file)
+            harps_list_obs = fits.open(spectra_file)
             #print(f'adp {spectra_file.replace("/scratch/mbarbier/mylocal/machines/Desktop_media/SeagateHub/DATA/HARPS/harpstar/data/","")}')
-            hdr0 = hdulist[0].header
-            hdr1 = hdulist[1].header
-            spec = hdulist[1].data
+            hdr0 = harps_list_obs[0].header
+            hdr1 = harps_list_obs[1].header
+            spec = harps_list_obs[1].data
             adp_data = {}
             keywords = datakw['adp']['keywords']
             for keyword in keywords:
@@ -876,89 +986,31 @@ for row in shuffled_hdulist_data:
             print(row['object'],row['spt_obj'])
             #rv,reduced_chisq,gamma,skewness,kurtosis = fit_absorption_line2(wl_, flux_,6562.817,30.0)
             
-            rv,reduced_chisq,gamma,skewness,kurtosis = fit_absorption_line(wl_, flux_,6562.817,10.0, False)
+            rv,reduced_chisq,gamma,skewness,kurtosis,speck1,speck_wl = fit_absorption_line(wl_, flux_,6562.817,20.0, False)
             
-            new_wl = wl_*(1+rv/const.c.to(u.km/u.s).value)
-            flux_interpolator = interp1d(wl_, flux_, kind='cubic', bounds_error=False, fill_value=0)
-            new_flux = flux_interpolator(new_wl)
-            _,_,_,_,_ = fit_absorption_line(new_wl, new_flux,4297.00,1, True)
+            if k==1:
+                speck = np.zeros_like(speck1)
+
+            print(k)
+            speck=((k-1)*speck+speck1)/k
+            
+            if np.mod(k,100)==0:
+                fig, ax1 = plt.subplots(1, 1)
+                ax1.plot(speck)
+                plt.show()
+            
+
+            
+            #new_wl = wl_*(1+rv/const.c.to(u.km/u.s).value)
+            #flux_interpolator = interp1d(wl_, flux_, kind='cubic', bounds_error=False, fill_value=0)
+            #new_flux = flux_interpolator(new_wl)
+            #_,_,_,_,_ = fit_absorption_line(new_wl, new_flux,6562.817,10.0, True)
 
             
             #popt,deltawl,rvha = fit_absorption_line(wl_, flux_,4861.332,10.0)
             #continuum,intensity,centrawl,width1sig = popt
             #print(row['object'],",",row['mjd_obs'],",",rv,",",reduced_chisq,",",gamma,",",skewness,",",kurtosis)
 
-            radvel = False
-            if radvel == True:
-                em1=np.min(wl) 
-                em2=np.max(wl)
-                ix1=np.argmin(np.abs(tpl_wl-em1))
-                ix2=np.argmin(np.abs(tpl_wl-em2))
-                tpl_wl_cut=tpl_wl[ix1:ix2+1]
-    
-                results = []
-                max_velocity = +1000  # km/s
-                min_velocity = -1000  # km/s
-                deltalamba_over_lambda = 0.01 / 5500.0
-                vel_c = const.c.to(u.km/u.s).value
-                kost = (deltalamba_over_lambda * vel_c)
-                #print(80/kost)
-                #sys.exit()
-                kk=0
-                for flux_template in templates_spectra:
-                    tpl_flux_cut = flux_template[ix1:ix2+1]
-                    kk += 1
-                    if kk >1:
-                        break
-                    # Calculate the maximum allowed lag for the desired velocity range
-                    max_lag = int(max_velocity / kost )
-                    min_lag = int(min_velocity / kost )
-                    #print(min_lag,max_lag)
-                    
-                    # Limit the range of lags
-                    lag = np.arange(min_lag, max_lag + 1)
-                    velocities = lag * kost
-                    lag = np.arange(-npoints + 1, npoints)
-    
-                    correlation = correlate(flux_ - np.mean(flux_), tpl_flux_cut - np.mean(tpl_flux_cut), mode='full')
-                    # Since the correlation is calculated for a larger range of lags than needed,
-                    # slice the correlation array to match the range of lags of interest.
-                    start_index = npoints + min_lag
-                    end_index = npoints + max_lag + 1
-                    correlation = correlation[start_index:end_index]
-                    
-                    radial_velocity = velocities[np.argmax(correlation)]
-                    peaks, _ = find_peaks(correlation)
-                    results_half = peak_widths(correlation, peaks, rel_height=0.5)
-                    fwhm = results_half[0]
-                    #print(fwhm)
-                    results.extend([radial_velocity, fwhm[0]])
-                    rvu=adp_data['tel_targ_radvel']['value']
-                    rv_obs=radial_velocity-adp_data['drs_berv']['value']
-                    berv=adp_data['drs_berv']['value']
-                    rv=rv_obs+berv
-                    print(adp_data['date-obs']['value'])
-                    print('RVuser        = ',rvu)
-                    print('RV            = ',rv)
-                    print('RVu-BERV-RV   = ',rvu-rv)
-                    
-                    figures = True
-                    if figures == True:
-                        plt.figure(figsize=(12, 6))
-                        plt.subplot(2, 1, 1)
-                        plt.plot(wl_, flux_/np.mean(flux_), label='flux')
-                        plt.plot(tpl_wl_cut, tpl_flux_cut/np.mean(tpl_flux_cut)+2, label='tpl_flux_cut')
-                        plt.xlabel('Wavelength')
-                        plt.ylabel('Flux')
-                        plt.legend()
-                        
-                        plt.subplot(2, 1, 2)
-                        plt.plot(velocities, correlation, label='correlation')
-                        plt.xlabel('Velocity (km/s)')
-                        plt.ylabel('Correlation')
-                        plt.legend()
-                        
-                        plt.show()
             
 
             stat_spec_b = {
@@ -997,7 +1049,7 @@ for row in shuffled_hdulist_data:
             
             all_results.update(stat_spec_b)
             all_results.update(stat_spec_r)
-            hdulist.close()
+            harps_list_obs.close()
 
 
 ######
@@ -1031,3 +1083,97 @@ for row in shuffled_hdulist_data:
         #print(k)
 
 
+
+
+
+
+
+
+
+
+sys.exit()
+#---------------   END PROGRAM
+
+
+
+
+
+
+
+
+
+
+
+
+
+#radvel = False
+#if radvel == True:
+    #em1=np.min(wl) 
+    #em2=np.max(wl)
+    #ix1=np.argmin(np.abs(tpl_wl-em1))
+    #ix2=np.argmin(np.abs(tpl_wl-em2))
+    #tpl_wl_cut=tpl_wl[ix1:ix2+1]
+
+    #results = []
+    #max_velocity = +1000  # km/s
+    #min_velocity = -1000  # km/s
+    #deltalamba_over_lambda = 0.01 / 5500.0
+    #vel_c = const.c.to(u.km/u.s).value
+    #kost = (deltalamba_over_lambda * vel_c)
+    ##print(80/kost)
+    ##sys.exit()
+    #kk=0
+    #for flux_template in templates_spectra:
+        #tpl_flux_cut = flux_template[ix1:ix2+1]
+        #kk += 1
+        #if kk >1:
+            #break
+        ## Calculate the maximum allowed lag for the desired velocity range
+        #max_lag = int(max_velocity / kost )
+        #min_lag = int(min_velocity / kost )
+        ##print(min_lag,max_lag)
+        
+        ## Limit the range of lags
+        #lag = np.arange(min_lag, max_lag + 1)
+        #velocities = lag * kost
+        #lag = np.arange(-npoints + 1, npoints)
+
+        #correlation = correlate(flux_ - np.mean(flux_), tpl_flux_cut - np.mean(tpl_flux_cut), mode='full')
+        ## Since the correlation is calculated for a larger range of lags than needed,
+        ## slice the correlation array to match the range of lags of interest.
+        #start_index = npoints + min_lag
+        #end_index = npoints + max_lag + 1
+        #correlation = correlation[start_index:end_index]
+        
+        #radial_velocity = velocities[np.argmax(correlation)]
+        #peaks, _ = find_peaks(correlation)
+        #results_half = peak_widths(correlation, peaks, rel_height=0.5)
+        #fwhm = results_half[0]
+        ##print(fwhm)
+        #results.extend([radial_velocity, fwhm[0]])
+        #rvu=adp_data['tel_targ_radvel']['value']
+        #rv_obs=radial_velocity-adp_data['drs_berv']['value']
+        #berv=adp_data['drs_berv']['value']
+        #rv=rv_obs+berv
+        #print(adp_data['date-obs']['value'])
+        #print('RVuser        = ',rvu)
+        #print('RV            = ',rv)
+        #print('RVu-BERV-RV   = ',rvu-rv)
+        
+        #figures = True
+        #if figures == True:
+            #plt.figure(figsize=(12, 6))
+            #plt.subplot(2, 1, 1)
+            #plt.plot(wl_, flux_/np.mean(flux_), label='flux')
+            #plt.plot(tpl_wl_cut, tpl_flux_cut/np.mean(tpl_flux_cut)+2, label='tpl_flux_cut')
+            #plt.xlabel('Wavelength')
+            #plt.ylabel('Flux')
+            #plt.legend()
+            
+            #plt.subplot(2, 1, 2)
+            #plt.plot(velocities, correlation, label='correlation')
+            #plt.xlabel('Velocity (km/s)')
+            #plt.ylabel('Correlation')
+            #plt.legend()
+            
+            #plt.show()
