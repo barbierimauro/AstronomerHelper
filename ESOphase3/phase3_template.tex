@@ -1,0 +1,108 @@
+%Please start from this template when preparing the documentation for your ESO Phase 3 data release. Guidelines regarding structure and content are provided below depending on the type of data (imaging, spectroscopy, scientific catalogue, et cetera). After having addressed each question, please completely remove the guideline text (italic style), this paragraph inclusive. The completed release description must constitute a self-consistent document in Portable Document Format (PDF) including all figures, plots and tabular information as needed. The final PDF file must be assigned to the Phase 3 batch via the Release Manager before closing the release. The release description document forms an integral part of any ESO data release. It is essential for the data content validation carried out by the Archive Science Group before integrating the data with the ESO archive. Finally, the release description will be published along with the data products to support the user community in utilizing the data.
+
+
+% do not modify this command
+\documentclass[a4paper,10pt]{article}
+
+% substitute with the title of your observing programme
+\title{Title of the ESO observing programme}
+
+%keep these commands empty
+\author{}
+\date{}
+%
+
+\begin{document}
+\maketitle
+
+\section{Abstract}
+%Short, broad overview of the data being released. Please refer to ESO programme, instrument, observational setup, filters/bands used, total sky coverage, number of epochs, resolution, if applicable. The scientific context may be touched as well. Please indicate if this is a catalogue data release.
+
+\section{Overview of Observations}
+%Brief summary of the observations this data release is based upon. In case of imaging observations and surveys: the field layout with an indication of the set of bands used for each field, preferably with finding chart or display of the covered fields/objects. In case of spectroscopy, please provide finding charts if possible.
+
+\section{Release Content}
+%List of imaging data products including field designation/target object, J2000 coordinates, filter, exposure time, observing date, seeing and limiting magnitude. Analogously, for spectroscopic data products, please list target name, J2000 coordinates, spectral range, resolution, exposure time, observing date and signal-to-noise ratio.
+%If the file list is very long, as for instance in the case of surveys, please provide a summary including the distribution of key parameters like seeing and limiting magnitude if possible. Please specify the total number of data files in any case.
+%In case of catalogue data, please provide a general description of the content in terms of the catalogue parameters and the selection criteria applied. The following topics should be addressed in particular.
+ %   • Sky region covered by the data. Any gaps?
+%    • Please specify the total area, e.g. in square degrees.
+%    • Spectral band used for detection, or was a multi-band detection image (“chi-square image”) used?
+%    • Limiting magnitude of the source catalogue and the corresponding statistical significance of the faintest sources (e.g. 10 σ). Is the limiting magnitude uniform across the survey area?
+%    • What is the total number of sources, or, more generally, catalogue records? What is the total data volume (megabytes)?
+
+\section{Release Notes}
+%Short descriptions of the reduction methods used, the calibration procedures (astrometric, photometric, wavelength, etc.), characterization of the data quality, comparison with previous releases, where applicable.
+
+%    • For spectra, including 3d cubes, specify the spectral reference system (e.g. topocentric, heliocentric, barycentric) and if the wavelength axis refers to wavelength measured in dry air or in vacuum.
+%    • For images, specify the photometric reference system. Clearly document for each filter band the colour transformations which have been applied to relate the photometric reference system to the instrumental system. Describe the procedure that was adopted to establish a global photometric calibration for surveys.
+
+\section{Data Reduction and Calibration}
+%Please address the following questions for scientific catalogue data, particularly in case of source catalogues:
+%    • Which source detection method was used to generate the catalogue? Has the image been filtered before detection? Pls. specify the detection parameters (threshold, min. area, etc.)
+%    • How were very bright stars, and imaging artifacts resulting thereof, handled?
+%    • Illustrate the screening procedure that was followed to remove spurious sources and artifacts from the catalogue.
+%    • Describe the process of merging overlapping survey tiles into one unique source catalogue (in case of surveys).
+%    • Which reference was used to establish the astrometric calibration (GSC1, GSC2, USNO, 2MASS catalogue)?
+%    • Specify the photometric reference system. Which procedure has been adopted to establish a global photometric calibration for surveys?
+%    • Has the illumination effect been corrected for? If yes, what has been corrected, image pixels or source fluxes?
+%    • Which corrections were applied to photometric measurements to account for seeing variations (e.g. aperture corrections, PSF matching)?
+%    • Discuss the loss of flux due to finite apertures and the estimation of total flux for point sources.
+%    • Discuss the effect of intergalactic extinction. Have fluxes/magnitudes been corrected for reddening?
+
+
+\section{Data Quality}
+%Outline of the quality checks that were carried out on the data, including a discussion of the following topics (when applicable):
+%    • Uniformity of the astrometric calibration across the survey region. Are there residuals due to individual detector chips or the tiling scheme of the survey?
+%    • Is the zeropoint uniform across the tile/image? Discuss residuals due to chip-to-chip variations and the illumination effect.
+%    • Uniformity of photometric calibration across the survey region, across different filters, and between different epochs. Quality of the colours indices?
+%    • Quality of source parameters for point sources versus extended sources.
+%    • Contamination of the source catalogue. What is the fractional amount of spurious objects at the faintest flux level?
+%    • Quantification of catalogue completeness.
+
+\subsection{Known issues}
+% This section only applies if there are known issues, otherwise write: "None"
+
+\subsection{Previous Releases}
+% If this release is the first, write "First data release"
+% For subsequent releases having release numbers >1,
+% please quote the release numbers of previous Phase 3 releases for this data collection and list the changes in this release (N) with respect to the immediately preceding data release (N-1).
+
+\section{Data Format}
+%Do not write anything here.
+
+\subsection{Files Types}
+% Description of the types of files in this release and the file naming conventions used.
+
+\subsection{Catalogue Columns}
+% Please list label, data format, and description for each catalogue column.
+
+\section{Acknowledgements}
+%Put here the acknowledgments to be included when using this data, usually referring to the scientific publication associated with the data, supplemented by the following boilerplate.
+
+
+
+% do not modify the following text
+Any publication making use of this data, whether obtained from the ESO archive or via third parties, must include the following acknowledgment:
+~\\
+~\\
+% add your program numbers
+\noindent
+\textit{Based on data products created from observations collected at the European Organisation for Astronomical Research in the Southern Hemisphere under ESO programme(s) TPPP.C-NNNN(R)}
+~\\
+
+% do not modify the following text
+\noindent
+If the access to the ESO Science Archive Facility services was helpful for you research, please include the following acknowledgment:
+~\\
+~\\
+\noindent
+\textit{This research has made use of the services of the ESO Science Archive Facility.}
+~\\
+
+% do not modify the following text
+\noindent
+Science data products from the ESO archive may be distributed by third parties, and disseminated via other services, according to the terms of the Creative Commons Attribution 4.0 International license. Credit to the ESO origin of the data must be acknowledged, and the file headers preserved.
+
+
+\end{document}
