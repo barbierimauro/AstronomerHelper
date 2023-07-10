@@ -8,7 +8,7 @@
 # keywords or patterns.
 #
 # Usage: 
-#   $0 DPID_ADP
+#   hdr_info.sh DPID_ADP
 #
 # Arguments:
 #   DPID_ADP: The Data Product Identifier of an ADP file.
@@ -64,6 +64,7 @@ sed -n '/<pre>/,/<\/pre>/p' "${dpid_adp_nocolons}.tmp" | sed '1d;$d' > "${dpid_a
 rm "${dpid_adp_nocolons}.tmp"
 # print basic information
 echo
+echo "ADP input file"
 echo $dpid_adp   "    :   " $dpid_adp
 echo "header in : " "${dpid_adp}.hdr"
 echo
