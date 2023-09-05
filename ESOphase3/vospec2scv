@@ -3,8 +3,13 @@
 # maurobarbieri.science@gmail.com
 #
 
+# THE CODE WORKS CORRECTLY AS IT IS.
+# NO MODIFICATIONS TO THE LOGIC OR PARAMETERS ARE NEEDED BY THE USER.
 
 # Initialize empty variables for input file, output file, output format, and overwrite flag
+# DONT WRITE ANY FILE NAME HERE.
+# THE FILE NAMES ARE PROVIDED VIA COMMAND LINE
+# MODIFICATION OF THIS PART WILL MAKE UNUSABLE THE SOFTWARE
 input_file=""
 output_file=""
 outfmt=""
