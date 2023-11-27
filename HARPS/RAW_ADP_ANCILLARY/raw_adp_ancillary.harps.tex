@@ -1,0 +1,105 @@
+\documentclass[a4paper,12pt]{article}
+
+\author{Mauro Barbieri}
+\date{12 May 2023}
+\title{ESO Archive: How to associate a RAW file with ADP and ANCILLARY files\\
+      The case of HARPS}
+
+
+\begin{document}
+\maketitle
+
+
+This workflow aims to establish a relationship between the RAW files (identified by 'dp\_id'), the ADP files (identified by 'archive\_id\_spec'), 
+and the ancillary TAR files (identified by 'archive\_id\_anci') for the HARPS instrument.
+Currently, no table provides this correspondence for any ESO instrument, making this operation essential for comprehensive data analysis. 
+While the specific procedures outlined here focus on the HARPS instrument, the same technique could be applied to any other instrument,
+making this workflow universally valuable for data from the ESO archive.
+
+The entire operation sequence is designed to categorize, align, and extract pertinent data across multiple tables. 
+The final output, 'finaltable', is a well-organized data table that comprises all observations, along with their associated metadata from all the involved tables. 
+This table will be used subsequently for retrieving and using these files for keyword extractions (since they are FITS files, even inside the TAR) and data analysis on the ADP. 
+This workflow hence serves as a precursor for more in-depth analysis and is especially beneficial when an entire dataset from an instrument is under scrutiny, 
+  as opposed to files from individual observing programs that can be retrieved from the ESO archive.
+
+Specific grouping based on 'dp\_tech' and 'dp\_type' is integral to distinguish between scientific data and calibration data. 
+Sorting by date ('dateadp') and retaining only the most recent ADP file for each RAW file ensures that the dataset is current and consistent. 
+Given that the 'phase3v2' table contains multiple ADP entries for the same RAW file, this process of sorting, identifying duplicates, and 
+keeping only the first entry is critical to maintaining the dataset's integrity.
+
+This workflow, though complex, is necessary and currently the only feasible method using TAP queries. 
+It not only makes data handling more streamlined but also ensures the use of the most up-to-date and relevant files, thus optimizing the subsequent data analysis.
+
+\begin{enumerate}
+\item 
+Start by querying the 'dbo.raw' table where the instrument name is 'HARPS'. This helps narrow down the entries to those relevant for the HARPS instrument.
+\begin{verbatim}
+select * from dbo.raw where instrument = 'HARPS'
+\end{verbatim}
+%select * from ivoa.obscore where instrument_name = 'HARPS'
+%select * from phase3v2.files where name like '%harps%'
+%select * from phase3v2.provenance where source_file like '%harps%'
+
+\item 
+    Make a subset science files from the 'dbo.raw' table based on the following conditions: if the 'dp\_tech' column starts with the string 'ECHELLE' and the 'dp\_type' column starts with 'STAR'.
+\begin{verbatim}
+startsWith(dp_tech,"ECHELLE") & startsWith(dp_type,"STAR")
+\end{verbatim}
+    
+\item 
+    Query the 'phase3v2.files' table for entries related to 'HARPS'.
+\begin{verbatim}
+select * from phase3v2.files where name like '%HARPS%'
+\end{verbatim}
+
+\item 
+    In the result of the 'phase3v2.files' query, create two new columns: 'dpid1' and 'dateadp'. 'dpid1' is created by extracting a substring of the 'name' column. 
+This new column will help in joining tables later on. 
+    \begin{verbatim}
+        dpid1 = startsWith(name,"H") ? 
+                substring(name,0,29) : 
+                substring(replaceAll(name,"TEST.",""),0,29)
+    \end{verbatim}
+    'dateadp' is created by converting a part of the 'archive\_id' column, which is in ISO format, to a Modified Julian Date (MJD) format. 
+This new column will be useful for sorting operations based on the file creation date.
+    \begin{verbatim}
+        dateadp = isoToMjd(substring(archive_id,4,30))
+    \end{verbatim}
+
+\item 
+    In the same result table, make two groups, 'spec' and 'anci', based on the 'category' value being either 'SCIENCE.SPECTRUM' or \\'ANCILLARY.HARPSTAR' respectively. 
+These groups are useful for categorizing different types of data in the table.
+
+\item 
+    Next, sort the 'phase3v2.files' table by 'dateadp' in descending order. This organizes the data by the file creation date, with the most recent entries appearing first.
+
+\item 
+    With the sorted data, execute an internal match operation on 'dpid1' column for both the 'spec' and 'anci' groups separately. 
+This operation matches rows with exact values in 'dpid1', grouping them together. 
+From each group, only the first entry (which is also the most recent due to the previous sorting operation) is retained. 
+The result of each operation is a new table, 'spec' and 'anci', respectively.
+
+\item 
+    Perform a crossmatch operation between 'dbo.raw' and the 'spec' table based on 'dp\_id' and 'dpid1' columns respectively. 
+The crossmatch operation is akin to a SQL left outer join. For each row in 'dbo.raw', the best matching row from 'spec' is selected. 
+The result is a new temporary table, 'temp1'.
+
+\item 
+    Similarly, perform a crossmatch operation between 'temp1' and the 'anci' table. 
+The result of this operation is the table 'temp2', which contains all the observations with their associated files: the ADPs and the TARs.
+
+\item 
+    Query the 'ivoa.obscore' table for entries related to 'HARPS'.
+\begin{verbatim}
+select * from ivoa.obscore where instrument_name = 'HARPS'
+\end{verbatim}
+
+\item 
+    Lastly, execute a crossmatch operation between 'temp2' and 'ivoa.obscore' tables. 
+This operation is based on 'archive\_id\_spec' from the 'temp2' table and 'dp\_id' from 'ivoa.obscore'. 
+The crossmatch operation is akin to a SQL left outer join, where for each row in 'temp2', the best matching row from 'ivoa.obscore' is selected. 
+This operation results in the final table, 'finaltable'. The 'archive\_id\_spec' is the archive\_id from the 'spec' table that was matched with 'dbo.raw' in a previous operation.
+
+\end{enumerate}
+
+\end{document}
